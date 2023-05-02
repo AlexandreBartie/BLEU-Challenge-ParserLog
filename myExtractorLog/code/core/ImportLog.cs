@@ -1,7 +1,7 @@
 using app.log;
 using app.util;
 
-namespace app.extract;
+namespace app.core;
 
 public class ImportLog
 {

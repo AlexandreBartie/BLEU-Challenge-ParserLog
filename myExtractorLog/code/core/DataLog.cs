@@ -1,7 +1,7 @@
         
 using app.log;
 
-namespace app.extract;
+namespace app.core;
 
 public class DataLog
 {
