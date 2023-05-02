@@ -1,3 +1,5 @@
+using app.extra;
+
 namespace app.log;
 
 public struct PlayerHealedPower {
@@ -19,7 +21,7 @@ public struct PlayerGainedExperience {
 
 public struct PlayerLootedByCreature {
     public string creature;
-    public string listLooted;
+    public LootedList list;
 
 }
 

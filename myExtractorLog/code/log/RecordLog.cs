@@ -1,3 +1,5 @@
+using app.extra;
+
 namespace app.log;
 
 public class RecordLog : BaseLog
@@ -50,7 +52,7 @@ public class RecordLog : BaseLog
         PlayerLootedByCreature data = new();
         
         data.creature = regex.GetParameter(1);
-        data.listLooted = regex.GetParameter(2);
+        data.list = new LootedList(regex.GetParameter(2));
         
         return data;  
     }
@@ -67,7 +69,8 @@ public class RecordLog : BaseLog
         
 }
 
-public class RecordsLog : List<RecordLog>{
+public class RecordsLog : List<RecordLog>
+{
 
     public RecordsLog filter(TypeLog type)
     {

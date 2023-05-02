@@ -74,14 +74,14 @@ public class RecordLogTest
     [InlineData("15:47 Loot of a dragon: a crossbow, 2 dragon ham, green dragon leather, plate legs, a steel shield.", "dragon", "1 crossbow, 2 dragon ham, 1 green dragon leather, 1 plate legs, 1 steel shield")]
     [InlineData("18:33 Loot of a dwarf soldier: 5 bolts, a soldier helmet, 2 white mushrooms.", "dwarf soldier", "5 bolts, 1 soldier helmet, 2 white mushrooms")]
     [InlineData("15:43 Loot of a ghoul: nothing.", "ghoul", "")]
-    public void TST08_PlayerLootedByCreature(string info, string creature, string listLooted, TypeLog type = TypeLog.eLogPlayerLootedByCreature)
+    public void TST08_PlayerLootedByCreature(string info, string creature, string list, TypeLog type = TypeLog.eLogPlayerLootedByCreature)
     {
 
         log = new(info);
 
         Assert.Equal(type, log.type);
         Assert.Equal(creature, log.GetPlayerLootedByCreature().creature);
-       // Assert.Equal(listLooted, log.GetPlayerLootedByCreature().listLooted);
+        Assert.Equal(list, log.GetPlayerLootedByCreature().list.txt);
 
     }
 

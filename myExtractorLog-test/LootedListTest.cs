@@ -5,7 +5,7 @@ using app.log;
 
 namespace myappxunit;
 
-public class ExtraLogTest
+public class LootedListTest
 {
 
     private RecordLog? log;
