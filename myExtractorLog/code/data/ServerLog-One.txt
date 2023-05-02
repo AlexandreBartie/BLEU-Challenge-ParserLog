@@ -1,0 +1,154 @@
+Channel Server Log saved Wed Apr 12 15:48:26 2023
+15:41 Your last visit in Tibia: 11. Jan 2023 01:23:38 CET.
+15:41 Today's boosted creature: Hydra
+Boosted creatures yield more experience points, carry more loot than usual and respawn at a faster rate.
+15:41 Today's boosted boss: Goshnar's Malice
+Boosted bosses contain more loot and count more kills for your Bosstiary.
+15:41 Due to your long-term loyalty to Tibia, you currently benefit from a 20% bonus on all of your skills.
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:42 You lose 1 hitpoint. 
+15:42 You healed yourself for 328 hitpoints.
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 You gained 150 experience points.
+15:43 Loot of a cyclops: 11 gold coins.
+15:43 You lose 31 hitpoints due to an attack by a cyclops. 
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 You gained 150 experience points.
+15:43 Loot of a cyclops: 6 gold coins.
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 You gained 150 experience points.
+15:43 Loot of a cyclops: 13 gold coins.
+15:43 A rat loses 20 hitpoints due to your attack. 
+15:43 You gained 5 experience points.
+15:43 Loot of a rat: a gold coin.
+15:43 You lose 2 hitpoints due to an attack by a ghoul. 
+15:43 A ghoul loses 100 hitpoints due to your attack. 
+15:43 You gained 85 experience points.
+15:43 Loot of a ghoul: nothing.
+15:43 A skeleton loses 50 hitpoints due to your attack. 
+15:43 You gained 35 experience points.
+15:43 Loot of a skeleton: 3 gold coins.
+15:43 You lose 5 hitpoints due to an attack by a cyclops. 
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 You gained 150 experience points.
+15:43 Loot of a cyclops: nothing.
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 You gained 150 experience points.
+15:43 Loot of a cyclops: a cyclops trophy, 29 gold coins.
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 You gained 150 experience points.
+15:43 Loot of a cyclops: nothing.
+15:44 You lose 14 hitpoints due to an attack by a cyclops. 
+15:44 A cyclops loses 260 hitpoints due to your attack. 
+15:44 You gained 150 experience points.
+15:44 Loot of a cyclops: 25 gold coins.
+15:44 You lose 29 hitpoints due to an attack by a cyclops smith. 
+15:44 A cyclops smith loses 419 hitpoints due to your attack. 
+15:44 You lose 35 hitpoints due to an attack by a cyclops. 
+15:44 A cyclops smith loses 16 hitpoints due to your attack. 
+15:44 You gained 255 experience points.
+15:44 Loot of a cyclops smith: a cyclops toe, 13 gold coins, meat.
+15:44 You lose 11 hitpoints due to an attack by a cyclops. 
+15:44 A cyclops loses 260 hitpoints due to your attack. 
+15:44 You gained 150 experience points.
+15:44 Loot of a cyclops: nothing.
+15:44 You lose 5 hitpoints due to an attack by a cyclops. 
+15:45 You healed yourself for 84 hitpoints.
+15:45 You healed yourself for 83 hitpoints.
+15:45 You healed yourself for 79 hitpoints.
+15:46 A dwarf loses 90 hitpoints due to your attack. 
+15:46 You gained 45 experience points.
+15:46 Loot of a dwarf: a hatchet.
+15:46 You lose 3 hitpoints due to an attack by a dwarf soldier. 
+15:46 A dwarf soldier loses 135 hitpoints due to your attack. 
+15:46 You gained 70 experience points.
+15:46 Loot of a dwarf soldier: nothing.
+15:46 A dwarf loses 90 hitpoints due to your attack. 
+15:46 You gained 45 experience points.
+15:46 Loot of a dwarf: a gold coin, a letter.
+15:46 You lose 9 hitpoints due to an attack by a dwarf soldier. 
+15:46 A dwarf loses 90 hitpoints due to your attack. 
+15:46 You gained 45 experience points.
+15:46 Loot of a dwarf: 5 gold coins.
+15:46 A dwarf soldier loses 135 hitpoints due to your attack. 
+15:46 You gained 70 experience points.
+15:46 Loot of a dwarf soldier: nothing.
+15:46 A spider loses 20 hitpoints due to your attack. 
+15:46 You gained 12 experience points.
+15:46 Loot of a spider: 3 gold coins.
+15:46 A dragon loses 386 hitpoints due to your attack. 
+15:46 You lose 148 hitpoints due to an attack by a dragon. 
+15:46 A dragon loses 242 hitpoints due to your attack. 
+15:46 You lose 24 hitpoints due to an attack by a dragon. 
+15:46 A dragon loses 329 hitpoints due to your attack. 
+15:46 You lose 38 hitpoints due to an attack by a dragon. 
+15:46 A dragon loses 43 hitpoints due to your attack. 
+15:46 You gained 700 experience points.
+15:46 Loot of a dragon: dragon ham, 14 gold coins.
+15:47 You lose 9 hitpoints. 
+15:47 You lose 75 hitpoints due to an attack by a dragon. 
+15:47 You lose 34 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 486 hitpoints due to your attack. 
+15:47 You lose 9 hitpoints. 
+15:47 A dragon loses 514 hitpoints due to your attack. 
+15:47 You gained 700 experience points.
+15:47 Loot of a dragon: 51 gold coins, plate legs.
+15:47 You lose 9 hitpoints. 
+15:47 A dragon loses 511 hitpoints due to your attack. 
+15:47 You lose 64 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 379 hitpoints due to your attack. 
+15:47 You lose 72 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 274 hitpoints due to your attack. 
+15:47 You lose 25 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 310 hitpoints due to your attack. 
+15:47 You lose 9 hitpoints. 
+15:47 You lose 25 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 176 hitpoints due to your attack. 
+15:47 You would have received 4 dust for the Exaltation Forge if you played on a Premium account.
+15:47 You gained 700 experience points.
+15:47 Loot of a dragon: 2 dragon ham, 24 gold coins.
+15:47 A dragon loses 303 hitpoints due to your attack. 
+15:47 You lose 121 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 541 hitpoints due to your attack. 
+15:47 You healed yourself for 333 hitpoints.
+15:47 A dragon healed itself for 60 hitpoints.
+15:47 You lose 78 hitpoints due to an attack by a dragon. 
+15:47 You lose 91 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 216 hitpoints due to your attack. 
+15:47 You gained 700 experience points.
+15:47 Loot of a dragon: dragon ham, 52 gold coins.
+15:47 You lose 9 hitpoints. 
+15:47 You lose 84 hitpoints due to an attack by a dragon. 
+15:47 You lose 85 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 435 hitpoints due to your attack. 
+15:47 You healed yourself for 340 hitpoints.
+15:47 A dragon loses 565 hitpoints due to your attack. 
+15:47 You gained 700 experience points.
+15:47 Loot of a dragon: dragon ham, 3 gold coins, a strong health potion.
+15:47 You lose 9 hitpoints. 
+15:47 A dragon loses 314 hitpoints due to your attack. 
+15:47 A dragon loses 301 hitpoints due to your attack. 
+15:47 A dragon loses 385 hitpoints due to your attack. 
+15:47 You gained 700 experience points.
+15:47 Loot of a dragon: dragon ham, 15 gold coins, a steel shield.
+15:47 You lose 9 hitpoints. 
+15:47 A dragon loses 389 hitpoints due to your attack. 
+15:47 You lose 34 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 537 hitpoints due to your attack. 
+15:47 You lose 25 hitpoints due to an attack by a dragon. 
+15:47 A dragon loses 74 hitpoints due to your attack. 
+15:47 You gained 700 experience points.
+15:47 Loot of a dragon: a crossbow, 2 dragon ham, green dragon leather, plate legs, a steel shield.
+15:47 A dragon loses 444 hitpoints due to your attack. 
+15:47 A dragon loses 339 hitpoints due to your attack. 
+15:47 You lose 75 hitpoints due to an attack by a dragon. 
+15:48 A dragon loses 217 hitpoints due to your attack. 
+15:48 You gained 700 experience points.
+15:48 Loot of a dragon: 36 gold coins, a steel helmet, a small diamond.
+15:48 You healed yourself for 371 hitpoints.
