@@ -3,7 +3,7 @@ using app.log;
 
 namespace app.data;
 
-public abstract class TotalModel
+public abstract class DataTotalModel
 {
     public readonly TotalLog total;
 
@@ -13,7 +13,7 @@ public abstract class TotalModel
 
     public int count => logs.Count;
 
-    public TotalModel(TotalLog total, TypeLog type)
+    public DataTotalModel(TotalLog total, TypeLog type)
     {
         this.total = total;
 

@@ -2,6 +2,8 @@ using app.log;
 using app.data;
 using app.util;
 
+using System.Text.Json;
+
 namespace app.core;
 
 public class TotalLog
@@ -9,16 +11,23 @@ public class TotalLog
 
     public RecordsLog logs = new();
 
-    public TotalPlayerHealedPower totalPlayerHealedPower;
+    public DataOutput output;
+
+    public DataTotalPlayerHealedPower totalPlayerHealedPower;
 
     public bool isNull => (logs == null);
 
     public TotalLog()
     {
-        totalPlayerHealedPower = new TotalPlayerHealedPower(this);
+        totalPlayerHealedPower = new DataTotalPlayerHealedPower(this);
     }
 
-    public string output()
+    public string txt()
+    {
+        return JsonSerializer.Serialize(output);
+    }
+
+    public string log()
     {
 
         if (!isNull)

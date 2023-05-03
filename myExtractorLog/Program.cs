@@ -30,7 +30,12 @@ namespace app
             var extrator = new ExtratorLog();
 
             if (extrator.Load(path, name))
+            {
+                Console.WriteLine("<<< OUTPUT >>>");
                 Console.WriteLine(extrator.output);
+                Console.WriteLine("<<< LOG >>>");
+                Console.WriteLine(extrator.log);
+            }
             else
                 Environment.Exit(-1);
             

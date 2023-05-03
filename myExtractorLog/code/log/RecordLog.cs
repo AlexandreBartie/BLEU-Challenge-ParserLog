@@ -9,26 +9,26 @@ public class RecordLog : BaseLog
 
     public RecordLog(string info) : base(info) {}
 
-    public PlayerHealedPower GetPlayerHealedPower()
+    public DataPlayerHealedPower GetPlayerHealedPower()
     {
         
-        PlayerHealedPower data = new();
+        DataPlayerHealedPower data = new();
         
         data.points = int.Parse(regex.GetParameter(1));
         
         return data; 
     }
-    public PlayerLostPower GetPlayerLostPower()
+    public DataPlayerLostPower GetPlayerLostPower()
     {
-        PlayerLostPower data = new();
+        DataPlayerLostPower data = new();
         
         data.points = int.Parse(regex.GetParameter(1));
         
         return data;  
     }
-    public PlayerLostPowerByCreature GetPlayerLostPowerByCreature()
+    public DataPlayerLostPowerByCreature GetPlayerLostPowerByCreature()
     {
-        PlayerLostPowerByCreature data = new();
+        DataPlayerLostPowerByCreature data = new();
         
         data.points = int.Parse(regex.GetParameter(1));
         data.creature = regex.GetParameter(3);
@@ -36,18 +36,18 @@ public class RecordLog : BaseLog
         return data;  
     }
 
-    public PlayerGainedExperience GetPlayerGainedExperience()
+    public DataPlayerGainedExperience GetPlayerGainedExperience()
     {
-        PlayerGainedExperience data = new();
+        DataPlayerGainedExperience data = new();
         
         data.points = int.Parse(regex.GetParameter(1));
         
         return data;  
     }
 
-    public PlayerLootedByCreature GetPlayerLootedByCreature()
+    public DataPlayerLootedByCreature GetPlayerLootedByCreature()
     {
-        PlayerLootedByCreature data = new();
+        DataPlayerLootedByCreature data = new();
         
         data.creature = regex.GetParameter(1);
         data.list = new LootedList(regex.GetParameter(2));
@@ -55,9 +55,9 @@ public class RecordLog : BaseLog
         return data;  
     }
 
-        public CreatureLostPower GetCreatureLostPower()
+        public DataCreatureLostPower GetCreatureLostPower()
     {
-        CreatureLostPower data = new();
+        DataCreatureLostPower data = new();
         
         data.creature = regex.GetParameter(1);
         data.points = int.Parse(regex.GetParameter(2));

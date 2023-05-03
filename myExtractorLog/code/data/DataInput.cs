@@ -2,30 +2,30 @@ using app.extra;
 
 namespace app.data;
 
-public struct PlayerHealedPower {
+public struct DataPlayerHealedPower {
     public int points;
 }
 
-public struct PlayerLostPower {
+public struct DataPlayerLostPower {
     public int points;
 }
 
-public struct PlayerLostPowerByCreature {
+public struct DataPlayerLostPowerByCreature {
     public int points;
     public string creature;
 }
 
-public struct PlayerGainedExperience {
+public struct DataPlayerGainedExperience {
     public int points;
 }
 
-public struct PlayerLootedByCreature {
+public struct DataPlayerLootedByCreature {
     public string creature;
     public LootedList list;
 
 }
 
-public struct CreatureLostPower {
+public struct DataCreatureLostPower {
     public string creature;
     public int points;
 

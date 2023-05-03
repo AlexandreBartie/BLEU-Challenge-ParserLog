@@ -2,11 +2,11 @@ using app.core;
 using app.log;
 namespace app.data;
 
-public class TotalPlayerHealedPower : TotalModel
+public class DataTotalPlayerHealedPower : DataTotalModel
 {
-    public PlayerHealedPower board;
+    public DataPlayerHealedPower board;
 
-    public TotalPlayerHealedPower(TotalLog total) : base(total, TypeLog.eLogPlayerHealedPower) {}
+    public DataTotalPlayerHealedPower(TotalLog total) : base(total, TypeLog.eLogPlayerHealedPower) {}
 
     public void SumData()
     {
