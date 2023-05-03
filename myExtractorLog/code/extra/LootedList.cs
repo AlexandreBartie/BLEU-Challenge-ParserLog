@@ -37,52 +37,57 @@ public class LootedItem
 
     const string LOOTED_NULL = "nothing";
     const string LOOTED_ITEM = @"^\s*(\d*)\s*(.*)$";
+    const string LOOTED_ITEM_NAME = @"^(an? )";
 
-    private string _qty = "";
-    private string _name = "";
+    private string item;
 
-    private bool isNull;
+    private string paramQTY = "";
+    private string paramName = "";
+
+    private bool isNull
+    {
+        get { return (item == LOOTED_NULL); }
+    }
 
     public int qty
     {
         get { 
             
-            if (_qty == "")
+            if (isNull )
+                return 0;
+
+            if (paramQTY == "")
                 return 1;
             
-            return int.Parse(_qty); }
+            return int.Parse(paramQTY); }
     }
 
     public string name
     {
-        get { return _name; }
+        get { return paramName; }
     }
 
-    public override string ToString() => isNull ? String.Format("{0} {1}", qty, _name) : "";   
+    public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);   
 
     public LootedItem(string item)
     {
         
-        isNull = (item != LOOTED_NULL);
+        this.item = item;
 
         if (!isNull)
         {
             var match = new TextMatch(item, LOOTED_ITEM);
             
-            _qty = match.GetParameter(1);
-            _name = GetNameTreatment(match.GetParameter(2));
+            paramQTY = match.GetParameter(1);
+            paramName = GetNameTreatment(match.GetParameter(2));
+
         }
         
     }
 
     private string GetNameTreatment(string input)
     {
-
-        string pattern = @"^(an? )";
-        string result = Regex.Replace(input, pattern, "");
-
-        return result;
-
+        return Regex.Replace(input, LOOTED_ITEM_NAME, "");
     }
 
 }

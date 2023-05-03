@@ -23,7 +23,7 @@ public class LootedListTest
 
         list = new(input);
 
-        Assert.Equal(expected, expected);
+        Assert.Equal(expected, list.txt);
 
     }
 
