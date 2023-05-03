@@ -8,7 +8,7 @@ public class DataLog : TotalLog
     private string path;
     private ImportLog import = new();
 
-    public void SetPath(string name)
+    public DataLog(string path)
     {
         this.path = path;
     }

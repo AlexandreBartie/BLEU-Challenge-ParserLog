@@ -5,7 +5,9 @@ namespace myappxunit;
 public class DataLogTest
 {
 
-    private DataLog data = new();
+    private DataLog data = new("");
+
+    "C:\DEVOPS\CHALLENGE\BLEU\ExtractorLog\myExtractorLog\code\file\input\ServerLog-TotalPlayerHealedPower.txt"
 
     private
 
