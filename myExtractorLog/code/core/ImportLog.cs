@@ -10,9 +10,7 @@ public class ImportLog
 
     private ParseLog parse = new();
 
-    public RecordsLog logs => parse.sessions.logs;
-
-    public bool Load(string path, string name)
+    public RecordsLog Load(string path, string name)
     {
         
         parse = new();
@@ -20,13 +18,11 @@ public class ImportLog
         if (file.Open(path, name))
         {
 
-            parse.Apply(file.lines);
+            return parse.Apply(file.lines).logs;
             
-            return true;
-
         }
 
-        return false;
+        return new RecordsLog();
 
     }
 

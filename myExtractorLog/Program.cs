@@ -17,7 +17,7 @@ namespace app
 
             // string path = AppDomain.CurrentDomain.BaseDirectory; 
             
-            string path = "C:/DEVOPS/CHALLENGE/BLEU/projectMyApp/myapp/code/data/";
+            string path = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/";
             string name = "ServerLog-One.txt";
 
             startApp(path, name);

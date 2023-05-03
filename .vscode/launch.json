@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/myapp/bin/Debug/net7.0/myapp.dll",
-            "args": ["C:/DEVOPS/CHALLENGE/BLEU/projectMyApp/myapp/code/data/ServerLog-One.txt"],
-            "cwd": "${workspaceFolder}/myapp",
+            "program": "${workspaceFolder}/myExtractorLog/bin/Debug/net7.0/myExtractorLog.dll",
+            "args": ["C:/DEVOPS/CHALLENGE/BLEU/projectmyExtractorLog/myExtractorLog/code/data/ServerLog-One.txt"],
+            "cwd": "${workspaceFolder}/myExtractorLog",
             "console": "internalConsole",
             "stopAtEntry": false
         },

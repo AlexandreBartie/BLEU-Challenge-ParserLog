@@ -4,10 +4,10 @@ namespace app.log;
 public class ParseLog
 {
 
-    public SessionsLog sessions = new();
-
-    public void Apply(string[] lines)
+    public SessionsLog Apply(string[] lines)
     {
+
+        var sessions = new SessionsLog();
 
         RecordLog log;
 
@@ -22,6 +22,8 @@ public class ParseLog
             sessions.addRecord(log);
 
         }
+
+        return sessions;
 
     }             
 

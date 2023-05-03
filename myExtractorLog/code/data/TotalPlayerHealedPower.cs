@@ -1,14 +1,22 @@
+using app.core;
+using app.log;
 namespace app.data;
 
-public class TotalPlayerHealedPower
+public class TotalPlayerHealedPower : TotalModel
 {
-    private DataLog data;
+    public PlayerHealedPower board;
 
-    public PlayerHealedPower control;
+    public TotalPlayerHealedPower(TotalLog total) : base(total, TypeLog.eLogPlayerHealedPower) {}
 
-    public TotalPlayerHealedPower(DataLog data)
+    public void SumData()
     {
-        this.data = data;
+
+        board.points = 0;
+
+        foreach (RecordLog log in logs)
+        {
+            board.points = board.points + log.GetPlayerHealedPower().points;
+        }
     }
 
 }
