@@ -9,60 +9,82 @@ public class RecordLog : BaseLog
 
     public RecordLog(string info) : base(info) {}
 
-    public DataPlayerHealedPower GetPlayerHealedPower()
+    public DataPlayerHealedPower dataPlayerHealedPower
     {
+        get {
+
+            DataPlayerHealedPower data = new();
+            
+            data.points = int.Parse(regex.GetParameter(1));
+            
+            return data; 
+
+        }
         
-        DataPlayerHealedPower data = new();
-        
-        data.points = int.Parse(regex.GetParameter(1));
-        
-        return data; 
+
     }
-    public DataPlayerLostPower GetPlayerLostPower()
+    public DataPlayerLostPower dataPlayerLostPower
     {
-        DataPlayerLostPower data = new();
+        get {
         
-        data.points = int.Parse(regex.GetParameter(1));
-        
-        return data;  
+            DataPlayerLostPower data = new();
+            
+            data.points = int.Parse(regex.GetParameter(1));
+            
+            return data;
+
+        } 
     }
-    public DataPlayerLostPowerByCreature GetPlayerLostPowerByCreature()
+    public DataPlayerLostPowerByCreature dataPlayerLostPowerByCreature
     {
-        DataPlayerLostPowerByCreature data = new();
         
-        data.points = int.Parse(regex.GetParameter(1));
-        data.creature = regex.GetParameter(3);
-        
-        return data;  
+        get {
+
+            DataPlayerLostPowerByCreature data = new();
+            
+            data.points = int.Parse(regex.GetParameter(1));
+            data.creature = regex.GetParameter(3);
+            
+            return data;
+        }  
     }
 
-    public DataPlayerGainedExperience GetPlayerGainedExperience()
+    public DataPlayerGainedExperience dataPlayerGainedExperience
     {
-        DataPlayerGainedExperience data = new();
-        
-        data.points = int.Parse(regex.GetParameter(1));
-        
-        return data;  
+        get {
+            DataPlayerGainedExperience data = new();
+            
+            data.points = int.Parse(regex.GetParameter(1));
+            
+            return data;
+        }  
     }
 
-    public DataPlayerLootedByCreature GetPlayerLootedByCreature()
+    public DataPlayerLootedByCreature dataPlayerLootedByCreature
     {
-        DataPlayerLootedByCreature data = new();
-        
-        data.creature = regex.GetParameter(1);
-        data.list = new LootedList(regex.GetParameter(2));
-        
-        return data;  
+        get {
+
+            DataPlayerLootedByCreature data = new();
+            
+            data.creature = regex.GetParameter(1);
+            data.list = new LootedList(regex.GetParameter(2));
+            
+            return data;
+        }
     }
 
-        public DataCreatureLostPower GetCreatureLostPower()
+    public DataCreatureLostPower dataCreatureLostPower
     {
-        DataCreatureLostPower data = new();
-        
-        data.creature = regex.GetParameter(1);
-        data.points = int.Parse(regex.GetParameter(2));
-        
-        return data;  
+        get {
+
+            DataCreatureLostPower data = new();
+            
+            data.creature = regex.GetParameter(1);
+            data.points = int.Parse(regex.GetParameter(2));
+            
+            return data;
+            
+        }
     }
         
 }

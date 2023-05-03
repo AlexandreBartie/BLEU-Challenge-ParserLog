@@ -15,7 +15,7 @@ public class RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(points, log.GetPlayerHealedPower().points);
+        Assert.Equal(points, log.dataPlayerHealedPower.points);
 
     }
 
@@ -28,7 +28,7 @@ public class RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(points, log.GetPlayerLostPower().points);
+        Assert.Equal(points, log.dataPlayerLostPower.points);
 
     }
 
@@ -43,8 +43,8 @@ public class RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(points, log.GetPlayerLostPowerByCreature().points);
-        Assert.Equal(creature, log.GetPlayerLostPowerByCreature().creature);
+        Assert.Equal(points, log.dataPlayerLostPowerByCreature.points);
+        Assert.Equal(creature, log.dataPlayerLostPowerByCreature.creature);
 
     }
 
@@ -58,7 +58,7 @@ public class RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(points, log.GetPlayerGainedExperience().points);
+        Assert.Equal(points, log.dataPlayerGainedExperience.points);
 
     }
 
@@ -76,8 +76,8 @@ public class RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(creature, log.GetPlayerLootedByCreature().creature);
-        Assert.Equal(list, log.GetPlayerLootedByCreature().list.txt);
+        Assert.Equal(creature, log.dataPlayerLootedByCreature.creature);
+        Assert.Equal(list, log.dataPlayerLootedByCreature.list.txt);
 
     }
 
@@ -91,8 +91,8 @@ public class RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(creature, log.GetCreatureLostPower().creature);
-        Assert.Equal(points, log.GetCreatureLostPower().points);
+        Assert.Equal(creature, log.dataCreatureLostPower.creature);
+        Assert.Equal(points, log.dataCreatureLostPower.points);
 
     }
 

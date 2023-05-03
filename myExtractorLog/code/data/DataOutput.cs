@@ -1,37 +1,37 @@
 namespace app.data;
 
-public struct DataOutput
+public class DataOutput
 {
 
     public int hitpointsHealed;
-    public TotalBoardDamageTaken damageTaken;
+    public TotalBoardDamageTaken damageTaken = new();
 
     public int experienceGained;
 
-    public List<TotalBoardLootItem> loot;
+    public List<TotalBoardLootItem> loot = new();
 
 }
 
-public struct TotalBoardDamageTaken
+public class TotalBoardDamageTaken
 {
 
     public int total;
-    public List<TotalBoardDamageTakenByCreature> byCreatureKind;
+    public List<TotalBoardDamageTakenByCreature> byCreatureKind = new();
 
 }
 
-public struct TotalBoardDamageTakenByCreature
+public class TotalBoardDamageTakenByCreature
 {
 
-    public string creature;
+    public string creature = "";
     public int damage;
 
 }
 
-public struct TotalBoardLootItem
+public class TotalBoardLootItem
 {
 
-    public string item;
+    public string item = "";
     public int qty;
 
 }

@@ -1,0 +1,7 @@
+Channel Server Log saved Wed Apr 12 15:48:26 2023
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint. 
+15:41 You lose 1 hitpoint.
+15:47 You lose 78 hitpoints due to an attack by a dragon. 
+15:47 You lose 91 hitpoints due to an attack by a dragon.
+15:47 You lose 9 hitpoints. 

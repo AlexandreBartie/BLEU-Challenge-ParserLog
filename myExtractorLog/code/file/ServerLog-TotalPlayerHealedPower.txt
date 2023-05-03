@@ -1,0 +1,6 @@
+Channel Server Log saved Wed Apr 12 15:48:26 2023
+15:45 You healed yourself for 84 hitpoints.
+15:45 You healed yourself for 83 hitpoints.
+15:45 You healed yourself for 79 hitpoints.
+15:47 You healed yourself for 340 hitpoints.
+15:48 You healed yourself for 371 hitpoints.
