@@ -30,7 +30,7 @@ namespace app
             var extrator = new ExtratorLog();
 
             if (extrator.Load(path, name))
-                Console.WriteLine(extrator.result);
+                Console.WriteLine(extrator.output);
             else
                 Environment.Exit(-1);
             

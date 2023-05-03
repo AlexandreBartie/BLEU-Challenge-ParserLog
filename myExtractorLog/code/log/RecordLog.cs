@@ -4,10 +4,7 @@ namespace app.log;
 
 public class RecordLog : BaseLog
 {
-    public bool isHeader
-    {
-        get { return type == TypeLog.eLogGameSession; }
-    }
+    public bool isHeader => type == TypeLog.eLogGameSession;
 
     public RecordLog(string info) : base(info) {}
 

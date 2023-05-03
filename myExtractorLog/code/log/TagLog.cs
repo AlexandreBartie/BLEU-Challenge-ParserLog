@@ -10,21 +10,12 @@ public class TagLog
     
     private string info = ""; 
 
-    public string time
-    {
-        get { return (hasTime) ? getTime() : ""; }
-    }
+    public string time => (hasTime) ? getTime() : "";
 
-    public string msg
-    {
-        get { return (hasTime) ? getMsg() : info; }
-    }
+    public string msg => (hasTime) ? getMsg() : info;
     
     //check if represent a valid time
-    public bool hasTime
-    {
-        get { return (Regex.IsMatch(getTime(), REGEX_TIME));   }
-    }
+    public bool hasTime => (Regex.IsMatch(getTime(), REGEX_TIME));
 
     public TagLog(string info)
     {

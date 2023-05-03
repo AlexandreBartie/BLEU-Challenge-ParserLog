@@ -15,11 +15,7 @@ public class SessionsLog : List<SessionLog>
 
     private SessionLog? current;
 
-    public RecordsLog logs 
-    {
-        get { return getLogs(); }
-
-    }
+    public RecordsLog logs => getLogs();
 
     public void addHeader()
     {

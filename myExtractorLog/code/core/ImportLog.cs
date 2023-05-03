@@ -10,10 +10,7 @@ public class ImportLog
 
     private ParseLog parse = new();
 
-    public RecordsLog logs
-    {
-        get { return parse.sessions.logs; }
-    }
+    public RecordsLog logs => parse.sessions.logs;
 
     public bool Load(string path, string name)
     {

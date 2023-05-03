@@ -11,11 +11,9 @@ public class RegexLog : RegexSettings
     private TypeLog _type;
     private Match? _match;
 
-    public TypeLog type
-    { get { return _type; } }
+    public TypeLog type => _type;
 
-    public Match? match
-    { get { return _match; } }
+    public Match? match => _match;
 
     public RegexLog(string msg, string time)
     {
