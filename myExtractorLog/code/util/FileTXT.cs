@@ -3,59 +3,58 @@ using System.Diagnostics;
 using System.Text;
 using System.IO;
 
-namespace app.util
+namespace app.util;
+
+public class FileTXT
 {
-    public class FileTXT
+
+    public string[] lines = new string[0];
+
+    public string path = "";
+    public string name = "";
+
+    public string fullName => path + name;
+
+    public bool isValid => System.IO.File.Exists(fullName);
+
+    private Encoding encoding = Encoding.UTF8;
+
+    public void SetEncoding(Encoding prmEncoding) => encoding = prmEncoding;
+
+    public bool Open(string path, string name)
     {
 
-        public string[] lines = new string[0];
-
-        public string path = "";
-        public string name = "";
-
-        public string fullName => path + name;
-
-        public bool isValid => System.IO.File.Exists(fullName);
-
-        private Encoding encoding = Encoding.UTF8;
-
-        public void SetEncoding(Encoding prmEncoding) => encoding = prmEncoding;
-
-        public bool Open(string path, string name)
+        try
         {
 
-            try
+            this.path = path;
+            this.name = name;
+
+            if (isValid)
             {
-
-                this.path = path;
-                this.name = name;
-
-                if (isValid)
-                {
-                    if ((encoding == null))
-                        lines = System.IO.File.ReadAllLines(fullName);
-                    else
-                        lines = System.IO.File.ReadAllLines(fullName, encoding);
-
-                    return(true);
-                }
+                if ((encoding == null))
+                    lines = System.IO.File.ReadAllLines(fullName);
                 else
-                {                    
-                    Console.WriteLine("Dont exist this path!");
-                    Console.WriteLine(fullName);
-                }
-                
+                    lines = System.IO.File.ReadAllLines(fullName, encoding);
+
+                return(true);
             }
-
-            catch (Exception e)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
+            else
+            {                    
+                Console.WriteLine("Dont exist this path!");
+                Console.WriteLine(fullName);
             }
-
-            return (false);
-
+            
         }
 
+        catch (Exception e)
+        {
+            Console.WriteLine("The file could not be read:");
+            Console.WriteLine(e.Message);
+        }
+
+        return (false);
+    
     }
+
 }
