@@ -3,7 +3,7 @@ using app.core;
 using app.log;
 using app.util;
 
-namespace app.data;
+namespace app.core;
 
 public class DataLog
 {

@@ -1,8 +1,4 @@
-using Xunit;
-
 using app.log;
-
-
 namespace myappxunit;
 
 public class RecordLogTest

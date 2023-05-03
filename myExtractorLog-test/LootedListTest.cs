@@ -1,6 +1,3 @@
-using Xunit;
-
-using app.log;
 using app.extra;
 
 namespace myappxunit;
