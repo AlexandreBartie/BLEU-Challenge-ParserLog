@@ -83,7 +83,7 @@ public class DataLogTest
     [InlineData("dragon", 1018, 3)]
     [InlineData("dwarf", 90, 1)]   
     [InlineData("dwarf soldier", 135, 1)]    
-    public void TST04_TotalCreatureLostPower(string creature, int totalDamage, int qty)
+    public void TST05_TotalCreatureLostPower(string creature, int totalDamage, int qty)
     {
 
         string input = "ServerLog-CreatureLostPower.txt";
@@ -97,7 +97,32 @@ public class DataLogTest
 
     }
 
-    public void TST06_TotalExtraCreature(int damage, int qty)
+    [Theory]
+    [InlineData("gold coins", 201, 9)]
+    [InlineData("gold coin", 2, 2)]
+    [InlineData("cyclops toe", 1, 1)]
+    [InlineData("dragon ham", 5, 3)]
+    [InlineData("meat", 1, 1)]
+    [InlineData("plate legs", 2, 2)]
+    [InlineData("green dragon leather", 1, 1)]
+    [InlineData("steel shield", 1, 1)]   
+    [InlineData("steel helmet", 1, 1)] 
+    [InlineData("small diamond", 1, 1)]    
+    public void TST06_TotalPlayerLootedByCreature(string item, int total, int qty)
+    {
+
+        string input = "ServerLog-PlayerLootedByCreature.txt";
+
+        data.Load(input);
+
+        var list = data.output.loot.filter(item);
+
+        Assert.Equal(total, list.total);
+        Assert.Equal(qty, list.Count);
+
+    }
+
+    public void TSTXX_TotalExtraCreature(int damage, int qty)
     {
 
         input = "ServerLog-PlayerGainedExperience.txt";

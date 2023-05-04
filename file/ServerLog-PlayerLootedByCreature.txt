@@ -1,0 +1,15 @@
+Channel Server Log saved Wed Apr 12 15:48:26 2023
+15:43 Loot of a rat: a gold coin.
+15:43 Loot of a cyclops: 6 gold coins.
+15:43 Loot of a cyclops: 13 gold coins.
+15:43 Loot of a ghoul: nothing.
+15:43 Loot of a skeleton: 3 gold coins.
+15:43 Loot of a cyclops: nothing.
+15:44 Loot of a cyclops smith: a cyclops toe, 13 gold coins, meat.
+15:46 Loot of a dwarf: a gold coin, a letter.
+15:46 Loot of a spider: 3 gold coins.
+15:47 Loot of a dragon: 51 gold coins, plate legs.
+15:47 Loot of a dragon: 2 dragon ham, 24 gold coins.
+15:47 Loot of a dragon: dragon ham, 52 gold coins.
+15:47 Loot of a dragon: a crossbow, 2 dragon ham, green dragon leather, plate legs, a steel shield.
+15:48 Loot of a dragon: 36 gold coins, a steel helmet, a small diamond.

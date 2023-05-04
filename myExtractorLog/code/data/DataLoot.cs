@@ -3,15 +3,15 @@ using app.util;
 
 namespace app.data;
 
-public class DataLootList : List<DataLootItem>
+public class DataLootList : List<DataLoot>
 {
 
     const string LOOT_DELIMITER = ", ";
 
-    public string txt 
-    {
-        get { return string.Join(LOOT_DELIMITER, this); }
-    } 
+    
+    public int total => GetTotalDamage();
+
+    public string txt => string.Join(LOOT_DELIMITER, this);
 
     public DataLootList(string list = "")
     {
@@ -23,12 +23,25 @@ public class DataLootList : List<DataLootItem>
     public void AddList(DataLootList list)
     {
         
-        foreach (DataLootItem loot in list)
+        foreach (DataLoot loot in list)
         {
             Add(loot);
         }
     }
 
+    public DataLootList filter(string name)
+    {
+
+        var list = new DataLootList();
+
+        foreach (DataLoot loot in this)
+        {
+            if (Text.IsMatch(loot.name, name))
+                list.Add(loot);
+        }
+
+        return list;
+    }
     private void setup(string list)
     {
 
@@ -36,14 +49,25 @@ public class DataLootList : List<DataLootItem>
 
         foreach (string item in items)
         {
-            Add(new DataLootItem(item));
+            Add(new DataLoot(item));
         }
 
+    }
+    private int GetTotalDamage()
+    {
+        var total = 0;
+
+        foreach (DataLoot loot in this)
+        {
+            total += loot.qty;
+        }
+
+        return total;
     }
 
 }
 
-public class DataLootItem
+public class DataLoot
 {
 
     const string LOOTED_NULL = "nothing";
@@ -80,7 +104,7 @@ public class DataLootItem
 
     public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);   
 
-    public DataLootItem(string item)
+    public DataLoot(string item)
     {
         
         this.item = item;
