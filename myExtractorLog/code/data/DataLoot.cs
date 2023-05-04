@@ -36,7 +36,7 @@ public class DataLootList : List<DataLoot>
 
         foreach (DataLoot loot in this)
         {
-            if (Text.IsMatch(loot.name, name))
+            if (Text.IsMatch(loot.name, name, true))
                 list.Add(loot);
         }
 

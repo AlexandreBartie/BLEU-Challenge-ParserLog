@@ -98,8 +98,8 @@ public class DataLogTest
     }
 
     [Theory]
-    [InlineData("gold coins", 201, 9)]
-    [InlineData("gold coin", 2, 2)]
+    [InlineData("gold coins", 203, 11)]
+    [InlineData("gold coin", 203, 11)]
     [InlineData("cyclops toe", 1, 1)]
     [InlineData("dragon ham", 5, 3)]
     [InlineData("meat", 1, 1)]
