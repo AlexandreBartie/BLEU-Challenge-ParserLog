@@ -1,14 +1,14 @@
+using app.util;
 using app.log;
 using app.data;
-using app.total;
-using app.util;
+
 
 using System.Text.Json;
 
 
 namespace app.total;
 
-public class TotalLog
+public class TotalBoard
 {
 
     public DataOutput output;
@@ -16,23 +16,24 @@ public class TotalLog
     private RecordsLog _logs = new();
     public RecordsLog logs => _logs;
 
-    public readonly DataTotalPlayerHealedPower totalPlayerHealedPower;
-    public readonly DataTotalPlayerLostPower totalPlayerLostPower;
-    public readonly DataTotalPlayerLostPowerByCreature totalPlayerLostPowerByCreature;
-    public readonly DataTotalPlayerGainedExperience totalPlayerGainedExperience;
-    public readonly DataTotalCreatureLostPower totalCreatureLostPower;
+    public readonly TotalPlayerHealedPower totalPlayerHealedPower;
+    public readonly TotalPlayerLostPower totalPlayerLostPower;
+    public readonly TotalPlayerLostPowerByCreature totalPlayerLostPowerByCreature;
+    public readonly TotalPlayerGainedExperience totalPlayerGainedExperience;
+    public readonly TotalPlayerLootedByCreature totalPlayerLootedByCreature;
+    public readonly TotalCreatureLostPower totalCreatureLostPower;
 
     public bool isNull => (_logs == null);
 
-    public TotalLog()
+    public TotalBoard()
     {
         output = new DataOutput();
 
-        totalPlayerHealedPower = new DataTotalPlayerHealedPower(this);
-        totalPlayerLostPower = new DataTotalPlayerLostPower(this);
-        totalPlayerLostPowerByCreature = new DataTotalPlayerLostPowerByCreature(this);
-        totalPlayerGainedExperience = new DataTotalPlayerGainedExperience(this);
-        totalCreatureLostPower = new DataTotalCreatureLostPower(this);
+        totalPlayerHealedPower = new TotalPlayerHealedPower(this);
+        totalPlayerLostPower = new TotalPlayerLostPower(this);
+        totalPlayerLostPowerByCreature = new TotalPlayerLostPowerByCreature(this);
+        totalPlayerLootedByCreature = new TotalPlayerLootedByCreature(this);
+        totalPlayerGainedExperience = new TotalPlayerGainedExperience(this); totalCreatureLostPower = new TotalCreatureLostPower(this);
     }
 
     protected void SetLogs(RecordsLog logs)
@@ -48,6 +49,7 @@ public class TotalLog
         totalPlayerLostPower.SumData();
         totalPlayerLostPowerByCreature.SumData();
         totalPlayerGainedExperience.SumData();
+        totalPlayerLootedByCreature.SumData();
         totalCreatureLostPower.SumData();
     }
 

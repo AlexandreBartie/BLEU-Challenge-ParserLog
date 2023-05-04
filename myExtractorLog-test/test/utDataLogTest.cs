@@ -90,7 +90,7 @@ public class DataLogTest
 
         data.Load(input);
 
-        var list = data.output.creaturesBoard.lostPower.filter(creature);
+        var list = data.output.creatures.lostPower.filter(creature);
 
         Assert.Equal(totalDamage, list.totalDamage);
         Assert.Equal(qty, list.Count);

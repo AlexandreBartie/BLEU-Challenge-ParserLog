@@ -1,5 +1,3 @@
-using app.extra;
-
 namespace app.log;
 
 public class BaseLog

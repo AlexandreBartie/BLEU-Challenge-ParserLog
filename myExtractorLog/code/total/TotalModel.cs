@@ -1,12 +1,11 @@
-using app.core;
 using app.log;
 using app.data;
 
 namespace app.total;
 
-public abstract class DataTotalModel
+public abstract class TotalModel
 {
-    private readonly TotalLog total;
+    private readonly TotalBoard total;
 
     private TypeLog type;
 
@@ -16,7 +15,7 @@ public abstract class DataTotalModel
 
     public int count => logs.Count;
 
-    public DataTotalModel(TotalLog total, TypeLog type)
+    public TotalModel(TotalBoard total, TypeLog type)
     {
         this.total = total;
 

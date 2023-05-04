@@ -1,11 +1,10 @@
-using app.core;
 using app.log;
 
 namespace app.total;
 
-public class DataTotalPlayerHealedPower : DataTotalModel
+public class TotalPlayerHealedPower : TotalModel
 {
-    public DataTotalPlayerHealedPower(TotalLog total) : base(total, TypeLog.eLogGamePlayerHealedPower) { }
+    public TotalPlayerHealedPower(TotalBoard total) : base(total, TypeLog.eLogGamePlayerHealedPower) { }
 
     public override void SumData()
     {

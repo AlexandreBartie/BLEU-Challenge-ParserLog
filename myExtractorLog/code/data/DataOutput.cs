@@ -9,9 +9,9 @@ public class DataOutput
 
     public DataOutputDamageTaken damageTaken = new();
 
-    public DataOutputLootList loot = new();
+    public DataLootList loot = new();
 
-    public DataOutputCreaturesBoard creaturesBoard = new();
+    public DataOutputCreaturesBoard creatures = new();
 
 }
 
@@ -29,19 +29,5 @@ public class DataOutputDamageTaken
     public int total => unknown + byCreature.totalDamage;
     
     public DataCreatureList byCreature = new();
-
-}
-
-public class DataOutputLootList : List<DataOutputLootItem> 
-{
-
-
-}
-
-public class DataOutputLootItem
-{
-
-    public string item = "";
-    public int qty;
 
 }

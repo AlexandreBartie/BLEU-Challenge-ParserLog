@@ -1,5 +1,4 @@
 using app.data;
-using app.extra;
 
 namespace app.log;
 
@@ -67,7 +66,7 @@ public class RecordLog : BaseLog
             DataPlayerLootedByCreature data = new();
             
             data.creature = regex.GetParameter(1);
-            data.list = new LootedList(regex.GetParameter(2));
+            data.list = new DataLootList(regex.GetParameter(2));
             
             return data;
         }

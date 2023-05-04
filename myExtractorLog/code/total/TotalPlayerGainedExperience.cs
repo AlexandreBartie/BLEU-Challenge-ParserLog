@@ -1,11 +1,10 @@
-using app.core;
 using app.log;
 
 namespace app.total;
 
-public class DataTotalPlayerGainedExperience : DataTotalModel
+public class TotalPlayerGainedExperience : TotalModel
 {
-    public DataTotalPlayerGainedExperience(TotalLog total) : base(total, TypeLog.eLogGamePlayerGainedExperience) { }
+    public TotalPlayerGainedExperience(TotalBoard total) : base(total, TypeLog.eLogGamePlayerGainedExperience) { }
 
     public override void SumData()
     {

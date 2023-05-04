@@ -3,9 +3,9 @@ using app.total;
 
 namespace app.data;
 
-public class DataLog : TotalLog
+public class DataLog : TotalBoard
 {
-    
+
     private string path;
     private ImportLog import = new();
 
@@ -14,7 +14,7 @@ public class DataLog : TotalLog
         this.path = path;
     }
 
-    public bool Load(string name) 
+    public bool Load(string name)
     {
         SetLogs(import.Load(path, name));
 

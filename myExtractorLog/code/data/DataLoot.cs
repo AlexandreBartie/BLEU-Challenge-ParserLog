@@ -1,38 +1,49 @@
 using System.Text.RegularExpressions;
 using app.util;
 
-namespace app.extra;
+namespace app.data;
 
-public class LootedList : List<LootedItem>
+public class DataLootList : List<DataLootItem>
 {
 
-    const string LOOTED_DELIMITER = ", ";
+    const string LOOT_DELIMITER = ", ";
 
     public string txt 
     {
-        get { return string.Join(LOOTED_DELIMITER, this); }
+        get { return string.Join(LOOT_DELIMITER, this); }
     } 
 
-    public LootedList(string list)
+    public DataLootList(string list = "")
     {
-        setup(list);
+        
+        if (list != "")
+            setup(list);
+    }
+
+    public void AddList(DataLootList list)
+    {
+        
+        foreach (DataLootItem loot in list)
+        {
+            Add(loot);
+        }
     }
 
     private void setup(string list)
     {
 
-        string[] items = list.Split(LOOTED_DELIMITER);
+        string[] items = list.Split(LOOT_DELIMITER);
 
         foreach (string item in items)
         {
-            Add(new LootedItem(item));
+            Add(new DataLootItem(item));
         }
 
     }
 
 }
 
-public class LootedItem
+public class DataLootItem
 {
 
     const string LOOTED_NULL = "nothing";
@@ -69,7 +80,7 @@ public class LootedItem
 
     public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);   
 
-    public LootedItem(string item)
+    public DataLootItem(string item)
     {
         
         this.item = item;

@@ -1,5 +1,3 @@
-using app.extra;
-
 namespace app.data;
 
 public struct DataPlayerHealedPower {
@@ -21,7 +19,7 @@ public struct DataPlayerGainedExperience {
 
 public struct DataPlayerLootedByCreature {
     public string creature;
-    public LootedList list;
+    public DataLootList list;
 
 }
 
