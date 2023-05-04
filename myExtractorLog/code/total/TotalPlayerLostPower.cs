@@ -9,13 +9,18 @@ public class TotalPlayerLostPower : TotalModel
     public override void SumData()
     {
 
-        output.damageTaken.unknown = 0;
+        view.damageTaken.unknown = 0;
 
         foreach (RecordLog log in logs)
         {
-            output.damageTaken.unknown += log.dataPlayerLostPower.points;
+            view.damageTaken.unknown += log.dataPlayerLostPower.points;
         }
 
+    }
+
+    public override string log(string label)
+    {
+        return $"{label}: {view.damageTaken.unknown} points #{count}";
     }
 
 }

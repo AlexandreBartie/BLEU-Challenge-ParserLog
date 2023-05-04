@@ -10,8 +10,13 @@ public class TotalPlayerLootedByCreature : TotalModel
     {
         foreach (RecordLog log in logs)
         {
-            output.loot.AddList(log.dataPlayerLootedByCreature.list);
+            view.loot.AddList(log.dataPlayerLootedByCreature.list);
         }
+    }
+
+    public override string log(string label)
+    {
+        return $"{label}: {view.loot.total} points #{count}";
     }
 
 }

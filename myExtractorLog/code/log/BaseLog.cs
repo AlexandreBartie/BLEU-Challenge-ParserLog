@@ -14,7 +14,7 @@ public class BaseLog
 
     public BaseLog(string info)
     {
-        TagLog tag = new(info);
+        InfoLog tag = new(info);
 
         this.msg = tag.msg;
         this.time = tag.time;

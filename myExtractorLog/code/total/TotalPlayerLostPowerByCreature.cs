@@ -10,8 +10,13 @@ public class TotalPlayerLostPowerByCreature : TotalModel
     {
         foreach (RecordLog log in logs)
         {
-            output.damageTaken.byCreature.AddPlayerDamage(log.dataPlayerLostPowerByCreature);
+            view.damageTaken.byCreature.AddPlayerDamage(log.dataPlayerLostPowerByCreature);
         }
+    }
+
+    public override string log(string label)
+    {
+        return $"{label}: {view.damageTaken.byCreature.totalDamage} points #{count}";
     }
 
 }

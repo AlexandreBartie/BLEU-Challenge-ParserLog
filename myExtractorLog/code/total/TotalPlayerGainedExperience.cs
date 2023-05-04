@@ -9,12 +9,17 @@ public class TotalPlayerGainedExperience : TotalModel
     public override void SumData()
     {
 
-        output.experienceGained = 0;
+        view.experienceGained = 0;
 
         foreach (RecordLog log in logs)
         {
-            output.experienceGained += log.dataPlayerGainedExperience.points;
+            view.experienceGained += log.dataPlayerGainedExperience.points;
         }
     }
+
+    public override string log(string label)
+    {
+        return $"{label}: {view.experienceGained} points #{count}";
+    }    
 
 }

@@ -9,12 +9,17 @@ public class TotalPlayerHealedPower : TotalModel
     public override void SumData()
     {
 
-        output.hitpointsHealed = 0;
+        view.hitpointsHealed = 0;
 
         foreach (RecordLog log in logs)
         {
-            output.hitpointsHealed += log.dataPlayerHealedPower.points;
+            view.hitpointsHealed += log.dataPlayerHealedPower.points;
         }
+    }
+
+    public override string log(string label)
+    {
+        return $"{label}: {view.hitpointsHealed} points #{count}";
     }
 
 }

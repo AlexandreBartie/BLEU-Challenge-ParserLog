@@ -7,7 +7,7 @@ namespace app.total;
 public class TotalBoard
 {
 
-    public DataOutput output;
+    public DataView view;
 
     private RecordsLog _logs = new();
     public RecordsLog logs => _logs;
@@ -23,13 +23,13 @@ public class TotalBoard
 
     public TotalBoard()
     {
-        output = new DataOutput();
+        view = new DataView();
 
         totalPlayerHealedPower = new TotalPlayerHealedPower(this);
         totalPlayerLostPower = new TotalPlayerLostPower(this);
         totalPlayerLostPowerByCreature = new TotalPlayerLostPowerByCreature(this);
         totalPlayerLootedByCreature = new TotalPlayerLootedByCreature(this);
-        totalPlayerGainedExperience = new TotalPlayerGainedExperience(this); 
+        totalPlayerGainedExperience = new TotalPlayerGainedExperience(this);
         totalCreatureLostPower = new TotalCreatureLostPower(this);
     }
 
@@ -60,12 +60,12 @@ public class TotalBoard
 
             memo.Add($"               Logs: {logs.Count()}");
             memo.Add($"           Sessions: {logs.filter(TypeLog.eLogNoteSession).Count}");
-            memo.Add($"        HealedPower: {output.hitpointsHealed} points #{totalPlayerHealedPower?.count}");
-            memo.Add($"          LostPower: {output.damageTaken.total} points #{totalPlayerLostPower?.count}");
-            memo.Add($"LostPowerByCreature: {logs.filter(TypeLog.eLogGamePlayerLostPowerByCreature).Count}");
-            memo.Add($"   GainedExperience: {logs.filter(TypeLog.eLogGamePlayerGainedExperience).Count}");
-            memo.Add($"   LootedByCreature: {logs.filter(TypeLog.eLogGamePlayerLootedByCreature).Count}");
-            memo.Add($"  CreatureLostPower: {logs.filter(TypeLog.eLogGameCreatureLostPower).Count}");
+            memo.Add(totalPlayerHealedPower.log("HealedPower"));
+            memo.Add(totalPlayerLostPower.log("LostPower"));
+            memo.Add(totalPlayerLostPowerByCreature.log("LostPowerByCreature"));
+            memo.Add(totalPlayerGainedExperience.log("GainedExperience"));
+            memo.Add(totalPlayerLootedByCreature.log("LootedByCreature"));
+            memo.Add(totalCreatureLostPower.log("CreatureLostPower"));
 
             return (memo.txt);
         }

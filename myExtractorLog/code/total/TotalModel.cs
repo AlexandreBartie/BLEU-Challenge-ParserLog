@@ -11,7 +11,7 @@ public abstract class TotalModel
 
     public RecordsLog logs => total.logs.filter(type);
 
-    public DataOutput output => total.output;
+    public DataView view => total.view;
 
     public int count => logs.Count;
 
@@ -23,5 +23,7 @@ public abstract class TotalModel
     }
 
     public abstract void SumData();
+
+    public abstract string log(string label);
 
 }
