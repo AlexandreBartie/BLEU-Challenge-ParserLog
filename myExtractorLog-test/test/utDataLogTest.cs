@@ -5,7 +5,7 @@ namespace myappxunit;
 public class DataLogTest
 {
 
-    const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/input/";
+    const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/";
 
     private string input = "";
 
@@ -39,6 +39,19 @@ public class DataLogTest
         Assert.Equal(qty, data.totalPlayerLostPower.count + data.totalPlayerLostPowerByCreature.count);
 
     }
+    [Theory]
+    [InlineData(697, 6)]
+    public void TST03_TotalPlayerGainedExperience(int damage, int qty)
+    {
+
+        input = "ServerLog-TotalPlayerGainedExperience.txt";
+
+        data.Load(input);
+
+        Assert.Equal(damage, data.output.experienceGained);
+        Assert.Equal(qty, data.totalPlayerGainedExperience.count);
+
+    }
 
     [Theory]
     [InlineData("ghoul", 2, 1)]
@@ -46,7 +59,7 @@ public class DataLogTest
     [InlineData("cyclops smith", 29, 1)]
     [InlineData("dragon", 264, 3)]
     [InlineData("dwarf soldier", 9, 1)]    
-    public void TST03_TotalPlayerLostPowerByCreature(string creature, int totalDamage, int qty)
+    public void TST04_TotalPlayerLostPowerByCreature(string creature, int totalDamage, int qty)
     {
 
         string input = "ServerLog-TotalPlayerLostPower.txt";

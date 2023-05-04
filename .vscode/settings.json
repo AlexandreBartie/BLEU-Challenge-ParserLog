@@ -22,11 +22,15 @@
             "group": "Default"
         },
         {
-            "filePath": "myExtractorLog\\code\\file\\input",
+            "filePath": "myExtractorLog\\code\\total",
             "group": "Default"
         },
         {
-            "filePath": "myExtractorLog\\code\\total",
+            "filePath": "myExtractorLog-test\\test",
+            "group": "Default"
+        },
+        {
+            "filePath": "myExtractorLog\\code\\file",
             "group": "Default"
         }
     ]
