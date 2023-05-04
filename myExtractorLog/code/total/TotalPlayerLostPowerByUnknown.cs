@@ -6,6 +6,8 @@ public class TotalPlayerLostPowerByUnknown : TotalModel
 {
     public TotalPlayerLostPowerByUnknown(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
 
+    public int totalDamage => view.damageTaken.unknown;
+
     public override void SumData()
     {
 
@@ -20,7 +22,7 @@ public class TotalPlayerLostPowerByUnknown : TotalModel
 
     public override string log(string label)
     {
-        return $"{label}: {view.damageTaken.unknown} points #{count}";
+        return $"{label}: {totalDamage} points #{count}";
     }
 
 }

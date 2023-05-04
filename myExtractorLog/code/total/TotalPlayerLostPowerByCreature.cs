@@ -6,6 +6,8 @@ public class TotalPlayerLostPowerByCreature : TotalModel
 {
     public TotalPlayerLostPowerByCreature(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLostPowerByCreature) { }
 
+    public int totalDamage => view.damageTaken.byCreature.totalDamage;
+
     public override void SumData()
     {
         foreach (RecordLog log in logs)
@@ -16,7 +18,7 @@ public class TotalPlayerLostPowerByCreature : TotalModel
 
     public override string log(string label)
     {
-        return $"{label}: {view.damageTaken.byCreature.totalDamage} points #{count}";
+        return $"{label}: {totalDamage} points #{count}";
     }
 
 }
