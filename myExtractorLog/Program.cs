@@ -4,6 +4,7 @@ namespace app
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             
@@ -15,31 +16,29 @@ namespace app
                 Environment.Exit(-1);
             }
 
-            // string path = AppDomain.CurrentDomain.BaseDirectory; 
-            
-            string path = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/input/";
-            string name = "ServerLog-One.txt";
+            string fileName;
 
-            startApp(path, name);
+            #if DEBUG
+                fileName = "ServerLog-Session-One.txt";
+            #else
+                fileName = AppDomain.CurrentDomain.BaseDirectory;
+            #endif
+            
+            startApp(fileName);
 
         }
 
-        private static void startApp(string path, string name)
+        private static void startApp(string name)
         {
 
-            var extrator = new ExtratorLog(path);
+            var extrator = new ExtratorLog();
 
             if (extrator.Load(name))
             {
-                Console.WriteLine("<<< OUTPUT >>>");
-                Console.WriteLine(extrator.output);
-                Console.WriteLine("<<< LOG >>>");
                 Console.WriteLine(extrator.log);
             }
             else
                 Environment.Exit(-1);
-            
-
         }
 
     }

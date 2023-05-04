@@ -7,13 +7,13 @@ public class ExtratorLog
 
     private DataLog data;
 
+    private AppSettings settings = new();
+
     public string log => data.log();
 
-    public string output => data.txt();
-
-    public ExtratorLog(string path)
+    public ExtratorLog()
     {
-        data = new DataLog(path);
+        data = new DataLog(settings.fileFolder);
     }
 
     public bool Load(string name)

@@ -2,10 +2,6 @@ using app.util;
 using app.log;
 using app.data;
 
-
-using System.Text.Json;
-
-
 namespace app.total;
 
 public class TotalBoard
@@ -23,7 +19,7 @@ public class TotalBoard
     public readonly TotalPlayerLootedByCreature totalPlayerLootedByCreature;
     public readonly TotalCreatureLostPower totalCreatureLostPower;
 
-    public bool isNull => (_logs == null);
+    public bool isNull => (_logs.Count == 0);
 
     public TotalBoard()
     {
@@ -33,7 +29,8 @@ public class TotalBoard
         totalPlayerLostPower = new TotalPlayerLostPower(this);
         totalPlayerLostPowerByCreature = new TotalPlayerLostPowerByCreature(this);
         totalPlayerLootedByCreature = new TotalPlayerLootedByCreature(this);
-        totalPlayerGainedExperience = new TotalPlayerGainedExperience(this); totalCreatureLostPower = new TotalCreatureLostPower(this);
+        totalPlayerGainedExperience = new TotalPlayerGainedExperience(this); 
+        totalCreatureLostPower = new TotalCreatureLostPower(this);
     }
 
     protected void SetLogs(RecordsLog logs)
@@ -51,11 +48,6 @@ public class TotalBoard
         totalPlayerGainedExperience.SumData();
         totalPlayerLootedByCreature.SumData();
         totalCreatureLostPower.SumData();
-    }
-
-    public string txt()
-    {
-        return JsonSerializer.Serialize(output);
     }
 
     public string log()
