@@ -39,6 +39,7 @@ public class DataLogTest
         Assert.Equal(qty, data.totalPlayerLostPower.count + data.totalPlayerLostPowerByCreature.count);
 
     }
+
     [Theory]
     [InlineData(697, 6)]
     public void TST03_TotalPlayerGainedExperience(int damage, int qty)
@@ -70,6 +71,34 @@ public class DataLogTest
 
         Assert.Equal(totalDamage, list.totalDamage);
         Assert.Equal(qty, list.Count);
+
+    }
+
+    [Theory]
+    [InlineData(697, 6)]
+    public void TST05_TotalExtraCreature(int damage, int qty)
+    {
+
+        input = "ServerLog-TotalPlayerGainedExperience.txt";
+
+        data.Load(input);
+
+        Assert.Equal(damage, data.output.experienceGained);
+        Assert.Equal(qty, data.totalPlayerGainedExperience.count);
+
+    }
+
+    [Theory]
+    [InlineData(697, 6)]
+    public void TST06_TotalExtraCreature(int damage, int qty)
+    {
+
+        input = "ServerLog-TotalPlayerGainedExperience.txt";
+
+        data.Load(input);
+
+        Assert.Equal(damage, data.output.experienceGained);
+        Assert.Equal(qty, data.totalPlayerGainedExperience.count);
 
     }
 

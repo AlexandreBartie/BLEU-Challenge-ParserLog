@@ -5,12 +5,13 @@ namespace app.data;
 public class DataOutput
 {
 
-    public int hitpointsHealed;
-    public DataOutputDamageTaken damageTaken = new();
-
     public int experienceGained;
 
-    public List<DataOutputLootItem> loot = new();
+    public int hitpointsHealed;
+
+    public DataOutputDamageTaken damageTaken = new();
+
+    public DataOutputLootList loot = new();
 
 }
 
@@ -19,6 +20,7 @@ public class DataOutputDamageTaken
     public int unknown;
 
     public int total => unknown + byCreatureKind.totalDamage;
+
     public DataOutputDamageTakenByCreatureList byCreatureKind = new();
 
     public void AddDamage(DataPlayerLostPowerByCreature data)
@@ -62,7 +64,6 @@ public class DataOutputDamageTakenByCreatureList : List<DataOutputDamageTakenByC
         return total;
     }
 
-
 }
 
 public class DataOutputDamageTakenByCreature
@@ -78,6 +79,8 @@ public class DataOutputDamageTakenByCreature
     }
 
 }
+
+public class DataOutputLootList : List<DataOutputLootItem> {}
 
 public class DataOutputLootItem
 {

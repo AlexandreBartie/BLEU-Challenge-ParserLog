@@ -20,6 +20,7 @@ public class TotalLog
     public readonly DataTotalPlayerLostPower totalPlayerLostPower;
     public readonly DataTotalPlayerLostPowerByCreature totalPlayerLostPowerByCreature;
     public readonly DataTotalPlayerGainedExperience totalPlayerGainedExperience;
+    public readonly DataTotalCreatureLostPower totalCreatureLostPower;
 
     public bool isNull => (_logs == null);
 
@@ -31,6 +32,7 @@ public class TotalLog
         totalPlayerLostPower = new DataTotalPlayerLostPower(this);
         totalPlayerLostPowerByCreature = new DataTotalPlayerLostPowerByCreature(this);
         totalPlayerGainedExperience = new DataTotalPlayerGainedExperience(this);
+        totalCreatureLostPower = new DataTotalCreatureLostPower(this);
     }
 
     protected void SetLogs(RecordsLog logs)
@@ -46,6 +48,7 @@ public class TotalLog
         totalPlayerLostPower.SumData();
         totalPlayerLostPowerByCreature.SumData();
         totalPlayerGainedExperience.SumData();
+        totalCreatureLostPower.SumData();
     }
 
     public string txt()
