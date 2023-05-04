@@ -5,7 +5,7 @@ namespace myappxunit;
 public class DataLogTest
 {
 
-    const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/";
+    const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/file/";
 
     private string input = "";
 
@@ -16,7 +16,7 @@ public class DataLogTest
     public void TST01_TotalPlayerHealedPower(int damage, int qty)
     {
 
-        input = "ServerLog-TotalPlayerHealedPower.txt";
+        input = "ServerLog-PlayerHealedPower.txt";
 
         data.Load(input);
 
@@ -30,7 +30,7 @@ public class DataLogTest
     public void TST02_TotalPlayerLostPower(int unknown, int total, int qty)
     {
 
-       input = "ServerLog-TotalPlayerLostPower.txt";
+       input = "ServerLog-PlayerLostPower.txt";
         
         data.Load(input);
 
@@ -45,7 +45,7 @@ public class DataLogTest
     public void TST03_TotalPlayerGainedExperience(int damage, int qty)
     {
 
-        input = "ServerLog-TotalPlayerGainedExperience.txt";
+        input = "ServerLog-PlayerGainedExperience.txt";
 
         data.Load(input);
 
@@ -63,11 +63,11 @@ public class DataLogTest
     public void TST04_TotalPlayerLostPowerByCreature(string creature, int totalDamage, int qty)
     {
 
-        string input = "ServerLog-TotalPlayerLostPower.txt";
+        string input = "ServerLog-PlayerLostPower.txt";
 
         data.Load(input);
 
-        var list = data.output.damageTaken.filter(creature);
+        var list = data.output.damageTaken.byCreature.filter(creature);
 
         Assert.Equal(totalDamage, list.totalDamage);
         Assert.Equal(qty, list.Count);
@@ -75,25 +75,32 @@ public class DataLogTest
     }
 
     [Theory]
-    [InlineData(697, 6)]
-    public void TST05_TotalExtraCreature(int damage, int qty)
+    [InlineData("rat", 20, 1)]
+    [InlineData("cyclops", 520, 2)]
+    [InlineData("cyclops smith", 435, 2)]
+    [InlineData("skeleton", 50, 1)]
+    [InlineData("spider", 20, 1)]
+    [InlineData("dragon", 1018, 3)]
+    [InlineData("dwarf", 90, 1)]   
+    [InlineData("dwarf soldier", 135, 1)]    
+    public void TST04_TotalCreatureLostPower(string creature, int totalDamage, int qty)
     {
 
-        input = "ServerLog-TotalPlayerGainedExperience.txt";
+        string input = "ServerLog-CreatureLostPower.txt";
 
         data.Load(input);
 
-        Assert.Equal(damage, data.output.experienceGained);
-        Assert.Equal(qty, data.totalPlayerGainedExperience.count);
+        var list = data.output.creaturesBoard.lostPower.filter(creature);
+
+        Assert.Equal(totalDamage, list.totalDamage);
+        Assert.Equal(qty, list.Count);
 
     }
 
-    [Theory]
-    [InlineData(697, 6)]
     public void TST06_TotalExtraCreature(int damage, int qty)
     {
 
-        input = "ServerLog-TotalPlayerGainedExperience.txt";
+        input = "ServerLog-PlayerGainedExperience.txt";
 
         data.Load(input);
 

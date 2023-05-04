@@ -11,7 +11,7 @@ public class DataTotalPlayerLostPowerByCreature : DataTotalModel
     {
         foreach (RecordLog log in logs)
         {
-            output.damageTaken.AddDamage(log.dataPlayerLostPowerByCreature);
+            output.damageTaken.byCreature.AddPlayerDamage(log.dataPlayerLostPowerByCreature);
         }
     }
 

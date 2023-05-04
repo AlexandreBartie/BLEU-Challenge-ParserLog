@@ -28,10 +28,6 @@
         {
             "filePath": "myExtractorLog-test\\test",
             "group": "Default"
-        },
-        {
-            "filePath": "myExtractorLog\\code\\file",
-            "group": "Default"
         }
     ]
 }

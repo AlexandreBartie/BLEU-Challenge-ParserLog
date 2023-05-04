@@ -10,11 +10,9 @@ public class DataTotalCreatureLostPower : DataTotalModel
     public override void SumData()
     {
 
-        output. = 0;
-
         foreach (RecordLog log in logs)
         {
-            output.damageTaken.unknown += log.dataCreatureLostPower.points;
+            output.creaturesBoard.lostPower.AddCreatureDamage(log.dataCreatureLostPower);
         }
 
     }

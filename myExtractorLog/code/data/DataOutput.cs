@@ -1,5 +1,3 @@
-using app.util;
-
 namespace app.data;
 
 public class DataOutput
@@ -13,74 +11,32 @@ public class DataOutput
 
     public DataOutputLootList loot = new();
 
+    public DataOutputCreaturesBoard creaturesBoard = new();
+
+}
+
+public class DataOutputCreaturesBoard
+{
+    public int total => lostPower.totalDamage;
+
+    public DataCreatureList lostPower = new();
 }
 
 public class DataOutputDamageTaken
 {
     public int unknown;
 
-    public int total => unknown + byCreatureKind.totalDamage;
-
-    public DataOutputDamageTakenByCreatureList byCreatureKind = new();
-
-    public void AddDamage(DataPlayerLostPowerByCreature data)
-    {     
-        byCreatureKind.Add(new DataOutputDamageTakenByCreature(data.creature, data.points));
-    }
-
-    public DataOutputDamageTakenByCreatureList filter(string creature)
-    {
-        return byCreatureKind.filter(creature);
-    }
+    public int total => unknown + byCreature.totalDamage;
+    
+    public DataCreatureList byCreature = new();
 
 }
 
-public class DataOutputDamageTakenByCreatureList : List<DataOutputDamageTakenByCreature>
-{
-    public int totalDamage => GetTotalDamage();
-    public DataOutputDamageTakenByCreatureList filter(string creature)
-    {
-
-        var list = new DataOutputDamageTakenByCreatureList();
-
-        foreach (DataOutputDamageTakenByCreature item in this)
-        {
-            if (Text.IsMatch(item.creature, creature))
-                list.Add(item);
-        }
-
-        return list;
-    }
-
-    private int GetTotalDamage()
-    {
-        var total = 0;
-
-        foreach (DataOutputDamageTakenByCreature item in this)
-        {
-            total += item.damage;
-        }
-
-        return total;
-    }
-
-}
-
-public class DataOutputDamageTakenByCreature
+public class DataOutputLootList : List<DataOutputLootItem> 
 {
 
-    public string creature;
-    public int damage;
-
-    public DataOutputDamageTakenByCreature(string creature, int damage)
-    {
-        this.creature = creature;
-        this.damage = damage;
-    }
 
 }
-
-public class DataOutputLootList : List<DataOutputLootItem> {}
 
 public class DataOutputLootItem
 {
