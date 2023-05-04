@@ -1,4 +1,5 @@
 using app.core;
+using app.total;
 
 namespace app.data;
 
@@ -15,7 +16,7 @@ public class DataLog : TotalLog
 
     public bool Load(string name) 
     {
-        logs = import.Load(path, name);
+        SetLogs(import.Load(path, name));
 
         return !isNull;
     }

@@ -17,7 +17,7 @@ namespace app
 
             // string path = AppDomain.CurrentDomain.BaseDirectory; 
             
-            string path = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/";
+            string path = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/myExtractorLog/code/file/input/";
             string name = "ServerLog-One.txt";
 
             startApp(path, name);
@@ -27,9 +27,9 @@ namespace app
         private static void startApp(string path, string name)
         {
 
-            var extrator = new ExtratorLog();
+            var extrator = new ExtratorLog(path);
 
-            if (extrator.Load(path, name))
+            if (extrator.Load(name))
             {
                 Console.WriteLine("<<< OUTPUT >>>");
                 Console.WriteLine(extrator.output);

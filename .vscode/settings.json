@@ -1,3 +1,33 @@
 {
-    "dotnet-test-explorer.testProjectPath": "**/*-test.csproj"
+    "dotnet-test-explorer.testProjectPath": "**/*-test.csproj",
+    "favorites.resources": [
+        {
+            "filePath": "packages\\app\\auto\\test\\TestStrategy\\3.componentLevel",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\app\\auto\\e2e\\autotest",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\app\\playwright.config.ts",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\app\\auto\\e2e\\autoDEMO",
+            "group": "Default"
+        },
+        {
+            "filePath": "packages\\app\\auto\\src\\ATF\\Framework",
+            "group": "Default"
+        },
+        {
+            "filePath": "myExtractorLog\\code\\file\\input",
+            "group": "Default"
+        },
+        {
+            "filePath": "myExtractorLog\\code\\total",
+            "group": "Default"
+        }
+    ]
 }

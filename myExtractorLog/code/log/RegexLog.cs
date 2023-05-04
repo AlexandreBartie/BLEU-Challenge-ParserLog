@@ -21,9 +21,9 @@ public class RegexLog : RegexSettings
         text = msg;
 
         if (time == "")
-            GetTypeLogByGame();
+            GetTypeLogByNote();
         else
-            GetTypeLogByPlayer();
+            GetTypeLogByGame();
 
     }
 
@@ -34,37 +34,37 @@ public class RegexLog : RegexSettings
         return "" ;
     }
 
+    private void GetTypeLogByNote()
+    {
+
+        _type = TypeLog.eLogNoteMessage;
+
+        if (MatchTypeLog(TypeLog.eLogNoteSession))
+            return;
+
+    }
+
     private void GetTypeLogByGame()
     {
 
         _type = TypeLog.eLogGameMessage;
 
-        if (MatchTypeLog(TypeLog.eLogGameSession))
+        if (MatchTypeLog(TypeLog.eLogGamePlayerHealedPower))
             return;
 
-    }
-
-    private void GetTypeLogByPlayer()
-    {
-
-        _type = TypeLog.eLogPlayerMessage;
-
-        if (MatchTypeLog(TypeLog.eLogPlayerHealedPower))
+        if (MatchTypeLog(TypeLog.eLogGamePlayerLostPower))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogPlayerLostPower))
+        if (MatchTypeLog(TypeLog.eLogGamePlayerLostPowerByCreature))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogPlayerLostPowerByCreature))
+        if (MatchTypeLog(TypeLog.eLogGamePlayerGainedExperience))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogPlayerGainedExperience))
+        if (MatchTypeLog(TypeLog.eLogGamePlayerLootedByCreature))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogPlayerLootedByCreature))
-            return;
-
-        if (MatchTypeLog(TypeLog.eLogCreatureLostPower))
+        if (MatchTypeLog(TypeLog.eLogGameCreatureLostPower))
             return;
 
     }

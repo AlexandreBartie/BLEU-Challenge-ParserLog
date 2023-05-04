@@ -2,6 +2,12 @@ Channel Server Log saved Wed Apr 12 15:48:26 2023
 15:41 You lose 1 hitpoint. 
 15:41 You lose 1 hitpoint. 
 15:41 You lose 1 hitpoint.
-15:47 You lose 78 hitpoints due to an attack by a dragon. 
-15:47 You lose 91 hitpoints due to an attack by a dragon.
-15:47 You lose 9 hitpoints. 
+15:43 You lose 5 hitpoints due to an attack by a cyclops. 
+15:43 You lose 2 hitpoints due to an attack by a ghoul. 
+15:44 You lose 11 hitpoints due to an attack by a cyclops.
+15:44 You lose 29 hitpoints due to an attack by a cyclops smith. 
+15:47 You lose 78 hitpoints due to an attack by a dragon.
+15:46 You lose 9 hitpoints due to an attack by a dwarf soldier.
+15:46 You lose 38 hitpoints due to an attack by a dragon. 
+15:46 You lose 148 hitpoints due to an attack by a dragon.   
+15:47 You lose 9 hitpoints.

@@ -5,15 +5,20 @@ namespace app.core;
 public class ExtratorLog
 {
 
-    private DataLog data = new();
+    private DataLog data;
 
     public string log => data.log();
 
     public string output => data.txt();
 
-    public bool Load(string path, string name)
+    public ExtratorLog(string path)
     {
-        return data.Load(path, name);
+        data = new DataLog(path);
+    }
+
+    public bool Load(string name)
+    {
+        return data.Load(name);
     }
 
 }

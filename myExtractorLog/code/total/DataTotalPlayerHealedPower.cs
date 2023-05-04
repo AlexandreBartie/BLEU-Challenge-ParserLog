@@ -5,7 +5,7 @@ namespace app.total;
 
 public class DataTotalPlayerHealedPower : DataTotalModel
 {
-    public DataTotalPlayerHealedPower(TotalLog total) : base(total, TypeLog.eLogPlayerHealedPower) {}
+    public DataTotalPlayerHealedPower(TotalLog total) : base(total, TypeLog.eLogGamePlayerHealedPower) { }
 
     public override void SumData()
     {
@@ -14,7 +14,7 @@ public class DataTotalPlayerHealedPower : DataTotalModel
 
         foreach (RecordLog log in logs)
         {
-            output.hitpointsHealed = output.hitpointsHealed + log.dataPlayerHealedPower.points;
+            output.hitpointsHealed += log.dataPlayerHealedPower.points;
         }
     }
 

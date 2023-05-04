@@ -9,7 +9,7 @@ public class RecordLogTest
     [Theory]
     [InlineData("22:22 You healed yourself for 1 hitpoint.", 1)]
     [InlineData("15:42 You healed yourself for 328 hitpoints.", 328)]
-    public void TST01_PlayerHealedPower(string info, int points, TypeLog type = TypeLog.eLogPlayerHealedPower)
+    public void TST01_PlayerHealedPower(string info, int points, TypeLog type = TypeLog.eLogGamePlayerHealedPower)
     {
 
         log = new(info);
@@ -22,7 +22,7 @@ public class RecordLogTest
     [Theory]
     [InlineData("15:41 You lose 1 hitpoint.", 1)]
     [InlineData("15:47 You lose 29 hitpoints.", 29)]
-    public void TST02_PlayerLostPower(string info, int points, TypeLog type = TypeLog.eLogPlayerLostPower)
+    public void TST02_PlayerLostPower(string info, int points, TypeLog type = TypeLog.eLogGamePlayerLostPower)
     {
 
         log = new(info);
@@ -37,7 +37,7 @@ public class RecordLogTest
     [InlineData("15:47 You lose 75 hitpoints due to an attack by a dragon.", 75, "dragon")]
     [InlineData("18:38 You lose 20 hitpoints due to an attack by a dragon lord.", 20, "dragon lord")]
 
-    public void TST03_PlayerLostPowerByCreature(string info, int points, string creature, TypeLog type = TypeLog.eLogPlayerLostPowerByCreature)
+    public void TST03_PlayerLostPowerByCreature(string info, int points, string creature, TypeLog type = TypeLog.eLogGamePlayerLostPowerByCreature)
     {
 
         log = new(info);
@@ -52,7 +52,7 @@ public class RecordLogTest
     [InlineData("22:22 You gained 1 experience point.", 1)]
     [InlineData("15:47 You gained 700 experience points.", 700)]
 
-    public void TST04_PlayerGainedExperience(string info, int points, TypeLog type = TypeLog.eLogPlayerGainedExperience)
+    public void TST04_PlayerGainedExperience(string info, int points, TypeLog type = TypeLog.eLogGamePlayerGainedExperience)
     {
 
         log = new(info);
@@ -70,7 +70,7 @@ public class RecordLogTest
     [InlineData("15:47 Loot of a dragon: a crossbow, 2 dragon ham, green dragon leather, plate legs, a steel shield.", "dragon", "1 crossbow, 2 dragon ham, 1 green dragon leather, 1 plate legs, 1 steel shield")]
     [InlineData("18:33 Loot of a dwarf soldier: 5 bolts, a soldier helmet, 2 white mushrooms.", "dwarf soldier", "5 bolts, 1 soldier helmet, 2 white mushrooms")]
     [InlineData("15:43 Loot of a ghoul: nothing.", "ghoul", "")]
-    public void TST08_PlayerLootedByCreature(string info, string creature, string list, TypeLog type = TypeLog.eLogPlayerLootedByCreature)
+    public void TST08_PlayerLootedByCreature(string info, string creature, string list, TypeLog type = TypeLog.eLogGamePlayerLootedByCreature)
     {
 
         log = new(info);
@@ -85,7 +85,7 @@ public class RecordLogTest
     [Theory]
     [InlineData("15:43 A cyclops loses 260 hitpoints due to your attack.", "cyclops", 260)]
     [InlineData("15:46 A dwarf soldier loses 135 hitpoints due to your attack. ", "dwarf soldier", 135)]
-    public void TST09_CreatureLostPower(string info, string creature, int points, TypeLog type = TypeLog.eLogCreatureLostPower)
+    public void TST09_CreatureLostPower(string info, string creature, int points, TypeLog type = TypeLog.eLogGameCreatureLostPower)
     {
 
         log = new(info);
