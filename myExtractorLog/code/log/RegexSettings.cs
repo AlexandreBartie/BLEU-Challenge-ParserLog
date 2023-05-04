@@ -16,7 +16,7 @@ public enum TypeLog
     eLogGamePlayerHealedPower = 11,
 
     // XX:XX You lose 1 hitpoint.
-    eLogGamePlayerLostPower = 12,
+    eLogGamePlayerLostPowerByUnknown = 12,
 
     // XX:XX You lose 31 hitpoints due to an attack by a cyclops.
     eLogGamePlayerLostPowerByCreature = 13,
@@ -44,7 +44,7 @@ public class RegexSettings
 
     // variations of LostPower
     // example: You lose 9 hitpoints. 
-    private string tagLostPower = @"^You lose (\d+) hitpoint(s)?\.$";
+    private string tagLostPowerByUnknown = @"^You lose (\d+) hitpoint(s)?\.$";
 
     // variations of LostPowerByCreature
     // example: You lose 31 hitpoints due to an attack by a cyclops. 
@@ -69,7 +69,7 @@ public class RegexSettings
         {
             TypeLog.eLogNoteSession => tagSession,
             TypeLog.eLogGamePlayerHealedPower => tagHealedPower,
-            TypeLog.eLogGamePlayerLostPower => tagLostPower,
+            TypeLog.eLogGamePlayerLostPowerByUnknown => tagLostPowerByUnknown,
             TypeLog.eLogGamePlayerLostPowerByCreature => tagLostPowerByCreature,
             TypeLog.eLogGamePlayerGainedExperience => tagGainedExperience,
             TypeLog.eLogGamePlayerLootedByCreature => tagLootedByCreature,

@@ -36,7 +36,7 @@ public class DataLogTest
 
         Assert.Equal(unknown, data.view.damageTaken.unknown);
         Assert.Equal(total, data.view.damageTaken.total);
-        Assert.Equal(qty, data.totalPlayerLostPower.count + data.totalPlayerLostPowerByCreature.count);
+        Assert.Equal(qty, data.totalPlayerLostPowerByUnknown.count + data.totalPlayerLostPowerByCreature.count);
 
     }
 

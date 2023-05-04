@@ -2,9 +2,9 @@ using app.log;
 
 namespace app.total;
 
-public class TotalPlayerLostPower : TotalModel
+public class TotalPlayerLostPowerByUnknown : TotalModel
 {
-    public TotalPlayerLostPower(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLostPower) { }
+    public TotalPlayerLostPowerByUnknown(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
 
     public override void SumData()
     {

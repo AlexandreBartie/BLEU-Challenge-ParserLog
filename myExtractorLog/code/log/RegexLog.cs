@@ -52,7 +52,7 @@ public class RegexLog : RegexSettings
         if (MatchTypeLog(TypeLog.eLogGamePlayerHealedPower))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogGamePlayerLostPower))
+        if (MatchTypeLog(TypeLog.eLogGamePlayerLostPowerByUnknown))
             return;
 
         if (MatchTypeLog(TypeLog.eLogGamePlayerLostPowerByCreature))

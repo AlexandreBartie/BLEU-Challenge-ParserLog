@@ -22,7 +22,7 @@ public class RecordLogTest
     [Theory]
     [InlineData("15:41 You lose 1 hitpoint.", 1)]
     [InlineData("15:47 You lose 29 hitpoints.", 29)]
-    public void TST02_PlayerLostPower(string info, int points, TypeLog type = TypeLog.eLogGamePlayerLostPower)
+    public void TST02_PlayerLostPowerByUnknown(string info, int points, TypeLog type = TypeLog.eLogGamePlayerLostPowerByUnknown)
     {
 
         log = new(info);
