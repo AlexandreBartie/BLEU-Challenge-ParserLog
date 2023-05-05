@@ -1,40 +1,42 @@
 using System.Text.RegularExpressions;
 using app.util;
 
-namespace app.data;
+namespace app.list;
 
-public class DataLootList : List<DataLoot>
+public class LootList : List<LootItem>
 {
 
     const string LOOT_DELIMITER = ", ";
 
-    
+
     public int total => GetTotalDamage();
+
+    public int count => this.Count;
 
     public string txt => string.Join(LOOT_DELIMITER, this);
 
-    public DataLootList(string list = "")
+    public LootList(string list = "")
     {
-        
+
         if (list != "")
             setup(list);
     }
 
-    public void AddList(DataLootList list)
+    public void AddList(LootList list)
     {
-        
-        foreach (DataLoot loot in list)
+
+        foreach (LootItem loot in list)
         {
             Add(loot);
         }
     }
 
-    public DataLootList filter(string name)
+    public LootList filter(string name)
     {
 
-        var list = new DataLootList();
+        var list = new LootList();
 
-        foreach (DataLoot loot in this)
+        foreach (LootItem loot in this)
         {
             if (Text.IsMatch(loot.name, name, true))
                 list.Add(loot);
@@ -49,7 +51,7 @@ public class DataLootList : List<DataLoot>
 
         foreach (string item in items)
         {
-            Add(new DataLoot(item));
+            Add(new LootItem(item));
         }
 
     }
@@ -57,7 +59,7 @@ public class DataLootList : List<DataLoot>
     {
         var total = 0;
 
-        foreach (DataLoot loot in this)
+        foreach (LootItem loot in this)
         {
             total += loot.qty;
         }
@@ -67,7 +69,7 @@ public class DataLootList : List<DataLoot>
 
 }
 
-public class DataLoot
+public class LootItem
 {
 
     const string LOOTED_NULL = "nothing";
@@ -86,15 +88,17 @@ public class DataLoot
 
     public int qty
     {
-        get { 
-            
-            if (isNull )
+        get
+        {
+
+            if (isNull)
                 return 0;
 
             if (paramQTY == "")
                 return 1;
-            
-            return int.Parse(paramQTY); }
+
+            return int.Parse(paramQTY);
+        }
     }
 
     public string name
@@ -102,22 +106,22 @@ public class DataLoot
         get { return paramName; }
     }
 
-    public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);   
+    public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);
 
-    public DataLoot(string item)
+    public LootItem(string item)
     {
-        
+
         this.item = item;
 
         if (!isNull)
         {
             var match = new TextMatch(item, LOOTED_ITEM);
-            
+
             paramQTY = match.GetParameter(1);
             paramName = GetNameTreatment(match.GetParameter(2));
 
         }
-        
+
     }
 
     private string GetNameTreatment(string input)

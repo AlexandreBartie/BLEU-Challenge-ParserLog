@@ -2,7 +2,7 @@ using app.core;
 
 namespace app.data;
 
-public class DataLog : DataBoard
+public class DataLog : DataView
 {
 
     private string path;

@@ -1,4 +1,6 @@
 using app.data;
+using app.list;
+using app.total;
 
 namespace app.log;
 
@@ -6,86 +8,92 @@ public class RecordLog : BaseLog
 {
     public bool isHeader => type == TypeLog.eLogNoteSession;
 
-    public RecordLog(string info) : base(info) {}
+    public RecordLog(string info) : base(info) { }
 
     public DataPlayerHealedPower dataPlayerHealedPower
     {
-        get {
+        get
+        {
 
             DataPlayerHealedPower data = new();
-            
+
             data.points = int.Parse(regex.GetParameter(1));
-            
-            return data; 
+
+            return data;
 
         }
-        
+
 
     }
     public DataPlayerLostPower dataPlayerLostPower
     {
-        get {
-        
+        get
+        {
+
             DataPlayerLostPower data = new();
-            
+
             data.points = int.Parse(regex.GetParameter(1));
-            
+
             return data;
 
-        } 
+        }
     }
     public DataPlayerLostPowerByCreature dataPlayerLostPowerByCreature
     {
-        
-        get {
+
+        get
+        {
 
             DataPlayerLostPowerByCreature data = new();
-            
+
             data.points = int.Parse(regex.GetParameter(1));
             data.creature = regex.GetParameter(3);
-            
+
             return data;
-        }  
+        }
     }
 
     public DataPlayerGainedExperience dataPlayerGainedExperience
     {
-        get {
+        get
+        {
             DataPlayerGainedExperience data = new();
-            
+
             data.points = int.Parse(regex.GetParameter(1));
-            
+
             return data;
-        }  
+        }
     }
 
     public DataPlayerLootedByCreature dataPlayerLootedByCreature
     {
-        get {
+        get
+        {
 
             DataPlayerLootedByCreature data = new();
-            
+
             data.creature = regex.GetParameter(1);
-            data.list = new DataLootList(regex.GetParameter(2));
-            
+            data.list = new LootList(regex.GetParameter(2));
+
             return data;
         }
     }
 
     public DataCreatureLostPower dataCreatureLostPower
     {
-        get {
+        get
+        {
 
             DataCreatureLostPower data = new();
-            
+
             data.creature = regex.GetParameter(1);
             data.points = int.Parse(regex.GetParameter(2));
-            
+
             return data;
-            
+
         }
     }
-        
+
 }
 
 public class RecordsLog : List<RecordLog>

@@ -1,11 +1,11 @@
-using app.data;
+using app.list;
 
 namespace myappxunit;
 
 public class LootedListTest
 {
 
-    private DataLootList? list;
+    private LootList? list;
 
     [Theory]
     [InlineData("a gold coin", "1 gold coin")]

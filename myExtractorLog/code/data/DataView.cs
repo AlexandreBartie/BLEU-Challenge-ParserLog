@@ -1,33 +1,79 @@
+using app.core;
+using app.log;
+using app.total;
+using app.util;
+
 namespace app.data;
 
 public class DataView
 {
 
-    public int experienceGained;
+    public SessionsLog sessions = new();
 
-    public int hitpointsHealed;
+    public readonly ViewPlayerHealedPower viewPlayerHealedPower;
+    public readonly ViewPlayerLostPower viewPlayerLostPower;
+    public readonly ViewPlayerGainedExperience viewPlayerGainedExperience;
+    public readonly ViewPlayerLootedByCreature viewPlayerLootedByCreature;
+    public readonly ViewCreatureLostPower viewCreatureLostPower;
 
-    public DataViewDamageTaken damageTaken = new();
+    public RecordsLog logs => (sessions.logs);
 
-    public DataLootList loot = new();
+    public bool isNull => (sessions.isNull);
 
-    public DataViewCreaturesBoard creatures = new();
+    public DataView()
+    {
 
-}
+        viewPlayerHealedPower = new ViewPlayerHealedPower(this);
+        viewPlayerLostPower = new ViewPlayerLostPower(this);
+        viewPlayerLootedByCreature = new ViewPlayerLootedByCreature(this);
+        viewPlayerGainedExperience = new ViewPlayerGainedExperience(this);
+        viewCreatureLostPower = new ViewCreatureLostPower(this);
 
-public class DataViewCreaturesBoard
-{
-    public int total => lostPower.totalDamage;
+    }
 
-    public DataCreatureList lostPower = new();
-}
+    public void Populate(string[] lines)
+    {
 
-public class DataViewDamageTaken
-{
-    public int unknown;
+        sessions.Populate(lines);
 
-    public int total => unknown + byCreature.totalDamage;
+        viewPlayerHealedPower.SumData();
+        viewPlayerLostPower.SumData();
+        viewPlayerGainedExperience.SumData();
+        viewPlayerLootedByCreature.SumData();
+        viewCreatureLostPower.SumData();
+    }
 
-    public DataCreatureList byCreature = new();
+    public string log()
+    {
+
+        if (!isNull)
+        {
+
+            var memo = new Memo();
+
+            memo.Add(Importlog(SizePattern("Total")));
+            memo.Add(viewPlayerGainedExperience.log(SizePattern("Experience")));
+            memo.Add(viewPlayerHealedPower.log(SizePattern("HealedPower")));
+            memo.Add(viewPlayerLostPower.log(SizePattern("LostPower")));
+            memo.Add(viewPlayerLostPower.byUnknown.log(SizePattern("-unknown")));
+            memo.Add(viewPlayerLostPower.byCreature.log(SizePattern("-byCreature")));
+            memo.Add(viewPlayerLootedByCreature.log(SizePattern("LootedByCreature")));
+            memo.Add(viewCreatureLostPower.log(SizePattern("CreatureLostPower")));
+
+            return (memo.txt);
+        }
+
+        return "";
+
+    }
+    private string Importlog(string label)
+    {
+        return $"{label}: {logs.Count()} logs #{sessions.Count()}";
+    }
+
+    private string SizePattern(string label)
+    {
+        return label.PadLeft(25);
+    }
 
 }

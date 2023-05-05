@@ -13,44 +13,44 @@ public class DataLogTest
 
     [Theory]
     [InlineData(957, 5)]
-    public void TST01_TotalPlayerHealedPower(int damage, int qty)
+    public void TST01_ViewPlayerHealedPower(int damage, int qty)
     {
 
         input = "ServerLog-PlayerHealedPower.txt";
 
         data.Load(input);
 
-        Assert.Equal(damage, data.view.hitpointsHealed);
-        Assert.Equal(qty, data.totalPlayerHealedPower.count);
+        Assert.Equal(damage, data.viewPlayerHealedPower.totalHealed);
+        Assert.Equal(qty, data.viewPlayerHealedPower.count);
 
     }
 
     [Theory]
     [InlineData(12, 332, 12)]
-    public void TST02_TotalPlayerLostPower(int unknown, int total, int qty)
+    public void TST02_ViewPlayerLostPower(int unknown, int total, int qty)
     {
 
         input = "ServerLog-PlayerLostPower.txt";
 
         data.Load(input);
 
-        Assert.Equal(unknown, data.view.damageTaken.unknown);
-        Assert.Equal(total, data.view.damageTaken.total);
-        Assert.Equal(qty, data.totalPlayerLostPower.count);
+        Assert.Equal(unknown, data.viewPlayerLostPower.byUnknown.totalDamage);
+        Assert.Equal(total, data.viewPlayerLostPower.totalDamage);
+        Assert.Equal(qty, data.viewPlayerLostPower.count);
 
     }
 
     [Theory]
     [InlineData(697, 6)]
-    public void TST03_TotalPlayerGainedExperience(int damage, int qty)
+    public void TST03_ViewPlayerGainedExperience(int damage, int qty)
     {
 
         input = "ServerLog-PlayerGainedExperience.txt";
 
         data.Load(input);
 
-        Assert.Equal(damage, data.view.experienceGained);
-        Assert.Equal(qty, data.totalPlayerGainedExperience.count);
+        Assert.Equal(damage, data.viewPlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, data.viewPlayerGainedExperience.count);
 
     }
 
@@ -60,17 +60,17 @@ public class DataLogTest
     [InlineData("cyclops smith", 29, 1)]
     [InlineData("dragon", 264, 3)]
     [InlineData("dwarf soldier", 9, 1)]
-    public void TST04_TotalPlayerLostPowerByCreature(string creature, int totalDamage, int qty)
+    public void TST04_ViewPlayerLostPowerByCreature(string creature, int totalDamage, int qty)
     {
 
         string input = "ServerLog-PlayerLostPower.txt";
 
         data.Load(input);
 
-        var list = data.view.damageTaken.byCreature.filter(creature);
+        var listLog = data.viewPlayerLostPower.byCreature.list.filter(creature);
 
-        Assert.Equal(totalDamage, list.totalDamage);
-        Assert.Equal(qty, list.Count);
+        Assert.Equal(totalDamage, listLog.totalDamage);
+        Assert.Equal(qty, listLog.count);
 
     }
 
@@ -83,17 +83,17 @@ public class DataLogTest
     [InlineData("dragon", 1018, 3)]
     [InlineData("dwarf", 90, 1)]
     [InlineData("dwarf soldier", 135, 1)]
-    public void TST05_TotalCreatureLostPower(string creature, int totalDamage, int qty)
+    public void TST05_ViewCreatureLostPower(string name, int totalDamage, int qty)
     {
 
         string input = "ServerLog-CreatureLostPower.txt";
 
         data.Load(input);
 
-        var list = data.view.creatures.lostPower.filter(creature);
+        var creature = data.viewCreatureLostPower.list.filter(name);
 
-        Assert.Equal(totalDamage, list.totalDamage);
-        Assert.Equal(qty, list.Count);
+        Assert.Equal(totalDamage, creature.totalDamage);
+        Assert.Equal(qty, creature.Count);
 
     }
 
@@ -108,17 +108,17 @@ public class DataLogTest
     [InlineData("steel shield", 1, 1)]
     [InlineData("steel helmet", 1, 1)]
     [InlineData("small diamond", 1, 1)]
-    public void TST06_TotalPlayerLootedByCreature(string item, int total, int qty)
+    public void TST06_ViewPlayerLootedByCreature(string item, int total, int qty)
     {
 
         string input = "ServerLog-PlayerLootedByCreature.txt";
 
         data.Load(input);
 
-        var list = data.view.loot.filter(item);
+        var list = data.viewPlayerLootedByCreature.loot.filter(item);
 
         Assert.Equal(total, list.total);
-        Assert.Equal(qty, list.Count);
+        Assert.Equal(qty, list.count);
 
     }
 
@@ -129,8 +129,8 @@ public class DataLogTest
 
         data.Load(input);
 
-        Assert.Equal(damage, data.view.experienceGained);
-        Assert.Equal(qty, data.totalPlayerGainedExperience.count);
+        Assert.Equal(damage, data.viewPlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, data.viewPlayerGainedExperience.count);
 
     }
 
