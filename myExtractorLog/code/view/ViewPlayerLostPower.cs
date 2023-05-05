@@ -1,5 +1,3 @@
-using app.data;
-
 namespace app.view;
 
 public class ViewPlayerLostPower

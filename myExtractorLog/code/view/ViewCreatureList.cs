@@ -1,4 +1,3 @@
-using app.data;
 using app.list;
 using app.log;
 using app.util;
@@ -29,12 +28,12 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
     }
 
-    private void AddDamage(ParseLogPlayerLostPowerByCreature data)
+    private void AddDamage(ILogPlayerLostPowerByCreature data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
 
-    private void AddDamage(ParseLogCreatureLostPower data)
+    private void AddDamage(ILogCreatureLostPower data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
