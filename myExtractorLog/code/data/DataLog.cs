@@ -1,24 +1,23 @@
 using app.core;
-using app.total;
 
 namespace app.data;
 
-public class DataLog : TotalBoard
+public class DataLog : DataBoard
 {
 
     private string path;
-    private ImportLog import = new();
+    private ImportLog import;
 
     public DataLog(string path)
     {
         this.path = path;
+
+        import = new ImportLog(this);
     }
 
     public bool Load(string name)
     {
-        SetLogs(import.Load(path, name));
-
-        return !isNull;
+        return import.Load(path, name);
     }
 
 }

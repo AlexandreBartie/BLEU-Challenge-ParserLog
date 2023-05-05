@@ -1,16 +1,16 @@
-using app.util;
+using app.core;
 using app.log;
-using app.data;
+using app.total;
+using app.util;
 
-namespace app.total;
+namespace app.data;
 
-public class TotalBoard
+public class DataBoard
 {
 
     public DataView view;
 
-    private RecordsLog _logs = new();
-    public RecordsLog logs => _logs;
+    public SessionsLog sessions = new();
 
     public readonly TotalPlayerHealedPower totalPlayerHealedPower;
     public readonly TotalPlayerLostPower totalPlayerLostPower;
@@ -18,9 +18,11 @@ public class TotalBoard
     public readonly TotalPlayerLootedByCreature totalPlayerLootedByCreature;
     public readonly TotalCreatureLostPower totalCreatureLostPower;
 
-    public bool isNull => (_logs.Count == 0);
+    public RecordsLog logs => (sessions.logs);
 
-    public TotalBoard()
+    public bool isNull => (sessions.isNull);
+
+    public DataBoard()
     {
         view = new DataView();
 
@@ -31,16 +33,11 @@ public class TotalBoard
         totalCreatureLostPower = new TotalCreatureLostPower(this);
 
     }
-
-    protected void SetLogs(RecordsLog logs)
+    public void Populate(string[] lines)
     {
-        this._logs = logs;
 
-        SumDataAll();
-    }
+        sessions.Populate(lines);
 
-    private void SumDataAll()
-    {
         totalPlayerHealedPower.SumData();
         totalPlayerLostPower.SumData();
         totalPlayerGainedExperience.SumData();
@@ -56,14 +53,14 @@ public class TotalBoard
 
             var memo = new Memo();
 
-            memo.Add(                               log("         Total Logs"));
-            memo.Add(   totalPlayerGainedExperience.log("         Experience"));
-            memo.Add(        totalPlayerHealedPower.log("        HealedPower"));
-            memo.Add(          totalPlayerLostPower.log("          LostPower"));
-            memo.Add( totalPlayerLostPower.byUnknown.log("           -unknown"));
+            memo.Add(log("         Total Logs"));
+            memo.Add(totalPlayerGainedExperience.log("         Experience"));
+            memo.Add(totalPlayerHealedPower.log("        HealedPower"));
+            memo.Add(totalPlayerLostPower.log("          LostPower"));
+            memo.Add(totalPlayerLostPower.byUnknown.log("           -unknown"));
             memo.Add(totalPlayerLostPower.byCreature.log("        -byCreature"));
-            memo.Add(   totalPlayerLootedByCreature.log("   LootedByCreature"));
-            memo.Add(        totalCreatureLostPower.log("  CreatureLostPower"));
+            memo.Add(totalPlayerLootedByCreature.log("   LootedByCreature"));
+            memo.Add(totalCreatureLostPower.log("  CreatureLostPower"));
 
             return (memo.txt);
         }
@@ -74,6 +71,6 @@ public class TotalBoard
     private string log(string label)
     {
         return $"{label}: {logs.Count()}";
-    }    
+    }
 
 }

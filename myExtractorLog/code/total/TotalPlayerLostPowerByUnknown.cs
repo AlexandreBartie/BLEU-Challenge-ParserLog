@@ -1,10 +1,10 @@
 using app.log;
-
+using app.data;
 namespace app.total;
 
 public class TotalPlayerLostPowerByUnknown : TotalModel
 {
-    public TotalPlayerLostPowerByUnknown(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
+    public TotalPlayerLostPowerByUnknown(DataBoard board) : base(board, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
 
     public int totalDamage => view.damageTaken.unknown;
 

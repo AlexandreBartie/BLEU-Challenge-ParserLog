@@ -1,4 +1,4 @@
-using app.log;
+using app.data;
 using app.util;
 
 namespace app.core;
@@ -6,24 +6,29 @@ namespace app.core;
 public class ImportLog
 {
 
-    private FileTXT file = new();
+    private DataLog data;
 
-    private ParseLog parse = new();
+    public ImportLog(DataLog data)
+    {
+        this.data = data;
+    }
 
-    public RecordsLog Load(string path, string name)
+    public bool Load(string path, string name)
     {
         
-        parse = new();
+        var file = new FileTXT();
 
         if (file.Open(path, name))
         {
+            data.Populate(file.lines);
 
-            return parse.Apply(file.lines).logs;
-            
+            return true;            
         }
 
-        return new RecordsLog();
+        return false;
 
     }
+
+  
 
 }

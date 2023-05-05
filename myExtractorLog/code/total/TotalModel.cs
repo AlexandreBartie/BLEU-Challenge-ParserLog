@@ -5,19 +5,19 @@ namespace app.total;
 
 public abstract class TotalModel
 {
-    private readonly TotalBoard total;
+    private readonly DataBoard board;
 
     private TypeLog type;
 
-    public RecordsLog logs => total.logs.filter(type);
+    public RecordsLog logs => board.logs.filter(type);
 
-    public DataView view => total.view;
+    public DataView view => board.view;
 
     public int count => logs.Count;
 
-    public TotalModel(TotalBoard total, TypeLog type)
+    public TotalModel(DataBoard board, TypeLog type)
     {
-        this.total = total;
+        this.board = board;
 
         this.type = type;
     }

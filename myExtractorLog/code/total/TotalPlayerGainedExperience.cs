@@ -1,10 +1,11 @@
 using app.log;
+using app.data;
 
 namespace app.total;
 
 public class TotalPlayerGainedExperience : TotalModel
 {
-    public TotalPlayerGainedExperience(TotalBoard total) : base(total, TypeLog.eLogGamePlayerGainedExperience) { }
+    public TotalPlayerGainedExperience(DataBoard board) : base(board, TypeLog.eLogGamePlayerGainedExperience) { }
 
     public override void SumData()
     {
@@ -20,6 +21,6 @@ public class TotalPlayerGainedExperience : TotalModel
     public override string log(string label)
     {
         return $"{label}: {view.experienceGained} points #{count}";
-    }    
+    }
 
 }

@@ -1,10 +1,11 @@
 using app.log;
+using app.data;
 
 namespace app.total;
 
 public class TotalPlayerLootedByCreature : TotalModel
 {
-    public TotalPlayerLootedByCreature(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLootedByCreature) { }
+    public TotalPlayerLootedByCreature(DataBoard board) : base(board, TypeLog.eLogGamePlayerLootedByCreature) { }
 
     public override void SumData()
     {

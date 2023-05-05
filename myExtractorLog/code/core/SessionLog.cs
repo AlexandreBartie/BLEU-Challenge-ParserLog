@@ -17,14 +17,34 @@ public class SessionsLog : List<SessionLog>
 
     public RecordsLog logs => getLogs();
 
-    public void addHeader()
+    public bool isNull => (logs.Count == 0);
+
+    public void Populate(string[] lines)
+    {
+        RecordLog log;
+
+        foreach (string line in lines)
+        {
+
+            log = new RecordLog(line);
+
+            if (log.isHeader)
+                addHeader();
+            
+            addRecord(log);
+
+        }
+
+    } 
+
+    private void addHeader()
     {
         current = new SessionLog();
 
         Add(current);
     }
 
-    public void addRecord(RecordLog record)
+    private void addRecord(RecordLog record)
     {
         current?.logs.Add(record);
     }

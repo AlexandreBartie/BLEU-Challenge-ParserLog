@@ -1,8 +1,10 @@
+
+using app.data;
 namespace app.total;
 
 public class TotalPlayerLostPower
 {
-    
+
     public readonly TotalPlayerLostPowerByUnknown byUnknown;
     public readonly TotalPlayerLostPowerByCreature byCreature;
 
@@ -10,10 +12,10 @@ public class TotalPlayerLostPower
 
     public int totalDamage => byUnknown.totalDamage + byCreature.totalDamage;
 
-    public TotalPlayerLostPower(TotalBoard total)
+    public TotalPlayerLostPower(DataBoard board)
     {
-        byUnknown = new TotalPlayerLostPowerByUnknown(total);
-        byCreature = new TotalPlayerLostPowerByCreature(total);
+        byUnknown = new TotalPlayerLostPowerByUnknown(board);
+        byCreature = new TotalPlayerLostPowerByCreature(board);
     }
 
     public void SumData()

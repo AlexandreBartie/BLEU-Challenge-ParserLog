@@ -1,10 +1,11 @@
 using app.log;
+using app.data;
 
 namespace app.total;
 
 public class TotalPlayerLostPowerByCreature : TotalModel
 {
-    public TotalPlayerLostPowerByCreature(TotalBoard total) : base(total, TypeLog.eLogGamePlayerLostPowerByCreature) { }
+    public TotalPlayerLostPowerByCreature(DataBoard board) : base(board, TypeLog.eLogGamePlayerLostPowerByCreature) { }
 
     public int totalDamage => view.damageTaken.byCreature.totalDamage;
 
