@@ -9,11 +9,11 @@ public class ViewData
 
     public ParseSessions sessions = new();
 
-    public readonly ViewPlayerHealedPower viewPlayerHealedPower;
-    public readonly ViewPlayerLostPower viewPlayerLostPower;
-    public readonly ViewPlayerGainedExperience viewPlayerGainedExperience;
-    public readonly ViewPlayerLootedByCreature viewPlayerLootedByCreature;
-    public readonly ViewCreatureLostPower viewCreatureLostPower;
+    public readonly ViewPlayerHealedPower PlayerHealedPower;
+    public readonly ViewPlayerLostPower PlayerLostPower;
+    public readonly ViewPlayerGainedExperience PlayerGainedExperience;
+    public readonly ViewPlayerLootedByCreature PlayerLootedByCreature;
+    public readonly ViewCreatureLostPower CreatureLostPower;
 
     public RecordsLog logs => (sessions.logs);
 
@@ -22,11 +22,11 @@ public class ViewData
     public ViewData()
     {
 
-        viewPlayerHealedPower = new ViewPlayerHealedPower(this);
-        viewPlayerLostPower = new ViewPlayerLostPower(this);
-        viewPlayerLootedByCreature = new ViewPlayerLootedByCreature(this);
-        viewPlayerGainedExperience = new ViewPlayerGainedExperience(this);
-        viewCreatureLostPower = new ViewCreatureLostPower(this);
+        PlayerHealedPower = new ViewPlayerHealedPower(this);
+        PlayerLostPower = new ViewPlayerLostPower(this);
+        PlayerLootedByCreature = new ViewPlayerLootedByCreature(this);
+        PlayerGainedExperience = new ViewPlayerGainedExperience(this);
+        CreatureLostPower = new ViewCreatureLostPower(this);
 
     }
 
@@ -35,11 +35,11 @@ public class ViewData
 
         sessions.Populate(lines);
 
-        viewPlayerHealedPower.SumData();
-        viewPlayerLostPower.SumData();
-        viewPlayerGainedExperience.SumData();
-        viewPlayerLootedByCreature.SumData();
-        viewCreatureLostPower.SumData();
+        PlayerHealedPower.SumData();
+        PlayerLostPower.SumData();
+        PlayerGainedExperience.SumData();
+        PlayerLootedByCreature.SumData();
+        CreatureLostPower.SumData();
     }
 
 }

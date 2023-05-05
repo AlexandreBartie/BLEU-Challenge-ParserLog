@@ -22,13 +22,13 @@ public class ParseExport
             var memo = new Memo();
 
             memo.add(totalLog(SizePattern("Total")));
-            memo.add(parse.viewPlayerGainedExperience.log(SizePattern("Experience")));
-            memo.add(parse.viewPlayerHealedPower.log(SizePattern("HealedPower")));
-            memo.add(parse.viewPlayerLostPower.log(SizePattern("LostPower")));
-            memo.add(parse.viewPlayerLostPower.byUnknown.log(SizePattern("-unknown")));
-            memo.add(parse.viewPlayerLostPower.byCreature.log(SizePattern("-byCreature")));
-            memo.add(parse.viewPlayerLootedByCreature.log(SizePattern("LootedByCreature")));
-            memo.add(parse.viewCreatureLostPower.log(SizePattern("CreatureLostPower")));
+            memo.add(parse.PlayerGainedExperience.log(SizePattern("Experience")));
+            memo.add(parse.PlayerHealedPower.log(SizePattern("HealedPower")));
+            memo.add(parse.PlayerLostPower.log(SizePattern("LostPower")));
+            memo.add(parse.PlayerLostPower.byUnknown.log(SizePattern("-unknown")));
+            memo.add(parse.PlayerLostPower.byCreature.log(SizePattern("-byCreature")));
+            memo.add(parse.PlayerLootedByCreature.log(SizePattern("LootedByCreature")));
+            memo.add(parse.CreatureLostPower.log(SizePattern("CreatureLostPower")));
 
             return (memo.txt);
         }

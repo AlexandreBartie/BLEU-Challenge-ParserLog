@@ -18,8 +18,8 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        Assert.Equal(damage, parse.viewPlayerHealedPower.totalHealed);
-        Assert.Equal(qty, parse.viewPlayerHealedPower.count);
+        Assert.Equal(damage, parse.PlayerHealedPower.totalHealed);
+        Assert.Equal(qty, parse.PlayerHealedPower.count);
 
     }
 
@@ -32,9 +32,9 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        Assert.Equal(unknown, parse.viewPlayerLostPower.byUnknown.totalDamage);
-        Assert.Equal(total, parse.viewPlayerLostPower.totalDamage);
-        Assert.Equal(qty, parse.viewPlayerLostPower.count);
+        Assert.Equal(unknown, parse.PlayerLostPower.byUnknown.totalDamage);
+        Assert.Equal(total, parse.PlayerLostPower.totalDamage);
+        Assert.Equal(qty, parse.PlayerLostPower.count);
 
     }
 
@@ -47,8 +47,8 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        Assert.Equal(damage, parse.viewPlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, parse.viewPlayerGainedExperience.count);
+        Assert.Equal(damage, parse.PlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, parse.PlayerGainedExperience.count);
 
     }
 
@@ -65,7 +65,7 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        var listLog = parse.viewPlayerLostPower.byCreature.list.filter(creature);
+        var listLog = parse.PlayerLostPower.byCreature.list.filter(creature);
 
         Assert.Equal(totalDamage, listLog.totalDamage);
         Assert.Equal(qty, listLog.count);
@@ -88,7 +88,7 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        var creature = parse.viewCreatureLostPower.list.filter(name);
+        var creature = parse.CreatureLostPower.list.filter(name);
 
         Assert.Equal(totalDamage, creature.totalDamage);
         Assert.Equal(qty, creature.Count);
@@ -113,7 +113,7 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        var list = parse.viewPlayerLootedByCreature.loot.filter(item);
+        var list = parse.PlayerLootedByCreature.loot.filter(item);
 
         Assert.Equal(total, list.total);
         Assert.Equal(qty, list.count);
@@ -129,7 +129,7 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        var list = parse.viewPlayerLostPower.byCreature.list;
+        var list = parse.PlayerLostPower.byCreature.list;
 
         Assert.Equal(qty, list.count);
         // Assert.Equal(log, list.log("... ").csv);
@@ -144,8 +144,8 @@ public class UT03_ParseLogTest
 
         parse.LoadFile(input);
 
-        Assert.Equal(damage, parse.viewPlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, parse.viewPlayerGainedExperience.count);
+        Assert.Equal(damage, parse.PlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, parse.PlayerGainedExperience.count);
 
     }
 
