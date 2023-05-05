@@ -1,13 +1,13 @@
 using app.log;
 using app.data;
 
-namespace app.total;
+namespace app.view;
 
 public abstract class ViewModel
 {
     public readonly DataView view;
 
-    private TypeLog type;
+    public readonly TypeLog type;
 
     public RecordsLog logs => view.logs.filter(type);
 

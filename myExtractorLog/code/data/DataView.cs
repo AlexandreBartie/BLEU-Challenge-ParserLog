@@ -1,6 +1,6 @@
 using app.core;
 using app.log;
-using app.total;
+using app.view;
 using app.util;
 
 namespace app.data;
@@ -51,14 +51,14 @@ public class DataView
 
             var memo = new Memo();
 
-            memo.Add(Importlog(SizePattern("Total")));
-            memo.Add(viewPlayerGainedExperience.log(SizePattern("Experience")));
-            memo.Add(viewPlayerHealedPower.log(SizePattern("HealedPower")));
-            memo.Add(viewPlayerLostPower.log(SizePattern("LostPower")));
-            memo.Add(viewPlayerLostPower.byUnknown.log(SizePattern("-unknown")));
-            memo.Add(viewPlayerLostPower.byCreature.log(SizePattern("-byCreature")));
-            memo.Add(viewPlayerLootedByCreature.log(SizePattern("LootedByCreature")));
-            memo.Add(viewCreatureLostPower.log(SizePattern("CreatureLostPower")));
+            memo.add(Importlog(SizePattern("Total")));
+            memo.add(viewPlayerGainedExperience.log(SizePattern("Experience")));
+            memo.add(viewPlayerHealedPower.log(SizePattern("HealedPower")));
+            memo.add(viewPlayerLostPower.log(SizePattern("LostPower")));
+            memo.add(viewPlayerLostPower.byUnknown.log(SizePattern("-unknown")));
+            memo.add(viewPlayerLostPower.byCreature.log(SizePattern("-byCreature")));
+            memo.add(viewPlayerLootedByCreature.log(SizePattern("LootedByCreature")));
+            memo.add(viewCreatureLostPower.log(SizePattern("CreatureLostPower")));
 
             return (memo.txt);
         }

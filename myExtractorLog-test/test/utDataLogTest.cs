@@ -122,6 +122,23 @@ public class DataLogTest
 
     }
 
+    [Theory]
+    [InlineData("ghoul, cyclops, cyclops smith, dragon, dwarf soldier", 8)]
+    public void TST07_ViewCreatureList(string log, int qty)
+    {
+
+        string input = "ServerLog-PlayerLostPower.txt";
+
+        data.Load(input);
+
+        var list = data.viewPlayerLostPower.byCreature.list;
+
+        Assert.Equal(qty, list.count);
+        // Assert.Equal(log, list.log("... ").csv);
+
+
+    }
+
     public void TSTXX_TotalExtraCreature(int damage, int qty)
     {
 

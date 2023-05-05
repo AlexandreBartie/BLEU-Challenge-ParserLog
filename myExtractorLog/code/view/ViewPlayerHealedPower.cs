@@ -1,7 +1,7 @@
 using app.data;
 using app.log;
 
-namespace app.total;
+namespace app.view;
 
 public class ViewPlayerHealedPower : ViewModel
 {

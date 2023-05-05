@@ -1,6 +1,5 @@
 using app.data;
 using app.list;
-using app.total;
 
 namespace app.log;
 

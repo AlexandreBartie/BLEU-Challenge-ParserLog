@@ -1,6 +1,6 @@
 using app.data;
 
-namespace app.total;
+namespace app.view;
 
 public class ViewPlayerLostPower
 {

@@ -1,5 +1,6 @@
 using app.data;
 using app.list;
+using app.log;
 using app.util;
 
 namespace app.view;
@@ -7,18 +8,33 @@ namespace app.view;
 public class ViewCreatureList : List<ViewCreatureItem>
 {
 
+    private TypeLog type;
+
     public CreatureList creatures => GetCreatures();
 
     public int totalDamage => GetTotalDamage();
 
     public int count => this.Count;
 
-    public void AddPlayerDamage(DataPlayerLostPowerByCreature data)
+    public ViewCreatureList(TypeLog type)
+    { this.type = type; }
+
+    public void AddDamage(RecordLog log)
+    {
+        if (type == TypeLog.eLogGamePlayerLostPowerByCreature)
+            AddDamage(log.dataPlayerLostPowerByCreature);
+
+        if (type == TypeLog.eLogGameCreatureLostPower)
+            AddDamage(log.dataCreatureLostPower); 
+
+    }
+    
+    private void AddDamage(DataPlayerLostPowerByCreature data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
 
-    public void AddCreatureDamage(DataCreatureLostPower data)
+    private void AddDamage(DataCreatureLostPower data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
@@ -26,7 +42,7 @@ public class ViewCreatureList : List<ViewCreatureItem>
     public ViewCreatureList filter(string creature)
     {
 
-        var list = new ViewCreatureList();
+        var list = new ViewCreatureList(type);
 
         foreach (ViewCreatureItem item in this)
         {
@@ -61,6 +77,24 @@ public class ViewCreatureList : List<ViewCreatureItem>
         }
 
         return total;
+    }
+
+    public string log(int tab)
+    {
+        
+        var memo = new Memo();
+        
+        foreach (Creature item in creatures)
+        {
+            var creature = item.name;
+            
+            var list = filter(creature);
+            
+            memo.Add( $"{Text.Tab(tab)}{creature}: {list.totalDamage} points #{list.count}");
+        }
+
+        return memo.txt;
+
     }
 
 }

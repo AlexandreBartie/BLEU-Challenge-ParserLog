@@ -2,7 +2,7 @@ using app.data;
 using app.log;
 using app.list;
 
-namespace app.total;
+namespace app.view;
 
 public class ViewPlayerLootedByCreature : ViewModel
 {

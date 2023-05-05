@@ -17,5 +17,8 @@ public static class Text
         return string.Equals(str1, str2, StringComparison.OrdinalIgnoreCase);
     }
 
+    public static string Tab(int size)
+    { return new string(' ', size); }
+
 }
 

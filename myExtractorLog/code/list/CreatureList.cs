@@ -7,14 +7,27 @@ public class CreatureList : List<Creature>
 
     public void AddItem(string name)
     {
+        if (name.Trim() == "")
+            return;
+
+        if(!Found(name))
+            Add(new Creature(name));
+
+    }
+
+    public bool Found(string name)
+    {
 
         foreach (Creature item in this)
         {
-            if (!Text.IsMatch(item.name, name))
-                Add(new Creature(name));
+            if (Text.IsMatch(item.name, name))
+                return true;
         }
 
+        return false;
+
     }
+
 
 }
 
