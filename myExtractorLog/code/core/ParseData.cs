@@ -1,10 +1,9 @@
-using app.core;
 using app.log;
-using app.util;
+using app.view;
 
-namespace app.view;
+namespace app.core;
 
-public class ViewData
+public class ParseView
 {
 
     public ParseSessions sessions = new();
@@ -19,7 +18,7 @@ public class ViewData
 
     public bool isNull => (sessions.isNull);
 
-    public ViewData()
+    public ParseView()
     {
 
         PlayerHealedPower = new ViewPlayerHealedPower(this);

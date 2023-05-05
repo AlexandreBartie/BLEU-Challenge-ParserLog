@@ -1,3 +1,4 @@
+using app.core;
 using app.log;
 using app.util;
 
@@ -5,7 +6,7 @@ namespace app.view;
 
 public abstract class ViewModelCreatureList : ViewModel
 {
-    public ViewModelCreatureList(ViewData view, TypeLog type) : base(view, type)
+    public ViewModelCreatureList(ParseView view, TypeLog type) : base(view, type)
     { list = new ViewCreatureList(type); }
 
     public ViewCreatureList list;

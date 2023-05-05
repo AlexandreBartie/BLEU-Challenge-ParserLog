@@ -1,3 +1,4 @@
+using app.core;
 namespace app.view;
 
 public class ViewPlayerLostPower
@@ -9,7 +10,7 @@ public class ViewPlayerLostPower
 
     public int totalDamage => byUnknown.totalDamage + byCreature.totalDamage;
 
-    public ViewPlayerLostPower(ViewData view)
+    public ViewPlayerLostPower(ParseView view)
     {
         byUnknown = new ViewPlayerLostPowerByUnknown(view);
         byCreature = new ViewPlayerLostPowerByCreature(view);

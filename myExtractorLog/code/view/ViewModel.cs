@@ -1,10 +1,11 @@
+using app.core;
 using app.log;
 
 namespace app.view;
 
 public abstract class ViewModel
 {
-    public readonly ViewData view;
+    public readonly ParseView view;
 
     public readonly TypeLog type;
 
@@ -12,7 +13,7 @@ public abstract class ViewModel
 
     public int count => logs.Count;
 
-    public ViewModel(ViewData view, TypeLog type)
+    public ViewModel(ParseView view, TypeLog type)
     {
         this.view = view;
 

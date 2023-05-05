@@ -1,8 +1,6 @@
-using app.view;
-
 namespace app.core;
 
-public class ParseLog : ViewData
+public class ParseLog : ParseView
 {
 
     private ParseSettings settings = new();

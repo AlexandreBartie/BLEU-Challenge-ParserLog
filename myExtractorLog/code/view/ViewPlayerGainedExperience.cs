@@ -1,10 +1,11 @@
+using app.core;
 using app.log;
 
 namespace app.view;
 
 public class ViewPlayerGainedExperience : ViewModel
 {
-    public ViewPlayerGainedExperience(ViewData view) : base(view, TypeLog.eLogGamePlayerGainedExperience) { }
+    public ViewPlayerGainedExperience(ParseView view) : base(view, TypeLog.eLogGamePlayerGainedExperience) { }
 
     public int totalExperience;
 

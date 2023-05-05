@@ -1,3 +1,4 @@
+using app.core;
 using app.log;
 using app.list;
 
@@ -5,7 +6,7 @@ namespace app.view;
 
 public class ViewPlayerLootedByCreature : ViewModel
 {
-    public ViewPlayerLootedByCreature(ViewData view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
+    public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
 
     public LootList loot = new();
 

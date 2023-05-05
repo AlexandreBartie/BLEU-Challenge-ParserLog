@@ -1,10 +1,11 @@
+using app.core;
 using app.log;
 
 namespace app.view;
 
 public class ViewPlayerHealedPower : ViewModel
 {
-    public ViewPlayerHealedPower(ViewData view) : base(view, TypeLog.eLogGamePlayerHealedPower) { }
+    public ViewPlayerHealedPower(ParseView view) : base(view, TypeLog.eLogGamePlayerHealedPower) { }
 
     public int totalHealed;
 

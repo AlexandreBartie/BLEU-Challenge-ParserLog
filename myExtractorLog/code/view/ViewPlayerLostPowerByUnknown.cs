@@ -1,10 +1,11 @@
+using app.core;
 using app.log;
 
 namespace app.view;
 
 public class ViewPlayerLostPowerByUnknown : ViewModel
 {
-    public ViewPlayerLostPowerByUnknown(ViewData view) : base(view, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
+    public ViewPlayerLostPowerByUnknown(ParseView view) : base(view, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
 
     public int totalDamage = 0;
 
