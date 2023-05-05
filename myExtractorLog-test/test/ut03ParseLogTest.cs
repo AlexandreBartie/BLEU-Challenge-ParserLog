@@ -1,15 +1,15 @@
-using app.data;
+using app.core;
 
 namespace myappxunit;
 
-public class DataLogTest
+public class ParseLogTest
 {
 
     const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/file/";
 
     private string input = "";
 
-    private DataLog data = new(PATH_FILE);
+    private ParseLog parse = new(PATH_FILE);
 
     [Theory]
     [InlineData(957, 5)]
@@ -18,10 +18,10 @@ public class DataLogTest
 
         input = "ServerLog-PlayerHealedPower.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        Assert.Equal(damage, data.viewPlayerHealedPower.totalHealed);
-        Assert.Equal(qty, data.viewPlayerHealedPower.count);
+        Assert.Equal(damage, parse.viewPlayerHealedPower.totalHealed);
+        Assert.Equal(qty, parse.viewPlayerHealedPower.count);
 
     }
 
@@ -32,11 +32,11 @@ public class DataLogTest
 
         input = "ServerLog-PlayerLostPower.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        Assert.Equal(unknown, data.viewPlayerLostPower.byUnknown.totalDamage);
-        Assert.Equal(total, data.viewPlayerLostPower.totalDamage);
-        Assert.Equal(qty, data.viewPlayerLostPower.count);
+        Assert.Equal(unknown, parse.viewPlayerLostPower.byUnknown.totalDamage);
+        Assert.Equal(total, parse.viewPlayerLostPower.totalDamage);
+        Assert.Equal(qty, parse.viewPlayerLostPower.count);
 
     }
 
@@ -47,10 +47,10 @@ public class DataLogTest
 
         input = "ServerLog-PlayerGainedExperience.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        Assert.Equal(damage, data.viewPlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, data.viewPlayerGainedExperience.count);
+        Assert.Equal(damage, parse.viewPlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, parse.viewPlayerGainedExperience.count);
 
     }
 
@@ -65,9 +65,9 @@ public class DataLogTest
 
         string input = "ServerLog-PlayerLostPower.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        var listLog = data.viewPlayerLostPower.byCreature.list.filter(creature);
+        var listLog = parse.viewPlayerLostPower.byCreature.list.filter(creature);
 
         Assert.Equal(totalDamage, listLog.totalDamage);
         Assert.Equal(qty, listLog.count);
@@ -88,9 +88,9 @@ public class DataLogTest
 
         string input = "ServerLog-CreatureLostPower.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        var creature = data.viewCreatureLostPower.list.filter(name);
+        var creature = parse.viewCreatureLostPower.list.filter(name);
 
         Assert.Equal(totalDamage, creature.totalDamage);
         Assert.Equal(qty, creature.Count);
@@ -113,9 +113,9 @@ public class DataLogTest
 
         string input = "ServerLog-PlayerLootedByCreature.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        var list = data.viewPlayerLootedByCreature.loot.filter(item);
+        var list = parse.viewPlayerLootedByCreature.loot.filter(item);
 
         Assert.Equal(total, list.total);
         Assert.Equal(qty, list.count);
@@ -129,9 +129,9 @@ public class DataLogTest
 
         string input = "ServerLog-PlayerLostPower.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        var list = data.viewPlayerLostPower.byCreature.list;
+        var list = parse.viewPlayerLostPower.byCreature.list;
 
         Assert.Equal(qty, list.count);
         // Assert.Equal(log, list.log("... ").csv);
@@ -144,10 +144,10 @@ public class DataLogTest
 
         input = "ServerLog-PlayerGainedExperience.txt";
 
-        data.Load(input);
+        parse.LoadFile(input);
 
-        Assert.Equal(damage, data.viewPlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, data.viewPlayerGainedExperience.count);
+        Assert.Equal(damage, parse.viewPlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, parse.viewPlayerGainedExperience.count);
 
     }
 

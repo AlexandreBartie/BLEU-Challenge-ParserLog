@@ -3,9 +3,9 @@ using app.log;
 using app.view;
 using app.util;
 
-namespace app.data;
+namespace app.view;
 
-public class DataView
+public class ViewData
 {
 
     public SessionsLog sessions = new();
@@ -20,7 +20,9 @@ public class DataView
 
     public bool isNull => (sessions.isNull);
 
-    public DataView()
+    public string output => (getOutput());
+
+    public ViewData()
     {
 
         viewPlayerHealedPower = new ViewPlayerHealedPower(this);
@@ -43,7 +45,7 @@ public class DataView
         viewCreatureLostPower.SumData();
     }
 
-    public string log()
+    private string getOutput()
     {
 
         if (!isNull)
@@ -51,7 +53,7 @@ public class DataView
 
             var memo = new Memo();
 
-            memo.add(Importlog(SizePattern("Total")));
+            memo.add(ImportLog(SizePattern("Total")));
             memo.add(viewPlayerGainedExperience.log(SizePattern("Experience")));
             memo.add(viewPlayerHealedPower.log(SizePattern("HealedPower")));
             memo.add(viewPlayerLostPower.log(SizePattern("LostPower")));
@@ -66,7 +68,7 @@ public class DataView
         return "";
 
     }
-    private string Importlog(string label)
+    private string ImportLog(string label)
     {
         return $"{label}: {logs.Count()} logs #{sessions.Count()}";
     }

@@ -5,7 +5,7 @@ namespace app.view;
 
 public class ViewPlayerLostPowerByUnknown : ViewModel
 {
-    public ViewPlayerLostPowerByUnknown(DataView view) : base(view, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
+    public ViewPlayerLostPowerByUnknown(ViewData view) : base(view, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
 
     public int totalDamage = 0;
 

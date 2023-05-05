@@ -2,35 +2,35 @@ using app.list;
 
 namespace app.data;
 
-public struct DataLogPlayerHealedPower
+public struct ParseLogPlayerHealedPower
 {
     public int points;
 }
 
-public struct DataLogPlayerLostPower
+public struct ParseLogPlayerLostPower
 {
     public int points;
 }
 
-public struct DataLogPlayerLostPowerByCreature
+public struct ParseLogPlayerLostPowerByCreature
 {
     public int points;
     public string creature;
 }
 
-public struct DataLogPlayerGainedExperience
+public struct ParseLogPlayerGainedExperience
 {
     public int points;
 }
 
-public struct DataLogPlayerLootedByCreature
+public struct ParseLogPlayerLootedByCreature
 {
     public string creature;
     public LootList list;
 
 }
 
-public struct DataLogCreatureLostPower
+public struct ParseLogCreatureLostPower
 {
     public string creature;
     public int points;

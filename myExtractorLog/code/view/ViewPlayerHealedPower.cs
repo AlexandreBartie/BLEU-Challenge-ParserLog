@@ -5,7 +5,7 @@ namespace app.view;
 
 public class ViewPlayerHealedPower : ViewModel
 {
-    public ViewPlayerHealedPower(DataView view) : base(view, TypeLog.eLogGamePlayerHealedPower) { }
+    public ViewPlayerHealedPower(ViewData view) : base(view, TypeLog.eLogGamePlayerHealedPower) { }
 
     public int totalHealed;
 

@@ -6,29 +6,29 @@ namespace app.core;
 public class ImportLog
 {
 
-    private DataLog data;
+    private ParseLog data;
 
-    public ImportLog(DataLog data)
+    public ImportLog(ParseLog data)
     {
         this.data = data;
     }
 
     public bool Load(string path, string name)
     {
-        
+
         var file = new FileTXT();
 
         if (file.Open(path, name))
         {
             data.Populate(file.lines);
 
-            return true;            
+            return true;
         }
 
         return false;
 
     }
 
-  
+
 
 }

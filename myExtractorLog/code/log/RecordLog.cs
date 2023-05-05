@@ -9,12 +9,12 @@ public class RecordLog : BaseLog
 
     public RecordLog(string info) : base(info) { }
 
-    public DataLogPlayerHealedPower dataPlayerHealedPower
+    public ParseLogPlayerHealedPower dataPlayerHealedPower
     {
         get
         {
 
-            DataLogPlayerHealedPower data = new();
+            ParseLogPlayerHealedPower data = new();
 
             data.points = int.Parse(regex.GetParameter(1));
 
@@ -24,12 +24,12 @@ public class RecordLog : BaseLog
 
 
     }
-    public DataLogPlayerLostPower dataPlayerLostPower
+    public ParseLogPlayerLostPower dataPlayerLostPower
     {
         get
         {
 
-            DataLogPlayerLostPower data = new();
+            ParseLogPlayerLostPower data = new();
 
             data.points = int.Parse(regex.GetParameter(1));
 
@@ -37,13 +37,13 @@ public class RecordLog : BaseLog
 
         }
     }
-    public DataLogPlayerLostPowerByCreature dataPlayerLostPowerByCreature
+    public ParseLogPlayerLostPowerByCreature dataPlayerLostPowerByCreature
     {
 
         get
         {
 
-            DataLogPlayerLostPowerByCreature data = new();
+            ParseLogPlayerLostPowerByCreature data = new();
 
             data.points = int.Parse(regex.GetParameter(1));
             data.creature = regex.GetParameter(3);
@@ -52,11 +52,11 @@ public class RecordLog : BaseLog
         }
     }
 
-    public DataLogPlayerGainedExperience dataPlayerGainedExperience
+    public ParseLogPlayerGainedExperience dataPlayerGainedExperience
     {
         get
         {
-            DataLogPlayerGainedExperience data = new();
+            ParseLogPlayerGainedExperience data = new();
 
             data.points = int.Parse(regex.GetParameter(1));
 
@@ -64,12 +64,12 @@ public class RecordLog : BaseLog
         }
     }
 
-    public DataLogPlayerLootedByCreature dataPlayerLootedByCreature
+    public ParseLogPlayerLootedByCreature dataPlayerLootedByCreature
     {
         get
         {
 
-            DataLogPlayerLootedByCreature data = new();
+            ParseLogPlayerLootedByCreature data = new();
 
             data.creature = regex.GetParameter(1);
             data.list = new LootList(regex.GetParameter(2));
@@ -78,12 +78,12 @@ public class RecordLog : BaseLog
         }
     }
 
-    public DataLogCreatureLostPower dataCreatureLostPower
+    public ParseLogCreatureLostPower dataCreatureLostPower
     {
         get
         {
 
-            DataLogCreatureLostPower data = new();
+            ParseLogCreatureLostPower data = new();
 
             data.creature = regex.GetParameter(1);
             data.points = int.Parse(regex.GetParameter(2));

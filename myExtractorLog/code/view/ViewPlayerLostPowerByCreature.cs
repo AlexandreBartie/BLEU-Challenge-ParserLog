@@ -5,5 +5,5 @@ namespace app.view;
 
 public class ViewPlayerLostPowerByCreature : ViewModelCreatureList
 {
-    public ViewPlayerLostPowerByCreature(DataView view) : base(view, TypeLog.eLogGamePlayerLostPowerByCreature) { }
+    public ViewPlayerLostPowerByCreature(ViewData view) : base(view, TypeLog.eLogGamePlayerLostPowerByCreature) { }
 }

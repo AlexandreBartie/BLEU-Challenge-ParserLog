@@ -1,10 +1,23 @@
 
 namespace app;
 
-public class AppSettings
+public class AppSettings : AppDataSettings
 {
 
-    public string fileFolder {
+    public string GetFileFolder(string path)
+    {
+        if (path == "")
+            return fileFolder;
+        return path;
+    }
+
+
+}
+
+public class AppDataSettings
+{
+
+    protected string fileFolder {
 
         get {
 
@@ -20,7 +33,5 @@ public class AppSettings
         }
 
     }
-
-
 }
 

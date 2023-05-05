@@ -21,7 +21,7 @@ namespace app
             #if DEBUG
                 fileName = "ServerLog-Session-One.txt";
             #else
-                fileName = AppDomain.CurrentDomain.BaseDirectory;
+                fileName = args[0];
             #endif
             
             startApp(fileName);
@@ -31,11 +31,11 @@ namespace app
         private static void startApp(string name)
         {
 
-            var extrator = new ExtratorLog();
+            var parse = new ParseLog();
 
-            if (extrator.Load(name))
+            if (parse.LoadFile(name))
             {
-                Console.WriteLine(extrator.log);
+                Console.WriteLine(parse.output);
             }
             else
                 Environment.Exit(-1);

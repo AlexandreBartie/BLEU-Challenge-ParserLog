@@ -11,7 +11,7 @@ public class ViewPlayerLostPower
 
     public int totalDamage => byUnknown.totalDamage + byCreature.totalDamage;
 
-    public ViewPlayerLostPower(DataView view)
+    public ViewPlayerLostPower(ViewData view)
     {
         byUnknown = new ViewPlayerLostPowerByUnknown(view);
         byCreature = new ViewPlayerLostPowerByCreature(view);

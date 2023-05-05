@@ -6,7 +6,7 @@ namespace app.view;
 
 public class ViewPlayerLootedByCreature : ViewModel
 {
-    public ViewPlayerLootedByCreature(DataView view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
+    public ViewPlayerLootedByCreature(ViewData view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
 
     public LootList loot = new();
 

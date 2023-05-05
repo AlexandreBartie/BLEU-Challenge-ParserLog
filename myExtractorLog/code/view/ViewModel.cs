@@ -5,7 +5,7 @@ namespace app.view;
 
 public abstract class ViewModel
 {
-    public readonly DataView view;
+    public readonly ViewData view;
 
     public readonly TypeLog type;
 
@@ -13,7 +13,7 @@ public abstract class ViewModel
 
     public int count => logs.Count;
 
-    public ViewModel(DataView view, TypeLog type)
+    public ViewModel(ViewData view, TypeLog type)
     {
         this.view = view;
 

@@ -29,12 +29,12 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
     }
 
-    private void AddDamage(DataLogPlayerLostPowerByCreature data)
+    private void AddDamage(ParseLogPlayerLostPowerByCreature data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
 
-    private void AddDamage(DataLogCreatureLostPower data)
+    private void AddDamage(ParseLogCreatureLostPower data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
