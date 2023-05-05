@@ -25,16 +25,16 @@ public class ViewCreatureList : List<ViewCreatureItem>
             AddDamage(log.dataPlayerLostPowerByCreature);
 
         if (type == TypeLog.eLogGameCreatureLostPower)
-            AddDamage(log.dataCreatureLostPower); 
+            AddDamage(log.dataCreatureLostPower);
 
     }
-    
-    private void AddDamage(DataPlayerLostPowerByCreature data)
+
+    private void AddDamage(DataLogPlayerLostPowerByCreature data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
 
-    private void AddDamage(DataCreatureLostPower data)
+    private void AddDamage(DataLogCreatureLostPower data)
     {
         Add(new ViewCreatureItem(data.creature, data.points));
     }
@@ -81,16 +81,16 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
     public string log(int tab)
     {
-        
+
         var memo = new Memo();
-        
+
         foreach (Creature item in creatures)
         {
             var creature = item.name;
-            
+
             var list = filter(creature);
-            
-            memo.Add( $"{Text.Tab(tab)}{creature}: {list.totalDamage} points #{list.count}");
+
+            memo.Add($"{Text.Tab(tab)}{creature}: {list.totalDamage} points #{list.count}");
         }
 
         return memo.txt;
