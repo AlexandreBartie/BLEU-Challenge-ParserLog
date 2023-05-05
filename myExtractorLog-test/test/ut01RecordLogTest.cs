@@ -1,7 +1,7 @@
 using app.log;
 namespace myappxunit;
 
-public class RecordLogTest
+public class UT01_RecordLogTest
 {
 
     private RecordLog? log;

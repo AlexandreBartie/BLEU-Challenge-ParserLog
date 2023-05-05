@@ -1,6 +1,5 @@
 using app.core;
 using app.log;
-using app.view;
 using app.util;
 
 namespace app.view;
@@ -8,7 +7,7 @@ namespace app.view;
 public class ViewData
 {
 
-    public SessionsLog sessions = new();
+    public ParseSessions sessions = new();
 
     public readonly ViewPlayerHealedPower viewPlayerHealedPower;
     public readonly ViewPlayerLostPower viewPlayerLostPower;
@@ -53,7 +52,7 @@ public class ViewData
 
             var memo = new Memo();
 
-            memo.add(ImportLog(SizePattern("Total")));
+            memo.add(ParseImport(SizePattern("Total")));
             memo.add(viewPlayerGainedExperience.log(SizePattern("Experience")));
             memo.add(viewPlayerHealedPower.log(SizePattern("HealedPower")));
             memo.add(viewPlayerLostPower.log(SizePattern("LostPower")));
@@ -68,7 +67,7 @@ public class ViewData
         return "";
 
     }
-    private string ImportLog(string label)
+    private string ParseImport(string label)
     {
         return $"{label}: {logs.Count()} logs #{sessions.Count()}";
     }

@@ -5,22 +5,23 @@ namespace app.core;
 public class ParseLog : ViewData
 {
 
-    private AppSettings settings = new();
+    private ParseSettings settings = new();
 
     private string path;
-    private ImportLog import;
+    private ParseImport import;
+
 
     public ParseLog(string path = "")
     {
         this.path = path;
 
-        import = new ImportLog(this);
+        import = new ParseImport(this);
 
     }
 
     public bool LoadFile(string name)
     {
-        return import.Load(settings.GetFileFolder(path), name);
+        return import.Load(settings.GetInputFileFolder(path), name);
     }
 
 }

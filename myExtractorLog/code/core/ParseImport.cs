@@ -1,16 +1,15 @@
-using app.data;
 using app.util;
 
 namespace app.core;
 
-public class ImportLog
+public class ParseImport
 {
 
-    private ParseLog data;
+    private ParseLog parse;
 
-    public ImportLog(ParseLog data)
+    public ParseImport(ParseLog parse)
     {
-        this.data = data;
+        this.parse = parse;
     }
 
     public bool Load(string path, string name)
@@ -20,7 +19,7 @@ public class ImportLog
 
         if (file.Open(path, name))
         {
-            data.Populate(file.lines);
+            parse.Populate(file.lines);
 
             return true;
         }

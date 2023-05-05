@@ -2,7 +2,7 @@ using app.list;
 
 namespace myappxunit;
 
-public class LootedListTest
+public class UT02_LootedListTest
 {
 
     private LootList? list;

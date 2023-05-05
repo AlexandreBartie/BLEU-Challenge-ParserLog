@@ -1,20 +1,27 @@
 
-namespace app;
+namespace app.core;
 
-public class AppSettings : AppDataSettings
+public class ParseSettings : ParseDataSettings
 {
 
-    public string GetFileFolder(string path)
+    public string GetInputFileFolder(string path)
     {
         if (path == "")
             return fileFolder;
-        return path;
+        return path + "input/";;
+    }
+
+    public string GetOutputFileFolder(string path)
+    {
+        if (path == "")
+            return fileFolder;
+        return path + "output/";
     }
 
 
 }
 
-public class AppDataSettings
+public class ParseDataSettings
 {
 
     protected string fileFolder {

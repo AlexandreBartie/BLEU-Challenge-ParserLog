@@ -2,7 +2,7 @@ using app.log;
 
 namespace app.core;
 
-public class SessionLog
+public class ParseSession
 {
 
     public RecordsLog logs = new();
@@ -10,10 +10,10 @@ public class SessionLog
 }
 
 
-public class SessionsLog : List<SessionLog>
+public class ParseSessions : List<ParseSession>
 {
 
-    private SessionLog? current;
+    private ParseSession? current;
 
     public RecordsLog logs => getLogs();
 
@@ -30,16 +30,16 @@ public class SessionsLog : List<SessionLog>
 
             if (log.isHeader)
                 addHeader();
-            
+
             addRecord(log);
 
         }
 
-    } 
+    }
 
     private void addHeader()
     {
-        current = new SessionLog();
+        current = new ParseSession();
 
         Add(current);
     }
@@ -51,9 +51,9 @@ public class SessionsLog : List<SessionLog>
 
     private RecordsLog getLogs()
     {
-        
+
         var logs = new RecordsLog();
-        foreach (SessionLog session in this)
+        foreach (ParseSession session in this)
         {
             logs.AddRange(session.logs);
         }

@@ -2,7 +2,7 @@ using app.core;
 
 namespace myappxunit;
 
-public class ParseLogTest
+public class UT03_ParseLogTest
 {
 
     const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/file/";
