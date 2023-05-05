@@ -21,14 +21,14 @@ public class ParseExport
 
             var memo = new Memo();
 
-            memo.add(totalLog(SizePattern("Total")));
-            memo.add(parse.PlayerGainedExperience.log(SizePattern("Experience")));
-            memo.add(parse.PlayerHealedPower.log(SizePattern("HealedPower")));
-            memo.add(parse.PlayerLostPower.log(SizePattern("LostPower")));
-            memo.add(parse.PlayerLostPower.byUnknown.log(SizePattern("-unknown")));
-            memo.add(parse.PlayerLostPower.byCreature.log(SizePattern("-byCreature")));
-            memo.add(parse.PlayerLootedByCreature.log(SizePattern("LootedByCreature")));
-            memo.add(parse.CreatureLostPower.log(SizePattern("CreatureLostPower")));
+            memo.add(totalLog("Total"));
+            memo.add(parse.PlayerGainedExperience.log("Experience"));
+            memo.add(parse.PlayerHealedPower.log("HealedPower"));
+            memo.add(parse.PlayerLostPower.log("LostPower"));
+            memo.add(parse.PlayerLostPower.byUnknown.log("-unknown"));
+            memo.add(parse.PlayerLostPower.byCreature.log("-byCreature"));
+            memo.add(parse.PlayerLootedByCreature.log("LootedByCreature"));
+            memo.add(parse.CreatureLostPower.log("CreatureLostPower"));
 
             return (memo.txt);
         }
@@ -36,14 +36,11 @@ public class ParseExport
         return "";
 
     }
+
     private string totalLog(string label)
     {
-        return $"{label}: {parse.logs.Count()} logs #{parse.sessions.Count()}";
+        return parse.GetLogRecords(label, parse.logs.Count(), parse.sessions.Count());
     }
 
-    private string SizePattern(string label)
-    {
-        return label.PadLeft(25);
-    }
 
 }

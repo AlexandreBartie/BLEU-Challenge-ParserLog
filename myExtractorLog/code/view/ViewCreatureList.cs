@@ -78,7 +78,7 @@ public class ViewCreatureList : List<ViewCreatureItem>
         return total;
     }
 
-    public string log(int tab)
+    public string log()
     {
 
         var memo = new Memo();
@@ -89,7 +89,7 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
             var list = filter(creature);
 
-            memo.Add($"{Text.Tab(tab)}{creature}: {list.totalDamage} points #{list.count}");
+            memo.Add($"{Text.Tab(35)}{creature}: {list.totalDamage} points #{list.count}");
         }
 
         return memo.txt;

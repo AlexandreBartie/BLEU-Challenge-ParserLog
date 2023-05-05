@@ -30,8 +30,6 @@ public abstract class ViewModelCreatureList : ViewModel
 
         memo.add($"{label}: {totalDamage} points #{count}");
 
-        memo.add(list.log(label.Length));
-
         return memo.txt;
     }
 

@@ -22,7 +22,7 @@ public class ViewPlayerGainedExperience : ViewModel
 
     public override string log(string label)
     {
-        return $"{label}: {totalExperience} points #{count}";
+        return view.GetLogPoints(label, totalExperience, count);
     }
 
 }
