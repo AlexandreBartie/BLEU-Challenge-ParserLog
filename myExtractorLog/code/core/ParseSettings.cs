@@ -7,14 +7,16 @@ public class ParseSettings : ParseDataSettings
     public string GetInputFileFolder(string path)
     {
         if (path == "")
-            return fileFolder;
+            path = fileFolder;
+
         return path + "input/";;
     }
 
     public string GetOutputFileFolder(string path)
     {
         if (path == "")
-            return fileFolder;
+            path = fileFolder;
+
         return path + "output/";
     }
 

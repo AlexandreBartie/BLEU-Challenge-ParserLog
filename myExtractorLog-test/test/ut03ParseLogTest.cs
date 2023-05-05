@@ -5,11 +5,9 @@ namespace myappxunit;
 public class UT03_ParseLogTest
 {
 
-    const string PATH_FILE = "C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/file/";
-
     private string input = "";
 
-    private ParseLog parse = new(PATH_FILE);
+    private ParseLog parse = new();
 
     [Theory]
     [InlineData(957, 5)]

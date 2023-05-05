@@ -9,6 +9,9 @@ public class ParseLog : ViewData
 
     private string path;
     private ParseImport import;
+    private ParseExport export;
+
+    public string output => export.output;
 
 
     public ParseLog(string path = "")
@@ -16,6 +19,7 @@ public class ParseLog : ViewData
         this.path = path;
 
         import = new ParseImport(this);
+        export = new ParseExport(this);
 
     }
 
