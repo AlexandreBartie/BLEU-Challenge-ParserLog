@@ -17,6 +17,18 @@ public static class Text
         return string.Equals(str1, str2, StringComparison.OrdinalIgnoreCase);
     }
 
+    public static bool IsPlural(string input)
+{
+    if (string.IsNullOrEmpty(input))
+    {
+        return false; // the input string is empty or null, so the last character cannot be "s" or "S"
+    }
+    
+    char lastChar = input[input.Length - 1];
+    
+    return (lastChar == 's' || lastChar == 'S');
+}
+
     
     public static string Repeat(string text, int times)
     { return string.Concat(Enumerable.Repeat(text, times)); }

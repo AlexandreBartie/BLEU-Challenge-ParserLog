@@ -5,8 +5,8 @@ namespace app.core;
 public class ParseFormat
 {
 
-    private const int SIZE_LINE = 56;
-    private const int COLUMN_LABEL = 18;
+    private const int SIZE_LINE = 60;
+    private const int COLUMN_LABEL = 25;
     private const int COLUMN_UNIT = 8;
 
     private const int COLUMN_VALUE = 10;
@@ -14,8 +14,8 @@ public class ParseFormat
 
     private const string FORMAT_NUMBER = "##,###,##0";
 
-    private const string LABEL_POINTS = "points";
-    private const string LABEL_ITEMS = "items";
+    private const string LABEL_POINTS = "point(s)";
+    private const string LABEL_ITEMS = "item(s)";
 
     public string logTitle(string title)
     {
@@ -28,9 +28,9 @@ public class ParseFormat
          return memo.txt;
     }
 
-    private string logLine()
+    public string logLine(char mark = '=')
     {
-        return Text.Repeat('=', SIZE_LINE);
+        return Text.Repeat(mark, SIZE_LINE);
     }
 
     public string GetLogPoints(string title, int value, int count, int tab = 1)
@@ -45,7 +45,7 @@ public class ParseFormat
 
     private string GetLog(string label, int value, int count, string unit, int level)
     {
-        return $"{FormatLabel(label, level)}: {FormatValue(value)} {FormatUnit(unit)} {FormatCount(count)}";
+        return $"{FormatLabel(label, level)} {FormatValue(value)} {FormatUnit(unit)} {FormatCount(count)}#";
     }
 
     private string FormatLabel(string label, int level) => Text.TabLevel(label.PadRight(COLUMN_LABEL), level, 3);

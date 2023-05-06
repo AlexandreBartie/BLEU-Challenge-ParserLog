@@ -135,6 +135,21 @@ public class UT03_ParseLogTest
 
     }
 
+    [Theory]
+    [InlineData("crossbow, cyclops toe, dragon ham, gold coins, green dragon leather, letter, meat, plate legs, small diamond, steel helmet, steel shield")]
+    public void TST08_ViewLootList(string creatures)
+    {
+
+        string input = "ServerLog-PlayerLootedByCreature.txt";
+
+        parse.LoadFile(input);
+
+        var list = parse.PlayerLootedByCreature.loot.items;
+
+        Assert.Equal(creatures, list.txt);
+
+    }
+
     public void TSTXX_TotalExtraCreature(int damage, int qty)
     {
 

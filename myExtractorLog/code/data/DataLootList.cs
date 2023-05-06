@@ -1,4 +1,6 @@
 using System.Text.RegularExpressions;
+using app.core;
+using app.list;
 using app.util;
 
 namespace app.data;
@@ -9,11 +11,13 @@ public class DataLootList : List<DataLootItem>
     const string LOOT_DELIMITER = ", ";
 
 
-    public int total => GetTotalDamage();
+    public int total => GetTotal();
 
     public int count => this.Count;
 
     public string txt => string.Join(LOOT_DELIMITER, this);
+
+    public LootList items => GetLootList();
 
     public DataLootList(string list = "")
     {
@@ -44,6 +48,7 @@ public class DataLootList : List<DataLootItem>
 
         return list;
     }
+
     private void setup(string list)
     {
 
@@ -55,7 +60,7 @@ public class DataLootList : List<DataLootItem>
         }
 
     }
-    private int GetTotalDamage()
+    private int GetTotal()
     {
         var total = 0;
 
@@ -65,6 +70,18 @@ public class DataLootList : List<DataLootItem>
         }
 
         return total;
+    }
+
+    private LootList GetLootList()
+    {
+
+        var list = new LootList();
+
+        foreach (DataLootItem item in this)
+            list.AddItem(item.name);
+
+        return list;
+
     }
 
 }
@@ -81,10 +98,7 @@ public class DataLootItem
     private string paramQTY = "";
     private string paramName = "";
 
-    private bool isNull
-    {
-        get { return (item == LOOTED_NULL); }
-    }
+    private bool isNull => (item == LOOTED_NULL);
 
     public int qty
     {
@@ -101,10 +115,7 @@ public class DataLootItem
         }
     }
 
-    public string name
-    {
-        get { return paramName; }
-    }
+    public string name => paramName;
 
     public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);
 

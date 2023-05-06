@@ -25,9 +25,11 @@ public class ParseOutput
             memo.add(parse.logTitle("Statistics Player"));
             memo.add(parse.PlayerGainedExperience.log("Experience"));
             memo.add(parse.PlayerHealedPower.log("HealedPower"));
+            // memo.add(parse.logLine('-'));
             memo.add(parse.PlayerLostPower.log("LostPower"));
             memo.add(parse.PlayerLostPower.byUnknown.log("unknown"));
             memo.add(parse.PlayerLostPower.byCreature.log("byCreature"));
+            // memo.add(parse.logLine('-'));
             memo.add(parse.PlayerLootedByCreature.log("LootedByCreature"));
             memo.add(parse.logTitle("Statistics Creature"));
             memo.add(parse.CreatureLostPower.log("LostPower"));
