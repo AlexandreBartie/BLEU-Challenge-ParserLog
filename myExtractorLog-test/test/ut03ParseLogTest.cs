@@ -121,8 +121,8 @@ public class UT03_ParseLogTest
     }
 
     [Theory]
-    [InlineData("ghoul, cyclops, cyclops smith, dragon, dwarf soldier", 8)]
-    public void TST07_ViewCreatureList(string log, int qty)
+    [InlineData("cyclops, cyclops smith, dragon, dwarf soldier, ghoul")]
+    public void TST07_ViewCreatureList(string creatures)
     {
 
         string input = "ServerLog-PlayerLostPower.txt";
@@ -131,9 +131,7 @@ public class UT03_ParseLogTest
 
         var list = parse.PlayerLostPower.byCreature.list;
 
-        Assert.Equal(qty, list.count);
-        // Assert.Equal(log, list.log("... ").csv);
-
+        Assert.Equal(creatures, list.creatures.txt);
 
     }
 

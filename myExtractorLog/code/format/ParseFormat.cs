@@ -1,25 +1,50 @@
+using app.util;
+
 namespace app.core;
 
 public class ParseFormat
 {
-        private string GetLog(string label, int value, int count, string unit)
+
+    private const int SIZE_LINE = 60;
+    private const int COLUMN_LABEL = 18;
+    private const int COLUMN_UNIT = 15;
+
+    private const int COLUMN_VALUE = 10;
+    private const int COLUMN_COUNT = 5;
+
+    private const string FORMAT_NUMBER = "##,###,##0";
+
+    private const string LABEL_UNIT = "points";
+
+    public string logTitle(string title)
     {
-        return $"{FormatLabel(label)}: {FormatValue(value)} {FormatUnit(unit)} {FormatCount(count)}";
+        var memo = new Memo();
+
+        memo.add(logLine());
+        memo.add(Text.TabCentralize(title, SIZE_LINE));
+        memo.add(logLine());
+        
+         return memo.txt;
     }
 
-    public string GetLogRecords(string label, int value, int count)
+    private string logLine()
     {
-        return GetLog(label, value, count, "logs");
+        return Text.Repeat('=', SIZE_LINE);
     }
 
-    public string GetLogPoints(string title, int value, int count)
+    public string GetLogPoints(string title, int value, int count, int tab = 1)
     {
-        return GetLog(title, value, count, "points");
+        return GetLog(title, value, count, LABEL_UNIT, tab);
     }
 
-    private string FormatLabel(string title) => title.PadLeft(20);
-    private string FormatUnit(string label) => label.PadRight(8);
-    private string FormatValue(int value) => value.ToString("##,###,##0").PadLeft(10);
-    private string FormatCount(int value) => "[" + value.ToString("#,##0").PadLeft(5) + "]"; 
+    private string GetLog(string label, int value, int count, string unit, int level)
+    {
+        return $"{FormatLabel(label, level)}: {FormatValue(value)} {FormatUnit(unit)} {FormatCount(count)}";
+    }
+
+    private string FormatLabel(string label, int level) => Text.TabLevel(label.PadRight(COLUMN_LABEL), level, 3);
+    private string FormatUnit(string unit) => unit.PadRight(COLUMN_UNIT);
+    private string FormatValue(int value) => value.ToString(FORMAT_NUMBER).PadLeft(COLUMN_VALUE);
+    private string FormatCount(int count) => count.ToString(FORMAT_NUMBER).PadLeft(COLUMN_COUNT); 
     
 }

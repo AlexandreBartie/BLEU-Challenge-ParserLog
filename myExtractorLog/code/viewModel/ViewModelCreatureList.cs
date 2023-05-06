@@ -1,6 +1,7 @@
 using app.core;
 using app.log;
 using app.data;
+using app.util;
 
 namespace app.view.model;
 
@@ -26,7 +27,14 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
 
     public override string log(string label)
     {
-        return view.GetLogPoints(label, totalDamage, count);
+        
+        var memo = new Memo();
+
+        memo.add(view.GetLogPoints(label, totalDamage, count, 2));
+
+        memo.add(list.log());
+        
+        return memo.txt;
     }
 
 }

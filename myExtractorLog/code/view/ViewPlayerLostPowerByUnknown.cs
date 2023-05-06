@@ -24,7 +24,7 @@ public class ViewPlayerLostPowerByUnknown : ViewModelGeneric
 
     public override string log(string label)
     {
-        return view.GetLogPoints(label, totalDamage, count);
+        return view.GetLogPoints(label, totalDamage, count, 2);
     }
 
 }

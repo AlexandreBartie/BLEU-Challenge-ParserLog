@@ -18,7 +18,7 @@ public class Memo : List<string>
         foreach (string item in list)
         {
             add(item);
-        }
+       }
 
     }
 

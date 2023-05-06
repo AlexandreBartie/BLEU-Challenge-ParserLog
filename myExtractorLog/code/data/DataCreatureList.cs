@@ -89,13 +89,13 @@ public class DataCreatureList : List<DataCreature>
 
         var memo = new Memo();
 
-        foreach (Creature item in creatures)
+        foreach (Creature item in creatures.OrderBy(item => item.name))
         {
             var creature = item.name;
 
             var list = filter(creature);
 
-            var log = view.GetLogPoints(creature, list.totalDamage, list.count);
+            var log = view.GetLogPoints(creature, list.totalDamage, list.count, 3);
 
             memo.Add(log);
         }

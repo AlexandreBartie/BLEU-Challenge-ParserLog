@@ -3,7 +3,8 @@ using app.util;
 namespace app.list;
 
 public class CreatureList : List<Creature>
-{
+{  
+    public string txt => string.Join(", ", this.OrderBy(item => item.name));
 
     public void AddItem(string name)
     {
@@ -28,6 +29,17 @@ public class CreatureList : List<Creature>
 
     }
 
+    private string GetTXT()
+    {
+
+        var memo = new Memo();
+
+        foreach (Creature item in this)
+            memo.Add(item.name);
+
+        return memo.txt;
+
+    }
 
 }
 
@@ -37,6 +49,8 @@ public class Creature
 
     public Creature(string name)
     { this.name = name;}
+
+    public override string ToString() => name;
 
 }
 

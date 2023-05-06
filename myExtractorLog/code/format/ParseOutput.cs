@@ -17,30 +17,26 @@ public class ParseOutput
     private string getTXT()
     {
 
+        var memo = new Memo();
+
         if (!parse.isNull)
         {
 
-            var memo = new Memo();
-
-            memo.add(totalLog("Total"));
+            memo.add(parse.logTitle("Statistics Player"));
             memo.add(parse.PlayerGainedExperience.log("Experience"));
             memo.add(parse.PlayerHealedPower.log("HealedPower"));
             memo.add(parse.PlayerLostPower.log("LostPower"));
-            memo.add(parse.PlayerLostPower.byUnknown.log("-unknown"));
-            memo.add(parse.PlayerLostPower.byCreature.log("-byCreature"));
+            memo.add(parse.PlayerLostPower.byUnknown.log("unknown"));
+            memo.add(parse.PlayerLostPower.byCreature.log("byCreature"));
             memo.add(parse.PlayerLootedByCreature.log("LootedByCreature"));
-            memo.add(parse.CreatureLostPower.log("CreatureLostPower"));
+            memo.add(parse.logTitle("Statistics Creature"));
+            memo.add(parse.CreatureLostPower.log("LostPower"));
+            memo.add(parse.logTitle("Statistics based by file log extracted"));
 
-            return (memo.txt);
         }
 
-        return "";
+        return (memo.txt);
 
-    }
-
-    private string totalLog(string label)
-    {
-        return parse.GetLogRecords(label, parse.logs.Count(), parse.sessions.Count());
     }
 
 }
