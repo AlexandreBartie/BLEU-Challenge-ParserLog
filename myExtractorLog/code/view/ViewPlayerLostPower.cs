@@ -1,5 +1,5 @@
 using app.core;
-using app.view.model;
+using app.model;
 namespace app.view;
 
 

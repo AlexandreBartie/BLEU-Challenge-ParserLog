@@ -1,4 +1,4 @@
-using app.list;
+using app.data;
 
 namespace app.log;
 
@@ -26,7 +26,7 @@ public struct ILogPlayerGainedExperience
 public struct ILogPlayerLootedByCreature
 {
     public string creature;
-    public LootList list;
+    public DataLootList list;
 
 }
 

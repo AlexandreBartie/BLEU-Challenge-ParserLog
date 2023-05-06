@@ -27,15 +27,13 @@ public static class Text
     public static string Tab(int index, int size = 2)
     { return Repeat(' ', index * size); }
 
-    public static string TabLevel(string text, int level, int max)
+    public static string TabLevel(string text, int level, int max, string mark = "-")
     { 
-
-        var tab = level - 1;
         
-        var prefix = Repeat('-', tab);
+        string prefix = (level == 1) ? "" : mark;
 
-        var start = Tab(level).Substring(tab);
-        var end = Tab(max - level);
+        string start = Tab(level).Substring(prefix.Length);
+        string end = Tab(max - level);
        
         return start + prefix + text + end; 
     }

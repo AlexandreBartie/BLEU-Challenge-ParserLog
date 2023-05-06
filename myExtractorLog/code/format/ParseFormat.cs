@@ -5,16 +5,17 @@ namespace app.core;
 public class ParseFormat
 {
 
-    private const int SIZE_LINE = 60;
+    private const int SIZE_LINE = 56;
     private const int COLUMN_LABEL = 18;
-    private const int COLUMN_UNIT = 15;
+    private const int COLUMN_UNIT = 8;
 
     private const int COLUMN_VALUE = 10;
     private const int COLUMN_COUNT = 5;
 
     private const string FORMAT_NUMBER = "##,###,##0";
 
-    private const string LABEL_UNIT = "points";
+    private const string LABEL_POINTS = "points";
+    private const string LABEL_ITEMS = "items";
 
     public string logTitle(string title)
     {
@@ -34,7 +35,12 @@ public class ParseFormat
 
     public string GetLogPoints(string title, int value, int count, int tab = 1)
     {
-        return GetLog(title, value, count, LABEL_UNIT, tab);
+        return GetLog(title, value, count, LABEL_POINTS, tab);
+    }
+
+    public string GetLogItems(string title, int value, int count, int tab = 1)
+    {
+        return GetLog(title, value, count, LABEL_ITEMS, tab);
     }
 
     private string GetLog(string label, int value, int count, string unit, int level)

@@ -1,7 +1,7 @@
 using app.core;
 using app.log;
-using app.list;
-using app.view.model;
+using app.data;
+using app.model;
 
 namespace app.view;
 
@@ -9,7 +9,7 @@ public class ViewPlayerLootedByCreature : ViewModelGeneric
 {
     public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
 
-    public LootList loot = new();
+    public DataLootList loot = new();
 
     public override void SumData()
     {
@@ -21,7 +21,7 @@ public class ViewPlayerLootedByCreature : ViewModelGeneric
 
     public override string log(string label)
     {
-        return view.GetLogPoints(label, loot.total, count);
+        return view.GetLogItems(label, loot.total, count);
     }
 
 }

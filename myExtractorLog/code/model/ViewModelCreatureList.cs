@@ -3,7 +3,7 @@ using app.log;
 using app.data;
 using app.util;
 
-namespace app.view.model;
+namespace app.model;
 
 public abstract class ViewModelCreatureList : ViewModelGeneric
 {

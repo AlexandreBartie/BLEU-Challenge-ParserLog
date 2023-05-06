@@ -1,9 +1,9 @@
 using System.Text.RegularExpressions;
 using app.util;
 
-namespace app.list;
+namespace app.data;
 
-public class LootList : List<LootItem>
+public class DataLootList : List<DataLootItem>
 {
 
     const string LOOT_DELIMITER = ", ";
@@ -15,28 +15,28 @@ public class LootList : List<LootItem>
 
     public string txt => string.Join(LOOT_DELIMITER, this);
 
-    public LootList(string list = "")
+    public DataLootList(string list = "")
     {
 
         if (list != "")
             setup(list);
     }
 
-    public void AddList(LootList list)
+    public void AddList(DataLootList list)
     {
 
-        foreach (LootItem loot in list)
+        foreach (DataLootItem loot in list)
         {
             Add(loot);
         }
     }
 
-    public LootList filter(string name)
+    public DataLootList filter(string name)
     {
 
-        var list = new LootList();
+        var list = new DataLootList();
 
-        foreach (LootItem loot in this)
+        foreach (DataLootItem loot in this)
         {
             if (Text.IsMatch(loot.name, name, true))
                 list.Add(loot);
@@ -51,7 +51,7 @@ public class LootList : List<LootItem>
 
         foreach (string item in items)
         {
-            Add(new LootItem(item));
+            Add(new DataLootItem(item));
         }
 
     }
@@ -59,7 +59,7 @@ public class LootList : List<LootItem>
     {
         var total = 0;
 
-        foreach (LootItem loot in this)
+        foreach (DataLootItem loot in this)
         {
             total += loot.qty;
         }
@@ -69,7 +69,7 @@ public class LootList : List<LootItem>
 
 }
 
-public class LootItem
+public class DataLootItem
 {
 
     const string LOOTED_NULL = "nothing";
@@ -108,7 +108,7 @@ public class LootItem
 
     public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);
 
-    public LootItem(string item)
+    public DataLootItem(string item)
     {
 
         this.item = item;

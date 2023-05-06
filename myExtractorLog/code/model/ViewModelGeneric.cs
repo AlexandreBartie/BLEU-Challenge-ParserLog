@@ -1,7 +1,7 @@
 using app.core;
 using app.log;
 
-namespace app.view.model;
+namespace app.model;
 
 public abstract class ViewModelGeneric : ViewModel
 {
