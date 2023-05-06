@@ -35,7 +35,7 @@ namespace app
 
             if (parse.LoadFile(name))
             {
-                Console.WriteLine(parse.output);
+                Console.WriteLine(parse.txt);
             }
             else
                 Environment.Exit(-1);

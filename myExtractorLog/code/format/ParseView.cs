@@ -3,7 +3,7 @@ using app.view;
 
 namespace app.core;
 
-public class ParseView
+public class ParseView : ParseFormat
 {
 
     public ParseSessions sessions = new();
@@ -40,25 +40,5 @@ public class ParseView
         PlayerLootedByCreature.SumData();
         CreatureLostPower.SumData();
     }
-
-    private string GetLog(string title, int value, int count, string unit)
-    {
-        return $"{FormatTitle(title)}: {FormatValue(value)} {FormatLabel(unit)} #{FormatCount(count)}";
-    }
-
-    public string GetLogRecords(string title, int value, int count)
-    {
-        return GetLog(title, value, count, "logs");
-    }
-
-    public string GetLogPoints(string title, int value, int count)
-    {
-        return GetLog(title, value, count, "points");
-    }
-
-    private string FormatTitle(string title) => title.PadLeft(25);
-    private string FormatLabel(string label) => label.PadLeft(10);
-    private string FormatValue(int value) => value.ToString("###,###,##0");
-    private string FormatCount(int value) => value.ToString("###,##0");
 
 }

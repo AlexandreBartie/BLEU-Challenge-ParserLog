@@ -1,9 +1,10 @@
 using app.core;
 using app.log;
+using app.view.model;
 
 namespace app.view;
 
-public class ViewPlayerLostPowerByUnknown : ViewModel
+public class ViewPlayerLostPowerByUnknown : ViewModelGeneric
 {
     public ViewPlayerLostPowerByUnknown(ParseView view) : base(view, TypeLog.eLogGamePlayerLostPowerByUnknown) { }
 
@@ -23,7 +24,7 @@ public class ViewPlayerLostPowerByUnknown : ViewModel
 
     public override string log(string label)
     {
-        return $"{label}: {totalDamage} points #{count}";
+        return view.GetLogPoints(label, totalDamage, count);
     }
 
 }

@@ -1,9 +1,10 @@
 using app.core;
 using app.log;
+using app.view.model;
 
 namespace app.view;
 
-public class ViewPlayerGainedExperience : ViewModel
+public class ViewPlayerGainedExperience : ViewModelGeneric
 {
     public ViewPlayerGainedExperience(ParseView view) : base(view, TypeLog.eLogGamePlayerGainedExperience) { }
 

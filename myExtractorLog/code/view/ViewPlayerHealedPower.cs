@@ -1,9 +1,10 @@
 using app.core;
 using app.log;
+using app.view.model;
 
 namespace app.view;
 
-public class ViewPlayerHealedPower : ViewModel
+public class ViewPlayerHealedPower : ViewModelGeneric
 {
     public ViewPlayerHealedPower(ParseView view) : base(view, TypeLog.eLogGamePlayerHealedPower) { }
 
@@ -22,7 +23,7 @@ public class ViewPlayerHealedPower : ViewModel
 
     public override string log(string label)
     {
-        return $"{label}: {totalHealed} points #{count}";
+        return view.GetLogPoints(label, totalHealed, count);
     }
 
 }

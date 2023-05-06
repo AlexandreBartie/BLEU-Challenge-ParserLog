@@ -1,3 +1,4 @@
+using app.format;
 namespace app.core;
 
 public class ParseLog : ParseView
@@ -7,9 +8,9 @@ public class ParseLog : ParseView
 
     private string path;
     private ParseImport import;
-    private ParseExport export;
+    private ParseOutput output;
 
-    public string output => export.output;
+    public string txt => output.txt;
 
 
     public ParseLog(string path = "")
@@ -17,7 +18,7 @@ public class ParseLog : ParseView
         this.path = path;
 
         import = new ParseImport(this);
-        export = new ParseExport(this);
+        output = new ParseOutput(this);
 
     }
 

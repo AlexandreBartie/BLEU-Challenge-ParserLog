@@ -1,5 +1,6 @@
 using app.core;
 using app.log;
+using app.view.model;
 
 namespace app.view;
 

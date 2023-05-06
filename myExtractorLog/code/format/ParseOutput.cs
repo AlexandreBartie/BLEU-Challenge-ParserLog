@@ -1,19 +1,20 @@
+using app.core;
 using app.util;
 
-namespace app.core;
+namespace app.format;
 
-public class ParseExport
+public class ParseOutput
 {
 
     private ParseLog parse;
 
-    public string output => getOutput();
+    public string txt => getTXT();
 
-    public ParseExport(ParseLog parse)
+    public ParseOutput(ParseLog parse)
     {
         this.parse = parse;
     }
-    private string getOutput()
+    private string getTXT()
     {
 
         if (!parse.isNull)
@@ -41,6 +42,5 @@ public class ParseExport
     {
         return parse.GetLogRecords(label, parse.logs.Count(), parse.sessions.Count());
     }
-
 
 }

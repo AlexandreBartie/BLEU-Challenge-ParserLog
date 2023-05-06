@@ -1,13 +1,16 @@
+using app.core;
 using app.list;
 using app.log;
 using app.util;
 
-namespace app.view;
+namespace app.data;
 
-public class ViewCreatureList : List<ViewCreatureItem>
+public class DataCreatureList : List<DataCreature>
 {
 
-    private TypeLog type;
+    public readonly ParseView view;
+
+    public readonly TypeLog type;
 
     public CreatureList creatures => GetCreatures();
 
@@ -15,8 +18,11 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
     public int count => this.Count;
 
-    public ViewCreatureList(TypeLog type)
-    { this.type = type; }
+    public DataCreatureList(ParseView view, TypeLog type)
+    { 
+        this.view = view; 
+        this.type = type; 
+    }
 
     public void AddDamage(RecordLog log)
     {
@@ -30,20 +36,20 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
     private void AddDamage(ILogPlayerLostPowerByCreature data)
     {
-        Add(new ViewCreatureItem(data.creature, data.points));
+        Add(new DataCreature(data.creature, data.points));
     }
 
     private void AddDamage(ILogCreatureLostPower data)
     {
-        Add(new ViewCreatureItem(data.creature, data.points));
+        Add(new DataCreature(data.creature, data.points));
     }
 
-    public ViewCreatureList filter(string creature)
+    public DataCreatureList filter(string creature)
     {
 
-        var list = new ViewCreatureList(type);
+        var list = new DataCreatureList(view, type);
 
-        foreach (ViewCreatureItem item in this)
+        foreach (DataCreature item in this)
         {
             if (Text.IsMatch(item.creature, creature))
                 list.Add(item);
@@ -57,7 +63,7 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
         var list = new CreatureList();
 
-        foreach (ViewCreatureItem item in this)
+        foreach (DataCreature item in this)
         {
             list.AddItem(item.creature);
         }
@@ -70,7 +76,7 @@ public class ViewCreatureList : List<ViewCreatureItem>
     {
         var total = 0;
 
-        foreach (ViewCreatureItem item in this)
+        foreach (DataCreature item in this)
         {
             total += item.damage;
         }
@@ -89,7 +95,9 @@ public class ViewCreatureList : List<ViewCreatureItem>
 
             var list = filter(creature);
 
-            memo.Add($"{Text.Tab(35)}{creature}: {list.totalDamage} points #{list.count}");
+            var log = view.GetLogPoints(creature, list.totalDamage, list.count);
+
+            memo.Add(log);
         }
 
         return memo.txt;
@@ -97,13 +105,14 @@ public class ViewCreatureList : List<ViewCreatureItem>
     }
 
 }
-public class ViewCreatureItem
+
+public class DataCreature
 {
 
     public string creature;
     public int damage;
 
-    public ViewCreatureItem(string creature, int damage)
+    public DataCreature(string creature, int damage)
     {
         this.creature = creature;
         this.damage = damage;

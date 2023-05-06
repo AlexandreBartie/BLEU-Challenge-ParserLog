@@ -1,10 +1,11 @@
 using app.core;
 using app.log;
 using app.list;
+using app.view.model;
 
 namespace app.view;
 
-public class ViewPlayerLootedByCreature : ViewModel
+public class ViewPlayerLootedByCreature : ViewModelGeneric
 {
     public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
 
@@ -20,7 +21,7 @@ public class ViewPlayerLootedByCreature : ViewModel
 
     public override string log(string label)
     {
-        return $"{label}: {loot.total} points #{count}";
+        return view.GetLogPoints(label, loot.total, count);
     }
 
 }

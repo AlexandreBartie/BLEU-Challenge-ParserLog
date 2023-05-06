@@ -1,8 +1,12 @@
 using app.core;
+using app.view.model;
 namespace app.view;
+
 
 public class ViewPlayerLostPower
 {
+    private ParseView view;
+
     public readonly ViewPlayerLostPowerByUnknown byUnknown;
     public readonly ViewPlayerLostPowerByCreature byCreature;
 
@@ -12,6 +16,8 @@ public class ViewPlayerLostPower
 
     public ViewPlayerLostPower(ParseView view)
     {
+        this.view = view;
+        
         byUnknown = new ViewPlayerLostPowerByUnknown(view);
         byCreature = new ViewPlayerLostPowerByCreature(view);
     }
@@ -25,7 +31,7 @@ public class ViewPlayerLostPower
 
     public string log(string label)
     {
-        return $"{label}: {totalDamage} points #{count}";
+        return view.GetLogPoints(label, totalDamage, count);
     }
 
 
