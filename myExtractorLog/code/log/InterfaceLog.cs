@@ -1,4 +1,4 @@
-using app.data;
+using app.group;
 
 namespace app.log;
 
@@ -10,7 +10,7 @@ public struct ILogPlayerPoints
 public struct ILogPlayerLooted
 {
     public string creature;
-    public DataListLoot list;
+    public GroupLootList list;
 
 }
 

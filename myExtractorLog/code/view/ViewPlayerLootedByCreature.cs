@@ -1,6 +1,6 @@
 using app.core;
 using app.log;
-using app.data;
+using app.group;
 using app.model;
 using app.util;
 using app.list;
@@ -11,7 +11,7 @@ public class ViewPlayerLootedByCreature : ViewModelGeneric
 {
     public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogPlayerLootedByCreature) { }
 
-    public DataListLoot loot = new();
+    public GroupLootList loot = new();
 
     public override void SumData()
     {

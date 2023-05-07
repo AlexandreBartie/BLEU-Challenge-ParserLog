@@ -91,8 +91,8 @@ public class UT01_RecordLogTest
         log = new(info);
 
         Assert.Equal(type, log.type);
-        Assert.Equal(creature, log.dataCreatureLostPower.creature);
-        Assert.Equal(points, log.dataCreatureLostPower.points);
+        Assert.Equal(creature, log.GroupCreatureLostPower.creature);
+        Assert.Equal(points, log.GroupCreatureLostPower.points);
 
     }
 

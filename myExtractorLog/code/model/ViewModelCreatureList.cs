@@ -1,6 +1,6 @@
 using app.core;
 using app.log;
-using app.data;
+using app.group;
 using app.util;
 
 namespace app.model;
@@ -8,10 +8,10 @@ namespace app.model;
 public abstract class ViewModelListCreature : ViewModelGeneric
 {
 
-    public DataListCreature list;
+    public GroupCreatureList list;
 
     public ViewModelListCreature(ParseView view, TypeLog type) : base(view, type)
-    { list = new DataListCreature(view, type); }
+    { list = new GroupCreatureList(view, type); }
 
     public override void SumData()
     {

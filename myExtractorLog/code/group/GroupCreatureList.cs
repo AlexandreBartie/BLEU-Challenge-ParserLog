@@ -3,9 +3,9 @@ using app.list;
 using app.log;
 using app.util;
 
-namespace app.data;
+namespace app.group;
 
-public class DataListCreature : List<DataCreature>
+public class GroupCreatureList : List<GroupCreature>
 {
 
     public readonly ParseView view;
@@ -18,7 +18,7 @@ public class DataListCreature : List<DataCreature>
 
     public int count => this.Count;
 
-    public DataListCreature(ParseView view, TypeLog type)
+    public GroupCreatureList(ParseView view, TypeLog type)
     {
         this.view = view;
         this.type = type;
@@ -30,24 +30,24 @@ public class DataListCreature : List<DataCreature>
             AddItem(log.dataPlayerLostPowerByCreature);
 
         if (type == TypeLog.eLogCreatureHealedPower)
-            AddItem(log.dataCreatureHealedPower);
+            AddItem(log.GroupCreatureHealedPower);
 
         if (type == TypeLog.eLogCreatureLostPower)
-            AddItem(log.dataCreatureLostPower);
+            AddItem(log.GroupCreatureLostPower);
 
     }
 
     private void AddItem(ILogCreaturePoints data)
     {
-        Add(new DataCreature(data.creature, data.points));
+        Add(new GroupCreature(data.creature, data.points));
     }
 
-    public DataListCreature filter(string creature)
+    public GroupCreatureList filter(string creature)
     {
 
-        var list = new DataListCreature(view, type);
+        var list = new GroupCreatureList(view, type);
 
-        foreach (DataCreature item in this)
+        foreach (GroupCreature item in this)
         {
             if (Text.IsMatch(item.creature, creature))
                 list.Add(item);
@@ -61,7 +61,7 @@ public class DataListCreature : List<DataCreature>
 
         var list = new ListCreature();
 
-        foreach (DataCreature item in this)
+        foreach (GroupCreature item in this)
         {
             list.AddItem(item.creature);
         }
@@ -74,7 +74,7 @@ public class DataListCreature : List<DataCreature>
     {
         var total = 0;
 
-        foreach (DataCreature item in this)
+        foreach (GroupCreature item in this)
         {
             total += item.points;
         }
@@ -104,13 +104,13 @@ public class DataListCreature : List<DataCreature>
 
 }
 
-public class DataCreature
+public class GroupCreature
 {
 
     public string creature;
     public int points;
 
-    public DataCreature(string creature, int points)
+    public GroupCreature(string creature, int points)
     {
         this.creature = creature;
         this.points = points;

@@ -11,8 +11,8 @@ public class RecordLog : BaseLog
     public ILogPlayerPoints dataPlayerLostPower => regex.data.GetPlayerPoints();
     public ILogCreaturePoints dataPlayerLostPowerByCreature => regex.data.GetCreaturePoints(TypeLog.eLogPlayerLostPowerByCreature);
     public ILogPlayerLooted dataPlayerLootedByCreature => regex.data.GetPlayerLooted();
-    public ILogCreaturePoints dataCreatureHealedPower => regex.data.GetCreaturePoints(TypeLog.eLogCreatureHealedPower);
-    public ILogCreaturePoints dataCreatureLostPower => regex.data.GetCreaturePoints(TypeLog.eLogCreatureLostPower);
+    public ILogCreaturePoints GroupCreatureHealedPower => regex.data.GetCreaturePoints(TypeLog.eLogCreatureHealedPower);
+    public ILogCreaturePoints GroupCreatureLostPower => regex.data.GetCreaturePoints(TypeLog.eLogCreatureLostPower);
 }
 
 public class RecordsLog : List<RecordLog>

@@ -2,9 +2,9 @@ using System.Text.RegularExpressions;
 using app.list;
 using app.util;
 
-namespace app.data;
+namespace app.group;
 
-public class DataListLoot : List<DataLootItem>
+public class GroupLootList : List<GroupLootItem>
 {
 
     const string LOOT_DELIMITER = ", ";
@@ -18,28 +18,28 @@ public class DataListLoot : List<DataLootItem>
 
     public ListLoot items => GetListLoot();
 
-    public DataListLoot(string list = "")
+    public GroupLootList(string list = "")
     {
 
         if (list != "")
             setup(list);
     }
 
-    public void AddList(DataListLoot list)
+    public void AddList(GroupLootList list)
     {
 
-        foreach (DataLootItem loot in list)
+        foreach (GroupLootItem loot in list)
         {
             Add(loot);
         }
     }
 
-    public DataListLoot filter(string name)
+    public GroupLootList filter(string name)
     {
 
-        var list = new DataListLoot();
+        var list = new GroupLootList();
 
-        foreach (DataLootItem loot in this)
+        foreach (GroupLootItem loot in this)
         {
             if (Text.IsMatch(loot.name, name, true))
                 list.Add(loot);
@@ -55,7 +55,7 @@ public class DataListLoot : List<DataLootItem>
 
         foreach (string item in items)
         {
-            Add(new DataLootItem(item));
+            Add(new GroupLootItem(item));
         }
 
     }
@@ -63,7 +63,7 @@ public class DataListLoot : List<DataLootItem>
     {
         var total = 0;
 
-        foreach (DataLootItem loot in this)
+        foreach (GroupLootItem loot in this)
         {
             total += loot.qty;
         }
@@ -76,7 +76,7 @@ public class DataListLoot : List<DataLootItem>
 
         var list = new ListLoot();
 
-        foreach (DataLootItem item in this)
+        foreach (GroupLootItem item in this)
             list.AddItem(item.name);
 
         return list;
@@ -85,7 +85,7 @@ public class DataListLoot : List<DataLootItem>
 
 }
 
-public class DataLootItem
+public class GroupLootItem
 {
 
     const string LOOTED_NULL = "nothing";
@@ -118,7 +118,7 @@ public class DataLootItem
 
     public override string ToString() => isNull ? "" : String.Format("{0} {1}", qty, paramName);
 
-    public DataLootItem(string item)
+    public GroupLootItem(string item)
     {
 
         this.item = item;

@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using app.data;
+using app.group;
 
 namespace app.log;
 
@@ -49,7 +49,7 @@ public class RegexData
         ILogPlayerLooted data = new();
 
         data.creature = GetParameter(1);
-        data.list = new DataListLoot(GetParameter(2));
+        data.list = new GroupLootList(GetParameter(2));
 
         return data;
     }
