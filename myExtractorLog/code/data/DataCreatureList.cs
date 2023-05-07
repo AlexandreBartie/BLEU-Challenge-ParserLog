@@ -5,20 +5,20 @@ using app.util;
 
 namespace app.data;
 
-public class DataCreatureList : List<DataCreature>
+public class DataListCreature : List<DataCreature>
 {
 
     public readonly ParseView view;
 
     public readonly TypeLog type;
 
-    public CreatureList creatures => GetCreatures();
+    public ListCreature creatures => GetCreatures();
 
     public int total => GetTotal();
 
     public int count => this.Count;
 
-    public DataCreatureList(ParseView view, TypeLog type)
+    public DataListCreature(ParseView view, TypeLog type)
     {
         this.view = view;
         this.type = type;
@@ -42,10 +42,10 @@ public class DataCreatureList : List<DataCreature>
         Add(new DataCreature(data.creature, data.points));
     }
 
-    public DataCreatureList filter(string creature)
+    public DataListCreature filter(string creature)
     {
 
-        var list = new DataCreatureList(view, type);
+        var list = new DataListCreature(view, type);
 
         foreach (DataCreature item in this)
         {
@@ -56,10 +56,10 @@ public class DataCreatureList : List<DataCreature>
         return list;
     }
 
-    private CreatureList GetCreatures()
+    private ListCreature GetCreatures()
     {
 
-        var list = new CreatureList();
+        var list = new ListCreature();
 
         foreach (DataCreature item in this)
         {

@@ -49,7 +49,7 @@ public class RegexData
         ILogPlayerLooted data = new();
 
         data.creature = GetParameter(1);
-        data.list = new DataLootList(GetParameter(2));
+        data.list = new DataListLoot(GetParameter(2));
 
         return data;
     }

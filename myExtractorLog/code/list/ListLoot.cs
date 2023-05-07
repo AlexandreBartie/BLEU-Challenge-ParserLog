@@ -2,8 +2,8 @@ using app.util;
 
 namespace app.list;
 
-public class LootList : List<LootItem>
-{  
+public class ListLoot : List<LootItem>
+{
     public string txt => string.Join(", ", this.OrderBy(item => item.name));
 
     public void AddItem(string name)
@@ -11,7 +11,7 @@ public class LootList : List<LootItem>
         if (name.Trim() == "")
             return;
 
-        if(!Found(name))
+        if (!Found(name))
             Add(new LootItem(name));
 
     }
@@ -45,12 +45,12 @@ public class LootList : List<LootItem>
 
 public class LootItem
 {
- 
+
     private string _name;
     public string name => _name;
 
     public LootItem(string name)
-    { _name = name;}
+    { _name = name; }
 
     public override string ToString() => name;
 

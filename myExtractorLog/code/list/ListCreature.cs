@@ -2,8 +2,8 @@ using app.util;
 
 namespace app.list;
 
-public class CreatureList : List<Creature>
-{  
+public class ListCreature : List<Creature>
+{
     public string txt => string.Join(", ", this.OrderBy(item => item.name));
 
     public void AddItem(string name)
@@ -11,7 +11,7 @@ public class CreatureList : List<Creature>
         if (name.Trim() == "")
             return;
 
-        if(!Found(name))
+        if (!Found(name))
             Add(new Creature(name));
 
     }
@@ -48,7 +48,7 @@ public class Creature
     public readonly string name;
 
     public Creature(string name)
-    { this.name = name;}
+    { this.name = name; }
 
     public override string ToString() => name;
 

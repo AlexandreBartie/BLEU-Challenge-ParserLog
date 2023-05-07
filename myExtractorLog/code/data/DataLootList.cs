@@ -1,11 +1,10 @@
 using System.Text.RegularExpressions;
-using app.core;
 using app.list;
 using app.util;
 
 namespace app.data;
 
-public class DataLootList : List<DataLootItem>
+public class DataListLoot : List<DataLootItem>
 {
 
     const string LOOT_DELIMITER = ", ";
@@ -17,16 +16,16 @@ public class DataLootList : List<DataLootItem>
 
     public string txt => string.Join(LOOT_DELIMITER, this);
 
-    public LootList items => GetLootList();
+    public ListLoot items => GetListLoot();
 
-    public DataLootList(string list = "")
+    public DataListLoot(string list = "")
     {
 
         if (list != "")
             setup(list);
     }
 
-    public void AddList(DataLootList list)
+    public void AddList(DataListLoot list)
     {
 
         foreach (DataLootItem loot in list)
@@ -35,10 +34,10 @@ public class DataLootList : List<DataLootItem>
         }
     }
 
-    public DataLootList filter(string name)
+    public DataListLoot filter(string name)
     {
 
-        var list = new DataLootList();
+        var list = new DataListLoot();
 
         foreach (DataLootItem loot in this)
         {
@@ -72,10 +71,10 @@ public class DataLootList : List<DataLootItem>
         return total;
     }
 
-    private LootList GetLootList()
+    private ListLoot GetListLoot()
     {
 
-        var list = new LootList();
+        var list = new ListLoot();
 
         foreach (DataLootItem item in this)
             list.AddItem(item.name);

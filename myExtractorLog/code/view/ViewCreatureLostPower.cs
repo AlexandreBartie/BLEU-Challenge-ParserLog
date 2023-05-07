@@ -4,7 +4,7 @@ using app.model;
 
 namespace app.view;
 
-public class ViewCreatureLostPower : ViewModelCreatureList
+public class ViewCreatureLostPower : ViewModelListCreature
 {
     public ViewCreatureLostPower(ParseView view) : base(view, TypeLog.eLogCreatureLostPower) { }
 }

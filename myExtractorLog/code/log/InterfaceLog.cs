@@ -10,7 +10,7 @@ public struct ILogPlayerPoints
 public struct ILogPlayerLooted
 {
     public string creature;
-    public DataLootList list;
+    public DataListLoot list;
 
 }
 

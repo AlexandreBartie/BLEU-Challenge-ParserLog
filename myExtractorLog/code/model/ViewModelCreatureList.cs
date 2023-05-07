@@ -5,13 +5,13 @@ using app.util;
 
 namespace app.model;
 
-public abstract class ViewModelCreatureList : ViewModelGeneric
+public abstract class ViewModelListCreature : ViewModelGeneric
 {
 
-    public DataCreatureList list;
+    public DataListCreature list;
 
-    public ViewModelCreatureList(ParseView view, TypeLog type) : base(view, type)
-    { list = new DataCreatureList(view, type); }
+    public ViewModelListCreature(ParseView view, TypeLog type) : base(view, type)
+    { list = new DataListCreature(view, type); }
 
     public override void SumData()
     {
@@ -25,13 +25,13 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
 
     public override string log(string label)
     {
-        
+
         var memo = new Memo();
 
         memo.add(view.GetLogPoints(label, list.total, count, 2));
 
         memo.add(list.log());
-        
+
         return memo.txt;
     }
 

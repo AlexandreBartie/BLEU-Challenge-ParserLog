@@ -5,7 +5,7 @@ namespace myappxunit;
 public class UT02_LootedListTest
 {
 
-    private DataLootList? list;
+    private DataListLoot? list;
 
     [Theory]
     [InlineData("a gold coin", "1 gold coin")]

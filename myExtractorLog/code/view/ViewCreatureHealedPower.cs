@@ -4,7 +4,7 @@ using app.model;
 
 namespace app.view;
 
-public class ViewCreatureHealedPower : ViewModelCreatureList
+public class ViewCreatureHealedPower : ViewModelListCreature
 {
     public ViewCreatureHealedPower(ParseView view) : base(view, TypeLog.eLogCreatureHealedPower) { }
 }

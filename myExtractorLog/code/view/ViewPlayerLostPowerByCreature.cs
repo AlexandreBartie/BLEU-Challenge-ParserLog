@@ -4,11 +4,11 @@ using app.model;
 
 namespace app.view;
 
-public class ViewPlayerLostPowerByCreature : ViewModelCreatureList
+public class ViewPlayerLostPowerByCreature : ViewModelListCreature
 {
-    
+
     public int totalDamage => list.total;
-    
+
     public ViewPlayerLostPowerByCreature(ParseView view) : base(view, TypeLog.eLogPlayerLostPowerByCreature) { }
 
 }

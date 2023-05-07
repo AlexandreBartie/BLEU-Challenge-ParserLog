@@ -11,7 +11,7 @@ public class ViewPlayerLootedByCreature : ViewModelGeneric
 {
     public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogPlayerLootedByCreature) { }
 
-    public DataLootList loot = new();
+    public DataListLoot loot = new();
 
     public override void SumData()
     {
