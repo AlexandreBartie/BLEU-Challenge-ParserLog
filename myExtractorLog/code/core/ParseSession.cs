@@ -26,12 +26,18 @@ public class ParseSessions : List<ParseSession>
         foreach (string line in lines)
         {
 
-            log = new RecordLog(line);
+            if (line.Trim() != "")
+            {
 
-            if (log.isHeader)
-                addHeader();
+                log = new RecordLog(line);
 
-            addRecord(log);
+                if (log.isHeader)
+                    addHeader();
+
+                addRecord(log);
+
+            }
+            
 
         }
 

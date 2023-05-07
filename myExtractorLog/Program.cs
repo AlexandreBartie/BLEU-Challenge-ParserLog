@@ -19,9 +19,9 @@ namespace app
             string fileName;
 
 #if DEBUG
-            fileName = "Session-One.txt";
+            fileName = "Session-Full.txt";
 #else
-                fileName = args[0];
+            fileName = args[0];
 #endif
 
             startApp(fileName);

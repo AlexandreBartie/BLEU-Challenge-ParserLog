@@ -70,7 +70,7 @@ public class UT04_CreatureLogTest
     }
 
     [Theory]
-    [InlineData("dragon")]
+    [InlineData("dragon, dragon lord")]
     public void TST03_CreatureList_ByCreatureHealedPower(string creatures)
     {
 

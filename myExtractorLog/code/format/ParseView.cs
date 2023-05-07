@@ -41,6 +41,7 @@ public class ParseView : ParseFormat
         PlayerLostPower.SumData();
         PlayerGainedExperience.SumData();
         PlayerLootedByCreature.SumData();
+        CreatureHealedPower.SumData();
         CreatureLostPower.SumData();
     }
 
