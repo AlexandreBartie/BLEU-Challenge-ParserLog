@@ -1,3 +1,4 @@
+using app.regex;
 namespace app.log;
 
 public class BaseLog

@@ -1,7 +1,8 @@
 using System.Text.RegularExpressions;
 using app.group;
+using app.log;
 
-namespace app.log;
+namespace app.regex;
 
 public class RegexData
 {

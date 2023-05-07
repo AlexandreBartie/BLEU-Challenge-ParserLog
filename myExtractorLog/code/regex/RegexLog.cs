@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
+using app.log;
 
-namespace app.log;
+namespace app.regex;
 
 public class RegexLog : RegexSettings
 {
