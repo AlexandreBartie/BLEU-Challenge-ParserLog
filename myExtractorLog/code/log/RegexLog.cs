@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using app.util;
 
 namespace app.log;
 
@@ -15,6 +14,8 @@ public class RegexLog : RegexSettings
 
     public Match? match => _match;
 
+    public RegexData data;
+
     public RegexLog(string msg, string time)
     {
 
@@ -25,13 +26,8 @@ public class RegexLog : RegexSettings
         else
             GetTypeLogByGame();
 
-    }
+        data = new RegexData(match);
 
-    public string GetParameter(int index)
-    {     
-        if (match != null)
-            return match.Groups[index].Value;
-        return "" ;
     }
 
     private void GetTypeLogByNote()
@@ -47,24 +43,27 @@ public class RegexLog : RegexSettings
     private void GetTypeLogByGame()
     {
 
-        _type = TypeLog.eLogGameMessage;
+        _type = TypeLog.eLogMessage;
 
-        if (MatchTypeLog(TypeLog.eLogGamePlayerHealedPower))
+        if (MatchTypeLog(TypeLog.eLogPlayerHealedPower))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogGamePlayerLostPowerByUnknown))
+        if (MatchTypeLog(TypeLog.eLogPlayerLostPowerByUnknown))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogGamePlayerLostPowerByCreature))
+        if (MatchTypeLog(TypeLog.eLogPlayerLostPowerByCreature))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogGamePlayerGainedExperience))
+        if (MatchTypeLog(TypeLog.eLogPlayerGainedExperience))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogGamePlayerLootedByCreature))
+        if (MatchTypeLog(TypeLog.eLogPlayerLootedByCreature))
             return;
 
-        if (MatchTypeLog(TypeLog.eLogGameCreatureLostPower))
+        if (MatchTypeLog(TypeLog.eLogCreatureHealedPower))
+            return;
+
+        if (MatchTypeLog(TypeLog.eLogCreatureLostPower))
             return;
 
     }
@@ -73,9 +72,9 @@ public class RegexLog : RegexSettings
     {
 
         var pattern = getPattern(item);
-        
+
         var check = Regex.Match(text, pattern);
-        
+
         if (check.Success)
         {
             _type = item;

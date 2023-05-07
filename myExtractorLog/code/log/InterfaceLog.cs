@@ -2,35 +2,19 @@ using app.data;
 
 namespace app.log;
 
-public struct ILogPlayerHealedPower
+public struct ILogPlayerPoints
 {
     public int points;
 }
 
-public struct ILogPlayerLostPower
-{
-    public int points;
-}
-
-public struct ILogPlayerLostPowerByCreature
-{
-    public int points;
-    public string creature;
-}
-
-public struct ILogPlayerGainedExperience
-{
-    public int points;
-}
-
-public struct ILogPlayerLootedByCreature
+public struct ILogPlayerLooted
 {
     public string creature;
     public DataLootList list;
 
 }
 
-public struct ILogCreatureLostPower
+public struct ILogCreaturePoints
 {
     public string creature;
     public int points;

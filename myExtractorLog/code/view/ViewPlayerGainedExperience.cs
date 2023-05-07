@@ -6,7 +6,7 @@ namespace app.view;
 
 public class ViewPlayerGainedExperience : ViewModelGeneric
 {
-    public ViewPlayerGainedExperience(ParseView view) : base(view, TypeLog.eLogGamePlayerGainedExperience) { }
+    public ViewPlayerGainedExperience(ParseView view) : base(view, TypeLog.eLogPlayerGainedExperience) { }
 
     public int totalExperience;
 

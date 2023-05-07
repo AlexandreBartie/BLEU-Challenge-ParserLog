@@ -10,25 +10,28 @@ public enum TypeLog
     eLogNoteMessage = 1,
 
     // XX:XX Today's boosted boss: Goshnar's Malice
-    eLogGameMessage = 10,
+    eLogMessage = 10,
 
     // XX:XX You healed yourself for 328 hitpoints.
-    eLogGamePlayerHealedPower = 11,
+    eLogPlayerHealedPower = 11,
 
     // XX:XX You lose 1 hitpoint.
-    eLogGamePlayerLostPowerByUnknown = 12,
+    eLogPlayerLostPowerByUnknown = 12,
 
     // XX:XX You lose 31 hitpoints due to an attack by a cyclops.
-    eLogGamePlayerLostPowerByCreature = 13,
+    eLogPlayerLostPowerByCreature = 13,
 
     // XX:XX You gained 150 experience points.
-    eLogGamePlayerGainedExperience = 14,
+    eLogPlayerGainedExperience = 14,
 
     // XX:XX Loot of a cyclops: 6 gold coins, a meet.
-    eLogGamePlayerLootedByCreature = 15,
+    eLogPlayerLootedByCreature = 15,
+
+    // XX:XX A dragon healed itself for 60 hitpoints.
+    eLogCreatureHealedPower = 16,
 
     // XX:XX A cyclops loses 260 hitpoints due to your attack.
-    eLogGameCreatureLostPower = 16,
+    eLogCreatureLostPower = 17,
 
 }
 
@@ -58,6 +61,10 @@ public class RegexSettings
     // example: Loot of a cyclops: 6 gold coins, meat.
     private string tagLootedByCreature = @"^Loot of a (.*): (.*).$";
 
+    // variations of CreatureHealedPower
+    // example: A dragon healed itself for 60 hitpoints.
+    private string tagCreatureHealedPower = @"^A (.*) healed itself for (\d+) hitpoint(s)?.$";
+
     // variations of CreatureLostPower
     // example: A cyclops loses 260 hitpoints due to your attack.
     private string tagCreatureLostPower = @"^A (.*) loses (\d+) hitpoint(s)? due to your attack.$";
@@ -68,12 +75,13 @@ public class RegexSettings
         return (type) switch
         {
             TypeLog.eLogNoteSession => tagSession,
-            TypeLog.eLogGamePlayerHealedPower => tagHealedPower,
-            TypeLog.eLogGamePlayerLostPowerByUnknown => tagLostPowerByUnknown,
-            TypeLog.eLogGamePlayerLostPowerByCreature => tagLostPowerByCreature,
-            TypeLog.eLogGamePlayerGainedExperience => tagGainedExperience,
-            TypeLog.eLogGamePlayerLootedByCreature => tagLootedByCreature,
-            TypeLog.eLogGameCreatureLostPower => tagCreatureLostPower,
+            TypeLog.eLogPlayerHealedPower => tagHealedPower,
+            TypeLog.eLogPlayerLostPowerByUnknown => tagLostPowerByUnknown,
+            TypeLog.eLogPlayerLostPowerByCreature => tagLostPowerByCreature,
+            TypeLog.eLogPlayerGainedExperience => tagGainedExperience,
+            TypeLog.eLogPlayerLootedByCreature => tagLootedByCreature,
+            TypeLog.eLogCreatureHealedPower => tagCreatureHealedPower,
+            TypeLog.eLogCreatureLostPower => tagCreatureLostPower,
             _ => ""
         };
 

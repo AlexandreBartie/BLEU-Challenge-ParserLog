@@ -9,7 +9,7 @@ namespace app.view;
 
 public class ViewPlayerLootedByCreature : ViewModelGeneric
 {
-    public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogGamePlayerLootedByCreature) { }
+    public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogPlayerLootedByCreature) { }
 
     public DataLootList loot = new();
 
@@ -23,13 +23,13 @@ public class ViewPlayerLootedByCreature : ViewModelGeneric
 
     public override string log(string label)
     {
-        
+
         var memo = new Memo();
 
         memo.add(view.GetLogItems(label, loot.total, count));
 
         memo.add(logList());
-        
+
         return memo.txt;
     }
 

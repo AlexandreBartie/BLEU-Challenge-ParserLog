@@ -19,27 +19,22 @@ public class DataCreatureList : List<DataCreature>
     public int count => this.Count;
 
     public DataCreatureList(ParseView view, TypeLog type)
-    { 
-        this.view = view; 
-        this.type = type; 
+    {
+        this.view = view;
+        this.type = type;
     }
 
     public void AddDamage(RecordLog log)
     {
-        if (type == TypeLog.eLogGamePlayerLostPowerByCreature)
+        if (type == TypeLog.eLogPlayerLostPowerByCreature)
             AddDamage(log.dataPlayerLostPowerByCreature);
 
-        if (type == TypeLog.eLogGameCreatureLostPower)
+        if (type == TypeLog.eLogCreatureLostPower)
             AddDamage(log.dataCreatureLostPower);
 
     }
 
-    private void AddDamage(ILogPlayerLostPowerByCreature data)
-    {
-        Add(new DataCreature(data.creature, data.points));
-    }
-
-    private void AddDamage(ILogCreatureLostPower data)
+    private void AddDamage(ILogCreaturePoints data)
     {
         Add(new DataCreature(data.creature, data.points));
     }

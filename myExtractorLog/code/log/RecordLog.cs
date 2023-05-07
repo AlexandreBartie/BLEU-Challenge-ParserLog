@@ -1,5 +1,3 @@
-using app.data;
-
 namespace app.log;
 
 public class RecordLog : BaseLog
@@ -8,90 +6,13 @@ public class RecordLog : BaseLog
 
     public RecordLog(string info) : base(info) { }
 
-    public ILogPlayerHealedPower dataPlayerHealedPower
-    {
-        get
-        {
-
-            ILogPlayerHealedPower data = new();
-
-            data.points = int.Parse(regex.GetParameter(1));
-
-            return data;
-
-        }
-
-
-    }
-    public ILogPlayerLostPower dataPlayerLostPower
-    {
-        get
-        {
-
-            ILogPlayerLostPower data = new();
-
-            data.points = int.Parse(regex.GetParameter(1));
-
-            return data;
-
-        }
-    }
-    public ILogPlayerLostPowerByCreature dataPlayerLostPowerByCreature
-    {
-
-        get
-        {
-
-            ILogPlayerLostPowerByCreature data = new();
-
-            data.points = int.Parse(regex.GetParameter(1));
-            data.creature = regex.GetParameter(3);
-
-            return data;
-        }
-    }
-
-    public ILogPlayerGainedExperience dataPlayerGainedExperience
-    {
-        get
-        {
-            ILogPlayerGainedExperience data = new();
-
-            data.points = int.Parse(regex.GetParameter(1));
-
-            return data;
-        }
-    }
-
-    public ILogPlayerLootedByCreature dataPlayerLootedByCreature
-    {
-        get
-        {
-
-            ILogPlayerLootedByCreature data = new();
-
-            data.creature = regex.GetParameter(1);
-            data.list = new DataLootList(regex.GetParameter(2));
-
-            return data;
-        }
-    }
-
-    public ILogCreatureLostPower dataCreatureLostPower
-    {
-        get
-        {
-
-            ILogCreatureLostPower data = new();
-
-            data.creature = regex.GetParameter(1);
-            data.points = int.Parse(regex.GetParameter(2));
-
-            return data;
-
-        }
-    }
-
+    public ILogPlayerPoints dataPlayerGainedExperience => regex.data.GetPlayerPoints();
+    public ILogPlayerPoints dataPlayerHealedPower => regex.data.GetPlayerPoints();
+    public ILogPlayerPoints dataPlayerLostPower => regex.data.GetPlayerPoints();
+    public ILogCreaturePoints dataPlayerLostPowerByCreature => regex.data.GetCreaturePoints(TypeLog.eLogPlayerLostPowerByCreature);
+    public ILogPlayerLooted dataPlayerLootedByCreature => regex.data.GetPlayerLooted();
+    public ILogCreaturePoints dataCreatureHealedPower => regex.data.GetCreaturePoints(TypeLog.eLogCreatureHealedPower);
+    public ILogCreaturePoints dataCreatureLostPower => regex.data.GetCreaturePoints(TypeLog.eLogCreatureLostPower);
 }
 
 public class RecordsLog : List<RecordLog>
