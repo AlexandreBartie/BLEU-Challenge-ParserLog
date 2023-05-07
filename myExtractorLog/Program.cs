@@ -7,7 +7,7 @@ namespace app
 
         static void Main(string[] args)
         {
-            
+
             if (args.Length == 0)
             {
                 Console.WriteLine("Please, add the text as parameter!");
@@ -18,12 +18,12 @@ namespace app
 
             string fileName;
 
-            #if DEBUG
-                fileName = "ServerLog-Session-One.txt";
-            #else
+#if DEBUG
+            fileName = "Session-One.txt";
+#else
                 fileName = args[0];
-            #endif
-            
+#endif
+
             startApp(fileName);
 
         }

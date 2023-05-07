@@ -29,6 +29,9 @@ public class DataCreatureList : List<DataCreature>
         if (type == TypeLog.eLogPlayerLostPowerByCreature)
             AddDamage(log.dataPlayerLostPowerByCreature);
 
+        if (type == TypeLog.eLogCreatureHealedPower)
+            AddDamage(log.dataCreatureHealedPower);
+
         if (type == TypeLog.eLogCreatureLostPower)
             AddDamage(log.dataCreatureLostPower);
 

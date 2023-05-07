@@ -12,6 +12,8 @@ public class ParseView : ParseFormat
     public readonly ViewPlayerLostPower PlayerLostPower;
     public readonly ViewPlayerGainedExperience PlayerGainedExperience;
     public readonly ViewPlayerLootedByCreature PlayerLootedByCreature;
+
+    public readonly ViewCreatureHealedPower CreatureHealedPower;  
     public readonly ViewCreatureLostPower CreatureLostPower;
 
     public RecordsLog logs => (sessions.logs);
@@ -25,6 +27,7 @@ public class ParseView : ParseFormat
         PlayerLostPower = new ViewPlayerLostPower(this);
         PlayerLootedByCreature = new ViewPlayerLootedByCreature(this);
         PlayerGainedExperience = new ViewPlayerGainedExperience(this);
+        CreatureHealedPower = new ViewCreatureHealedPower(this);
         CreatureLostPower = new ViewCreatureLostPower(this);
 
     }

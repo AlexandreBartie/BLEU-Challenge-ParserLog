@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/myExtractorLog/bin/Debug/net7.0/myExtractorLog.dll",
-            "args": ["C:/DEVOPS/CHALLENGE/BLEU/projectmyExtractorLog/myExtractorLog/code/data/ServerLog-One.txt"],
+            "args": ["C:/DEVOPS/CHALLENGE/BLEU/projectmyExtractorLog/myExtractorLog/code/data/One.txt"],
             "cwd": "${workspaceFolder}/myExtractorLog",
             "console": "internalConsole",
             "stopAtEntry": false
