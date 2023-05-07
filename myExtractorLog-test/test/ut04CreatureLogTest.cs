@@ -56,7 +56,7 @@ public class UT04_CreatureLogTest
 
     [Theory]
     [InlineData("cyclops, cyclops smith, dragon, dwarf soldier, ghoul")]
-    public void TST02_ListCreature_ByPlayerLostPower(string creatures)
+    public void TST02_CreatureList_ByPlayerLostPower(string creatures)
     {
 
         string input = "PlayerLostPower.txt";
@@ -71,7 +71,7 @@ public class UT04_CreatureLogTest
 
     [Theory]
     [InlineData("dragon, dragon lord")]
-    public void TST03_ListCreature_ByCreatureHealedPower(string creatures)
+    public void TST03_CreatureList_ByCreatureHealedPower(string creatures)
     {
 
         string input = "CreatureHealedPower.txt";
@@ -86,7 +86,7 @@ public class UT04_CreatureLogTest
 
     [Theory]
     [InlineData("cyclops, cyclops smith, dragon, dwarf, dwarf soldier, rat, skeleton, spider")]
-    public void TST04_ListCreature_ByCreatureLostPower(string creatures)
+    public void TST04_CreatureList_ByCreatureLostPower(string creatures)
     {
 
         string input = "CreatureLostPower.txt";

@@ -16,7 +16,7 @@ public class GroupLootList : List<GroupLootItem>
 
     public string txt => string.Join(LOOT_DELIMITER, this);
 
-    public ListLoot items => GetListLoot();
+    public LootList items => GetLootList();
 
     public GroupLootList(string list = "")
     {
@@ -71,10 +71,10 @@ public class GroupLootList : List<GroupLootItem>
         return total;
     }
 
-    private ListLoot GetListLoot()
+    private LootList GetLootList()
     {
 
-        var list = new ListLoot();
+        var list = new LootList();
 
         foreach (GroupLootItem item in this)
             list.AddItem(item.name);

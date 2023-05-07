@@ -2,7 +2,7 @@ using app.util;
 
 namespace app.list;
 
-public class ListLoot : List<LootItem>
+public class LootList : List<LootItem>
 {
     public string txt => string.Join(", ", this.OrderBy(item => item.name));
 

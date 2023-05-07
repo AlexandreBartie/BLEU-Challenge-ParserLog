@@ -15,7 +15,7 @@ public class UT02_LootedListTest
     [InlineData("a crossbow, 2 dragon ham, green dragon leather, plate legs, a steel shield", "1 crossbow, 2 dragon ham, 1 green dragon leather, 1 plate legs, 1 steel shield")]
     [InlineData("5 bolts, a soldier helmet, 2 white mushrooms", "5 bolts, 1 soldier helmet, 2 white mushrooms")]
     [InlineData("nothing", "")]
-    public void TST01_ListLooted(string input, string expected)
+    public void TST01_LootListed(string input, string expected)
     {
 
         list = new(input);

@@ -5,12 +5,12 @@ using app.util;
 
 namespace app.model;
 
-public abstract class ViewModelListCreature : ViewModelGeneric
+public abstract class ViewModelCreatureList : ViewModelGeneric
 {
 
     public GroupCreatureList list;
 
-    public ViewModelListCreature(ParseView view, TypeLog type) : base(view, type)
+    public ViewModelCreatureList(ParseView view, TypeLog type) : base(view, type)
     { list = new GroupCreatureList(view, type); }
 
     public override void SumData()

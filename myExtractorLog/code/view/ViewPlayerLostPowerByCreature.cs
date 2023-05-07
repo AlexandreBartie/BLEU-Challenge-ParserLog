@@ -4,7 +4,7 @@ using app.model;
 
 namespace app.view;
 
-public class ViewPlayerLostPowerByCreature : ViewModelListCreature
+public class ViewPlayerLostPowerByCreature : ViewModelCreatureList
 {
 
     public int totalDamage => list.total;

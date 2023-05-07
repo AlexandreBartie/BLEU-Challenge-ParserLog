@@ -12,7 +12,7 @@ public class GroupCreatureList : List<GroupCreature>
 
     public readonly TypeLog type;
 
-    public ListCreature creatures => GetCreatures();
+    public CreatureList creatures => GetCreatures();
 
     public int total => GetTotal();
 
@@ -56,10 +56,10 @@ public class GroupCreatureList : List<GroupCreature>
         return list;
     }
 
-    private ListCreature GetCreatures()
+    private CreatureList GetCreatures()
     {
 
-        var list = new ListCreature();
+        var list = new CreatureList();
 
         foreach (GroupCreature item in this)
         {

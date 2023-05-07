@@ -2,7 +2,7 @@ using app.util;
 
 namespace app.list;
 
-public class ListCreature : List<Creature>
+public class CreatureList : List<Creature>
 {
     public string txt => string.Join(", ", this.OrderBy(item => item.name));
 
