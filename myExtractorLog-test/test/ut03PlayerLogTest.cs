@@ -67,7 +67,7 @@ public class UT03_PlayerLogTest
 
         var listLog = parse.PlayerLostPower.byCreature.list.filter(creature);
 
-        Assert.Equal(totalDamage, listLog.totalDamage);
+        Assert.Equal(totalDamage, listLog.total);
         Assert.Equal(qty, listLog.count);
 
     }

@@ -10,8 +10,6 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
 
     public DataCreatureList list;
 
-    public int totalDamage => list.totalDamage;
-
     public ViewModelCreatureList(ParseView view, TypeLog type) : base(view, type)
     { list = new DataCreatureList(view, type); }
 
@@ -20,7 +18,7 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
 
         foreach (RecordLog log in logs)
         {
-            list.AddDamage(log);
+            list.AddItem(log);
         }
 
     }
@@ -30,7 +28,7 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
         
         var memo = new Memo();
 
-        memo.add(view.GetLogPoints(label, totalDamage, count, 2));
+        memo.add(view.GetLogPoints(label, list.total, count, 2));
 
         memo.add(list.log());
         

@@ -14,16 +14,16 @@ public class ParseFormat
 
     private const string FORMAT_NUMBER = "##,###,##0";
 
-    private const string LABEL_POINTS = "point(s)";
-    private const string LABEL_ITEMS = "item(s)";
+    private const string LABEL_POINTS = "points";
+    private const string LABEL_ITEMS = "items";
 
-    public string logTitle(string title)
+    public string logTitle(string title, char markTop, char markBottom)
     {
         var memo = new Memo();
 
-        memo.add(logLine());
+        memo.add(logLine(markTop));
         memo.add(Text.TabCentralize(title, SIZE_LINE));
-        memo.add(logLine());
+        memo.add(logLine(markBottom));
         
          return memo.txt;
     }

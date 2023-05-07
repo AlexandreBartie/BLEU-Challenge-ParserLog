@@ -14,7 +14,7 @@ public class DataCreatureList : List<DataCreature>
 
     public CreatureList creatures => GetCreatures();
 
-    public int totalDamage => GetTotalDamage();
+    public int total => GetTotal();
 
     public int count => this.Count;
 
@@ -24,20 +24,20 @@ public class DataCreatureList : List<DataCreature>
         this.type = type;
     }
 
-    public void AddDamage(RecordLog log)
+    public void AddItem(RecordLog log)
     {
         if (type == TypeLog.eLogPlayerLostPowerByCreature)
-            AddDamage(log.dataPlayerLostPowerByCreature);
+            AddItem(log.dataPlayerLostPowerByCreature);
 
         if (type == TypeLog.eLogCreatureHealedPower)
-            AddDamage(log.dataCreatureHealedPower);
+            AddItem(log.dataCreatureHealedPower);
 
         if (type == TypeLog.eLogCreatureLostPower)
-            AddDamage(log.dataCreatureLostPower);
+            AddItem(log.dataCreatureLostPower);
 
     }
 
-    private void AddDamage(ILogCreaturePoints data)
+    private void AddItem(ILogCreaturePoints data)
     {
         Add(new DataCreature(data.creature, data.points));
     }
@@ -70,13 +70,13 @@ public class DataCreatureList : List<DataCreature>
 
     }
 
-    private int GetTotalDamage()
+    private int GetTotal()
     {
         var total = 0;
 
         foreach (DataCreature item in this)
         {
-            total += item.damage;
+            total += item.points;
         }
 
         return total;
@@ -93,7 +93,7 @@ public class DataCreatureList : List<DataCreature>
 
             var list = filter(creature);
 
-            var log = view.GetLogPoints(creature, list.totalDamage, list.count, 3);
+            var log = view.GetLogPoints(creature, list.total, list.count, 3);
 
             memo.Add(log);
         }
@@ -108,12 +108,12 @@ public class DataCreature
 {
 
     public string creature;
-    public int damage;
+    public int points;
 
-    public DataCreature(string creature, int damage)
+    public DataCreature(string creature, int points)
     {
         this.creature = creature;
-        this.damage = damage;
+        this.points = points;
     }
 
 }

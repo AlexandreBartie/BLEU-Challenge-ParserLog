@@ -22,18 +22,17 @@ public class ParseOutput
         if (!parse.isNull)
         {
 
-            memo.add(parse.logTitle("Statistics Player"));
+            memo.add(parse.logTitle("Statistics Player",'=', '-'));
             memo.add(parse.PlayerGainedExperience.log("Experience"));
             memo.add(parse.PlayerHealedPower.log("HealedPower"));
-            // memo.add(parse.logLine('-'));
             memo.add(parse.PlayerLostPower.log("LostPower"));
             memo.add(parse.PlayerLostPower.byUnknown.log("unknown"));
             memo.add(parse.PlayerLostPower.byCreature.log("byCreature"));
-            // memo.add(parse.logLine('-'));
             memo.add(parse.PlayerLootedByCreature.log("LootedByCreature"));
-            memo.add(parse.logTitle("Statistics Creature"));
+            memo.add(parse.logTitle("Statistics Creature",'-', '-'));
+            memo.add(parse.CreatureHealedPower.log("HealedPower"));
             memo.add(parse.CreatureLostPower.log("LostPower"));
-            memo.add(parse.logTitle("Statistics based by file log extracted"));
+            memo.add(parse.logTitle("Statistics based by file log extracted",'-', '='));
 
         }
 
