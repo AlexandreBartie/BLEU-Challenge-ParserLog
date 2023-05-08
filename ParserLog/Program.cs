@@ -34,13 +34,24 @@ class StartApp
 {
     public string fileName = "";
     public string creatureRules = "";
+
+    public readonly ParserLog parser = new();
+    
+    public ParserShow show => parser.settings.show;
+
+    public StartApp()
+    {
+        show.PlayerStatistics = false;
+        show.CreatureStatistics = false;
+        show.LootedByCreature = false;
+        show.CreatureSpotlight = true;
+    }
+
     public void Run()
     {
 
-        var parser = new ParserLog();
-
         parser.SetSpotlight(creatureRules);
-
+      
         if (parser.LoadFile(fileName))
         {
             Console.WriteLine(parser.txt);

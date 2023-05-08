@@ -4,7 +4,7 @@ namespace app.core;
 public class ParserLog : ViewData
 {
 
-    private ParserSettings settings = new();
+    public readonly ParserSettings settings = new();
 
     private string path = "";
     private ParserImport import;

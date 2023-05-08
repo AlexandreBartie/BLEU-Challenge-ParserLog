@@ -14,20 +14,36 @@ public class ParserFormat : ParserFormatSpotLight
     private const string LABEL_POINTS = "points";
     private const string LABEL_ITEMS = "items";
 
-    public string logTitle(string title, char markTop, char markBottom)
+    public string logTitle(string title)
+    {
+        return logBlock(title, true);
+    }
+
+    public string logSubTitle(string title, string subTitle)
+    {
+        return logTitle($"{title}: {subTitle}");
+    }
+
+    public string logEnd(string title)
+    {
+        return logBlock(title, false);
+    }
+    private string logBlock(string title, bool start)
     {
         var memo = new Memo();
+
+        char markTop; char markBottom;
+
+        if (start)
+            { markTop = '='; markBottom = '-'; }
+        else
+            { markTop = '-'; markBottom = '='; }
 
         memo.add(logLine(markTop));
         memo.add(Text.TabCentralize(title, SIZE_LINE));
         memo.add(logLine(markBottom));
 
         return memo.txt;
-    }
-
-    public string logSubTitle(string title, string subTitle)
-    {
-        return logTitle($"{title}: {subTitle}", '=', '-');
     }
 
     private string logLine(char mark = '=')

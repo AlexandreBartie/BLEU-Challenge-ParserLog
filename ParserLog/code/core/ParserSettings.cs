@@ -4,6 +4,8 @@ namespace app.core;
 public class ParserSettings : ParserSettingsData
 {
 
+    public ParserShow show = new();
+
     public string GetInputFileFolder(string path)
     {
         if (path == "")
