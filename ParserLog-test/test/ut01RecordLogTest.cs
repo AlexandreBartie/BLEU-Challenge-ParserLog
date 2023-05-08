@@ -1,4 +1,4 @@
-using app.log;
+using parser.core.log;
 namespace myappxunit;
 
 public class UT01_RecordLogTest

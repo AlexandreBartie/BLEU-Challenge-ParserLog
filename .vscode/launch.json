@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/ParserLog/bin/Debug/net7.0/ParserLog.dll",
-            "args": ["Session-Full.txt *Knight*"],
+            "args": [],
             "cwd": "${workspaceFolder}/ParserLog",
             "console": "internalConsole",
             "stopAtEntry": false

@@ -9,12 +9,11 @@ class Program
         if (args.Length == 0)
         {
             Console.WriteLine("Please, add a file name as a parameter.");
-            Console.WriteLine("The file needs to be in the same path of the executable.");
+            Console.WriteLine(" -The file needs to be in the same path of the executable.");
+            Console.WriteLine(" -Use a second optional parameter to focus data of creatures!");
             Console.WriteLine("");
-            Console.WriteLine("There are a second optional parameter to focus data of creatures!");
-            Console.WriteLine("");
-            Console.WriteLine("Sintaxe: Parserlog {FileName} {Creatures wildcard}");
-            Console.WriteLine("""Example: Parserlog "Session-Full.txt" "*Knight*, cyclops*""");
+            Console.WriteLine("""** Sintaxe: Parserlog {FileName} {Creatures wildcard}""");
+            Console.WriteLine("""** Example: Parserlog "Session-Full.txt" *Knight*,cyclops*""");
 
             Environment.Exit(-1);
         }
