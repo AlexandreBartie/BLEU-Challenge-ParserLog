@@ -6,7 +6,7 @@ public class UT04_CreatureLogTest
 {
     private string input = "";
 
-    private ParseLog parse = new();
+    private ParserLog parser = new();
 
     [Theory]
     [InlineData("rat", 20, 1)]
@@ -22,9 +22,9 @@ public class UT04_CreatureLogTest
 
         string input = "CreatureLostPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var creature = parse.CreatureLostPower.group.filter(name);
+        var creature = parser.CreatureLostPower.group.filter(name);
 
         Assert.Equal(total, creature.total);
         Assert.Equal(qty, creature.Count);
@@ -45,9 +45,9 @@ public class UT04_CreatureLogTest
 
         string input = "CreatureLostPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var creature = parse.CreatureLostPower.group.filter(name);
+        var creature = parser.CreatureLostPower.group.filter(name);
 
         Assert.Equal(totalDamage, creature.total);
         Assert.Equal(qty, creature.Count);
@@ -61,9 +61,9 @@ public class UT04_CreatureLogTest
 
         string input = "PlayerLostPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var group = parse.PlayerLostPower.byCreature.group;
+        var group = parser.PlayerLostPower.byCreature.group;
 
         Assert.Equal(creatures, group.creatures.txt);
 
@@ -76,9 +76,9 @@ public class UT04_CreatureLogTest
 
         string input = "CreatureHealedPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var group = parse.CreatureHealedPower.group;
+        var group = parser.CreatureHealedPower.group;
 
         Assert.Equal(creatures, group.creatures.txt);
 
@@ -91,9 +91,9 @@ public class UT04_CreatureLogTest
 
         string input = "CreatureLostPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var group = parse.CreatureLostPower.group;
+        var group = parser.CreatureLostPower.group;
 
         Assert.Equal(creatures, group.creatures.txt);
 
@@ -109,11 +109,11 @@ public class UT04_CreatureLogTest
 
         string input = "CreatureSpotlight.txt";
 
-        parse.SetSpotlight(rules);
+        parser.SetSpotlight(rules);
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var list = parse.CreatureSpotlight.creatures;
+        var list = parser.CreatureSpotlight.creatures;
 
         Assert.Equal(creatures, list.txt);
 

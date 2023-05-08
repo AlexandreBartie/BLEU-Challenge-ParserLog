@@ -6,16 +6,16 @@ public class UT04_LootedLogTest
 {
     string input = "PlayerLootedByCreature.txt";
 
-    private ParseLog parse = new();
+    private ParserLog parser = new();
 
     [Theory]
     [InlineData("crossbow, cyclops toe, dragon ham, gold coins, green dragon leather, letter, meat, plate legs, small diamond, steel helmet, steel shield")]
     public void TST01_LootedList(string creatures)
     {
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var list = parse.PlayerLootedByCreature.loot.items;
+        var list = parser.PlayerLootedByCreature.loot.items;
 
         Assert.Equal(creatures, list.txt);
 
@@ -35,9 +35,9 @@ public class UT04_LootedLogTest
     public void TST02_LootedItem(string item, int total, int count)
     {
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var list = parse.PlayerLootedByCreature.loot.filter(item);
+        var list = parser.PlayerLootedByCreature.loot.filter(item);
 
         Assert.Equal(total, list.total);
         Assert.Equal(count, list.count);
@@ -49,10 +49,10 @@ public class UT04_LootedLogTest
 
         input = "PlayerGainedExperience.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        Assert.Equal(damage, parse.PlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, parse.PlayerGainedExperience.count);
+        Assert.Equal(damage, parser.PlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, parser.PlayerGainedExperience.count);
 
     }
 

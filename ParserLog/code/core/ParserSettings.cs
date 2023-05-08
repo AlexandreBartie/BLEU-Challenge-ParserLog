@@ -1,7 +1,7 @@
 
 namespace app.core;
 
-public class ParseSettings : ParseDataSettings
+public class ParserSettings : ParserSettingsData
 {
 
     public string GetInputFileFolder(string path)
@@ -9,7 +9,7 @@ public class ParseSettings : ParseDataSettings
         if (path == "")
             path = fileFolder;
 
-        return path + "input/";;
+        return path + "input/"; ;
     }
 
     public string GetOutputFileFolder(string path)
@@ -23,20 +23,22 @@ public class ParseSettings : ParseDataSettings
 
 }
 
-public class ParseDataSettings
+public class ParserSettingsData
 {
 
-    protected string fileFolder {
+    protected string fileFolder
+    {
 
-        get {
+        get
+        {
 
             var fileFolder = "";
 
-            #if DEBUG
-                fileFolder ="C:/DEVOPS/CHALLENGE/BLEU/Challenge-ParserLog/file/";
-            #else
-                fileFolder = AppDomain.CurrentDomain.BaseDirectory;
-            #endif
+#if DEBUG
+            fileFolder ="C:/DEVOPS/CHALLENGE/BLEU/Challenge-ParserLog/file/";
+#else
+            fileFolder = AppDomain.CurrentDomain.BaseDirectory;
+#endif
 
             return fileFolder;
         }

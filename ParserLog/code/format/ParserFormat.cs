@@ -2,7 +2,7 @@ using app.util;
 
 namespace app.core;
 
-public class ParseFormat : ParseFormatSpotLight
+public class ParserFormat : ParserFormatSpotLight
 {
     private const int SIZE_LINE = 60;
     private const int COLUMN_LABEL = 25;
@@ -21,13 +21,13 @@ public class ParseFormat : ParseFormatSpotLight
         memo.add(logLine(markTop));
         memo.add(Text.TabCentralize(title, SIZE_LINE));
         memo.add(logLine(markBottom));
-        
-         return memo.txt;
+
+        return memo.txt;
     }
 
     public string logSubTitle(string title, string subTitle)
     {
-        return logTitle($"{title}: {subTitle}",'=', '-');
+        return logTitle($"{title}: {subTitle}", '=', '-');
     }
 
     private string logLine(char mark = '=')
@@ -53,11 +53,11 @@ public class ParseFormat : ParseFormatSpotLight
     private string FormatLabel(string label, int level) => Text.TabLevel(label.PadRight(COLUMN_LABEL), level, 3);
     private string FormatUnit(string unit) => unit.PadRight(COLUMN_UNIT);
     private string FormatValue(int value) => value.ToString(FORMAT_NUMBER).PadLeft(COLUMN_VALUE);
-    private string FormatCount(int count) => count.ToString(FORMAT_NUMBER).PadLeft(COLUMN_COUNT); 
-   
+    private string FormatCount(int count) => count.ToString(FORMAT_NUMBER).PadLeft(COLUMN_COUNT);
+
 }
 
-public class ParseFormatSpotLight
+public class ParserFormatSpotLight
 {
 
     private const int COLUMN_CREATURE = 16;
@@ -75,7 +75,7 @@ public class ParseFormatSpotLight
         var columnCreature = "Creature Name";
         var columnHealed = "HealedPower";
         var columnLost = "LostPower";
-        var columnDamage = "DamagePlayer";        
+        var columnDamage = "DamagePlayer";
 
         return $"{Text.Spaces(02)}{columnCreature}{Text.Spaces(6)}{columnHealed}{Text.Spaces(4)}{columnLost}{Text.Spaces(1)}{columnDamage}";
     }

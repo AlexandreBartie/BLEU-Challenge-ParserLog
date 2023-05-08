@@ -7,7 +7,7 @@ public class UT03_PlayerLogTest
 
     private string input = "";
 
-    private ParseLog parse = new();
+    private ParserLog parser = new();
 
     [Theory]
     [InlineData(957, 5)]
@@ -16,10 +16,10 @@ public class UT03_PlayerLogTest
 
         input = "PlayerHealedPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        Assert.Equal(damage, parse.PlayerHealedPower.totalHealed);
-        Assert.Equal(qty, parse.PlayerHealedPower.count);
+        Assert.Equal(damage, parser.PlayerHealedPower.totalHealed);
+        Assert.Equal(qty, parser.PlayerHealedPower.count);
 
     }
 
@@ -30,11 +30,11 @@ public class UT03_PlayerLogTest
 
         input = "PlayerLostPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        Assert.Equal(unknown, parse.PlayerLostPower.byUnknown.totalDamage);
-        Assert.Equal(total, parse.PlayerLostPower.totalDamage);
-        Assert.Equal(qty, parse.PlayerLostPower.count);
+        Assert.Equal(unknown, parser.PlayerLostPower.byUnknown.totalDamage);
+        Assert.Equal(total, parser.PlayerLostPower.totalDamage);
+        Assert.Equal(qty, parser.PlayerLostPower.count);
 
     }
 
@@ -45,10 +45,10 @@ public class UT03_PlayerLogTest
 
         input = "PlayerGainedExperience.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        Assert.Equal(damage, parse.PlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, parse.PlayerGainedExperience.count);
+        Assert.Equal(damage, parser.PlayerGainedExperience.totalExperience);
+        Assert.Equal(qty, parser.PlayerGainedExperience.count);
 
     }
 
@@ -63,9 +63,9 @@ public class UT03_PlayerLogTest
 
         string input = "PlayerLostPower.txt";
 
-        parse.LoadFile(input);
+        parser.LoadFile(input);
 
-        var listLog = parse.PlayerLostPower.byCreature.group.filter(creature);
+        var listLog = parser.PlayerLostPower.byCreature.group.filter(creature);
 
         Assert.Equal(totalDamage, listLog.total);
         Assert.Equal(qty, listLog.count);

@@ -3,10 +3,10 @@ using app.view;
 
 namespace app.core;
 
-public class ViewData : ParseFormat
+public class ViewData : ParserFormat
 {
 
-    public ParseSessions sessions = new();
+    public ParserSessions sessions = new();
 
     public readonly ViewPlayerHealedPower PlayerHealedPower;
     public readonly ViewPlayerLostPower PlayerLostPower;

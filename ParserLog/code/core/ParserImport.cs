@@ -2,14 +2,14 @@ using app.util;
 
 namespace app.core;
 
-public class ParseImport
+public class ParserImport
 {
 
-    private ParseLog parse;
+    private ParserLog parser;
 
-    public ParseImport(ParseLog parse)
+    public ParserImport(ParserLog parser)
     {
-        this.parse = parse;
+        this.parser = parser;
     }
 
     public bool Load(string path, string name)
@@ -19,7 +19,7 @@ public class ParseImport
 
         if (file.Open(path, name))
         {
-            parse.Populate(file.lines);
+            parser.Populate(file.lines);
 
             return true;
         }

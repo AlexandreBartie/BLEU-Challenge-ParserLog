@@ -8,21 +8,21 @@ class Program
 
         if (args.Length == 0)
         {
-            Console.WriteLine("Please, add the text as parameter!");
-            Console.WriteLine("Example: dotnet run <<your text>>");
+            Console.WriteLine("Please, add a file name as a parameter and !");
+            Console.WriteLine("Example: parserlog  run <<your text>>");
 
             Environment.Exit(-1);
         }
 
         var app = new StartApp();
 
-        #if DEBUG
-            app.fileName = "Session-Full.txt"; 
-            app.creatureRules = "cyclop*, dragon*";
-        #else
-            app.fileName = arg[0];
-            app.creatureRules = (args.Length >= 2) ? args[1]  : "";
-        #endif
+#if DEBUG
+        app.fileName = "Session-Full.txt"; 
+        app.creatureRules = "cyclop*, dragon*";
+#else
+        app.fileName = arg[0];
+        app.creatureRules = (args.Length >= 2) ? args[1] : "";
+#endif
 
         app.Run();
 
@@ -37,13 +37,13 @@ class StartApp
     public void Run()
     {
 
-        var parse = new ParseLog();
+        var parser = new ParserLog();
 
-        parse.SetSpotlight(creatureRules);
+        parser.SetSpotlight(creatureRules);
 
-        if (parse.LoadFile(fileName))
+        if (parser.LoadFile(fileName))
         {
-            Console.WriteLine(parse.txt);
+            Console.WriteLine(parser.txt);
         }
         else
             Environment.Exit(-1);
