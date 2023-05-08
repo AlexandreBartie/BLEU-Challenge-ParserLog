@@ -10,7 +10,7 @@ public class ViewPlayerLostPowerByUnknown : ViewModelGeneric
 
     public int totalDamage = 0;
 
-    public override void SumData()
+    public override void GroupData()
     {
 
         totalDamage = 0;

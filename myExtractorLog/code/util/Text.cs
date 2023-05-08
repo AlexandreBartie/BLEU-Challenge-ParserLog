@@ -14,7 +14,7 @@ public static class Text
         {
             // Escape any special characters in the pattern, 
             // replace the asterisk wildcard with a regex pattern
-            string regexPattern = Regex.Escape(pattern).Replace(@"\*", ".*");
+            string regexPattern = Regex.Escape(pattern.Trim()).Replace(@"\*", ".*");
 
             // Use the regex pattern to match the text
             if (Regex.IsMatch(text, regexPattern, RegexOptions.IgnoreCase))

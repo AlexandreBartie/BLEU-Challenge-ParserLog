@@ -11,7 +11,7 @@ public abstract class ViewModelGeneric : ViewModel
 
     public ViewModelGeneric(ViewData view, TypeLog type) : base(view, type) { }
 
-    public abstract void SumData();
+    public abstract void GroupData();
 
     public abstract string log(string label);
 

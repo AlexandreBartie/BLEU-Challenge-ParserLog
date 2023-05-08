@@ -13,9 +13,9 @@ public class ViewData : ParseFormat
     public readonly ViewPlayerGainedExperience PlayerGainedExperience;
     public readonly ViewPlayerLootedByCreature PlayerLootedByCreature;
 
-    public readonly ViewCreatureHealedPower CreatureHealedPower;  
+    public readonly ViewCreatureHealedPower CreatureHealedPower;
     public readonly ViewCreatureLostPower CreatureLostPower;
-    public readonly ViewCreatureSpotLight CreatureSpotLight;
+    public readonly ViewCreatureSpotlight CreatureSpotlight;
 
     public RecordsLog logs => (sessions.logs);
 
@@ -28,16 +28,16 @@ public class ViewData : ParseFormat
         PlayerLostPower = new ViewPlayerLostPower(this);
         PlayerLootedByCreature = new ViewPlayerLootedByCreature(this);
         PlayerGainedExperience = new ViewPlayerGainedExperience(this);
-        
+
         CreatureHealedPower = new ViewCreatureHealedPower(this);
         CreatureLostPower = new ViewCreatureLostPower(this);
-        CreatureSpotLight = new ViewCreatureSpotLight(this);
+        CreatureSpotlight = new ViewCreatureSpotlight(this);
 
     }
 
-    public void SetSpotLight(string rules)
+    public void SetSpotlight(string rules)
     {
-        CreatureSpotLight.Setup(rules);
+        CreatureSpotlight.Setup(rules);
     }
 
     public void Populate(string[] lines)
@@ -45,12 +45,13 @@ public class ViewData : ParseFormat
 
         sessions.Populate(lines);
 
-        PlayerHealedPower.SumData();
-        PlayerLostPower.SumData();
-        PlayerGainedExperience.SumData();
-        PlayerLootedByCreature.SumData();
-        CreatureHealedPower.SumData();
-        CreatureLostPower.SumData();
+        PlayerHealedPower.GroupData();
+        PlayerLostPower.GroupData();
+        PlayerGainedExperience.GroupData();
+        PlayerLootedByCreature.GroupData();
+        CreatureHealedPower.GroupData();
+        CreatureLostPower.GroupData();
+        CreatureSpotlight.GroupData();
     }
 
 }

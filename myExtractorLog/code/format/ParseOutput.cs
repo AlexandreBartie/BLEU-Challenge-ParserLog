@@ -32,21 +32,14 @@ public class ParseOutput
             memo.add(parse.logTitle("Statistics Creature",'-', '-'));
             memo.add(parse.CreatureHealedPower.log("HealedPower"));
             memo.add(parse.CreatureLostPower.log("LostPower"));
+            if (parse.CreatureSpotlight.HasCreatures)
+            {
+                memo.add(parse.logTitle("Creatures Spotlight",'-', '-'));
+                memo.add(parse.CreatureSpotlight.log());
+            }
             memo.add(parse.logTitle("Statistics based by file log extracted",'-', '='));
 
         }
-
-        return (memo.txt);
-
-    }
-
-    private string getExtra()
-    {
-
-        var memo = new Memo();
-
-        memo.add(parse.logTitle("Creatures SpotLight",'-', '-'));
-        memo.add(parse.CreaturesSpotLight.log());
 
         return (memo.txt);
 

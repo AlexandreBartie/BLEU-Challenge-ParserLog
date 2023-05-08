@@ -10,7 +10,7 @@ public class ViewPlayerGainedExperience : ViewModelGeneric
 
     public int totalExperience;
 
-    public override void SumData()
+    public override void GroupData()
     {
 
         totalExperience = 0;

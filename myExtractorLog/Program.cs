@@ -18,7 +18,7 @@ class Program
 
         #if DEBUG
             app.fileName = "Session-Full.txt"; 
-            app.creatureRules = "cyclop*";
+            app.creatureRules = "cyclop*, dragon*";
         #else
             app.fileName = arg[0];
             app.creatureRules = (args.Length >= 2) ? args[1]  : "";
@@ -39,7 +39,7 @@ class StartApp
 
         var parse = new ParseLog();
 
-        parse.SetSpotLight(creatureRules);
+        parse.SetSpotlight(creatureRules);
 
         if (parse.LoadFile(fileName))
         {

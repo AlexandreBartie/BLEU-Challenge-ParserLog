@@ -10,7 +10,7 @@ public class ViewPlayerHealedPower : ViewModelGeneric
 
     public int totalHealed;
 
-    public override void SumData()
+    public override void GroupData()
     {
 
         totalHealed = 0;

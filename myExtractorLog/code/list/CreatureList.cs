@@ -36,14 +36,14 @@ public class CreatureList : List<Creature>
 
     }
 
-    public CreatureList Select(string filter)
+    public CreatureList Match(string wildcard)
     {
 
         CreatureList list = new();
-        
+
         foreach (Creature creature in this)
         {
-            if (Text.IsMatchByWildcard(creature.name, filter))
+            if (creature.IsMatch(wildcard))
                 list.Add(creature);
         }
 

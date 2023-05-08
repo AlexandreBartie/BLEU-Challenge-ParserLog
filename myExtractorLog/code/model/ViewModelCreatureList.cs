@@ -16,7 +16,7 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
     public ViewModelCreatureList(ViewData view, TypeLog type) : base(view, type)
     { group = new GroupCreatureList(view, type); }
 
-    public override void SumData()
+    public override void GroupData()
     {
 
         foreach (RecordLog log in logs)

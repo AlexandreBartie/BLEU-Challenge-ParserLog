@@ -99,16 +99,23 @@ public class UT04_CreatureLogTest
 
     }
 
-
-    public void TST04_CreatureGroup_ByCreatureLostPower(int damage, int qty)
+    [Theory]
+    [InlineData("*cyclo*", "cyclops, cyclops smith")]
+    [InlineData("*black*", "Black Knight")]
+    [InlineData("dragon*, dwarf", "dragon, dragon lord, dwarf, dwarf soldier")]
+    public void TST05_CreatureGroup_ByCreatureSpotlight(string rules, string creatures)
     {
 
-        input = "PlayerGainedExperience.txt";
+
+        string input = "CreatureSpotlight.txt";
+
+        parse.SetSpotlight(rules);
 
         parse.LoadFile(input);
 
-        Assert.Equal(damage, parse.PlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, parse.PlayerGainedExperience.count);
+        var list = parse.CreatureSpotlight.creatures;
+
+        Assert.Equal(creatures, list.txt);
 
     }
 

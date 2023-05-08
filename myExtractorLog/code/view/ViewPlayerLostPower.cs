@@ -21,17 +21,16 @@ public class ViewPlayerLostPower
         byCreature = new ViewPlayerLostPowerByCreature(view);
     }
 
-    public void SumData()
+    public void GroupData()
     {
 
-        byUnknown.SumData();
-        byCreature.SumData();
+        byUnknown.GroupData();
+        byCreature.GroupData();
     }
 
     public string log(string label)
     {
         return view.GetLogPoints(label, totalDamage, count);
     }
-
 
 }

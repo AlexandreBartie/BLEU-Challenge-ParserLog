@@ -13,7 +13,7 @@ public class ViewPlayerLootedByCreature : ViewModelGeneric
 
     public GroupLootList loot = new();
 
-    public override void SumData()
+    public override void GroupData()
     {
         foreach (RecordLog log in logs)
         {

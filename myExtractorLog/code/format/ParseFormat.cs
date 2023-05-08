@@ -48,6 +48,11 @@ public class ParseFormat
         return $"{FormatLabel(label, level)} {FormatValue(value)} {FormatUnit(unit)} {FormatCount(count)}#";
     }
 
+    public string GetSpotlight(string creature, int healedPower, int lostPower, int damagePlayer)
+    {
+        return $"{FormatLabel(creature, 1)} {FormatValue(healedPower)} {FormatValue(lostPower)} {FormatValue(damagePlayer)} #";
+    }
+
     private string FormatLabel(string label, int level) => Text.TabLevel(label.PadRight(COLUMN_LABEL), level, 3);
     private string FormatUnit(string unit) => unit.PadRight(COLUMN_UNIT);
     private string FormatValue(int value) => value.ToString(FORMAT_NUMBER).PadLeft(COLUMN_VALUE);

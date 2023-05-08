@@ -1,0 +1,24 @@
+Channel Server Log saved Wed Apr 12 15:48:26 2023
+15:43 A rat loses 20 hitpoints due to your attack. 
+15:43 A cyclops loses 260 hitpoints due to your attack. 
+15:43 A skeleton loses 50 hitpoints due to your attack. 
+15:44 A cyclops smith loses 16 hitpoints due to your attack.
+15:44 A cyclops loses 260 hitpoints due to your attack. 
+15:44 A cyclops smith loses 419 hitpoints due to your attack. 
+15:46 A dwarf loses 90 hitpoints due to your attack. 
+15:46 A spider loses 20 hitpoints due to your attack. 
+15:46 A dwarf soldier loses 135 hitpoints due to your attack. 
+15:46 A dragon loses 386 hitpoints due to your attack.
+15:46 A dragon loses 329 hitpoints due to your attack.  
+15:47 A dragon loses 303 hitpoints due to your attack.
+15:47 A dragon healed itself for 60 hitpoints.
+18:38 A dragon healed itself for 67 hitpoints.
+18:39 A dragon lord healed itself for 88 hitpoints.
+18:39 A dragon lord healed itself for 82 hitpoints.
+18:39 A dragon lord healed itself for 64 hitpoints.
+18:40 A dragon healed itself for 44 hitpoints.
+18:46 You lose 147 hitpoints due to an attack by a Black Knight. 
+18:46 You lose 106 hitpoints due to an attack by a Black Knight. 
+18:46 A Black Knight loses 246 hitpoints due to your attack.
+18:46 You lose 68 hitpoints due to an attack by a Black Knight. 
+18:46 A Black Knight loses 198 hitpoints due to your attack. 
