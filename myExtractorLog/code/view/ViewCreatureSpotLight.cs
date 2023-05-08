@@ -7,7 +7,7 @@ public class ViewCreatureSpotlight
 {
     private ViewData view;
 
-    private string rules = "";
+    public string wildcard = "";
 
     private CreatureList _creatures = new();
 
@@ -21,9 +21,9 @@ public class ViewCreatureSpotlight
         this.view = view;
     }
 
-    public void Setup(string rules)
+    public void Setup(string wildcard)
     {
-        this.rules = rules;
+        this.wildcard = wildcard;
     }
 
     public void GroupData()
@@ -31,9 +31,9 @@ public class ViewCreatureSpotlight
 
         var list = new CreatureList();
 
-        list.AddList(view.CreatureHealedPower.creatures.Match(rules));
-        list.AddList(view.CreatureLostPower.creatures.Match(rules));
-        list.AddList(view.PlayerLostPower.byCreature.creatures.Match(rules));
+        list.AddList(view.CreatureHealedPower.creatures.Match(wildcard));
+        list.AddList(view.CreatureLostPower.creatures.Match(wildcard));
+        list.AddList(view.PlayerLostPower.byCreature.creatures.Match(wildcard));
 
         _creatures = list;
 

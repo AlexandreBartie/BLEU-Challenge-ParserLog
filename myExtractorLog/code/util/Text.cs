@@ -51,7 +51,10 @@ public static class Text
         
         return (lastChar == 's' || lastChar == 'S');
     }
-  
+
+    public static string Spaces(int times)
+    { return Repeat(" ", times); }
+      
     public static string Repeat(string text, int times)
     { return string.Concat(Enumerable.Repeat(text, times)); }
     
@@ -64,7 +67,7 @@ public static class Text
     public static string TabLevel(string text, int level, int max, string mark = "-")
     { 
         
-        string prefix = (level == 1) ? "" : mark;
+        string prefix = (level <= 1) ? "" : mark;
 
         string start = Tab(level).Substring(prefix.Length);
         string end = Tab(max - level);

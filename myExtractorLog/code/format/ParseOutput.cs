@@ -34,7 +34,8 @@ public class ParseOutput
             memo.add(parse.CreatureLostPower.log("LostPower"));
             if (parse.CreatureSpotlight.HasCreatures)
             {
-                memo.add(parse.logTitle("Creatures Spotlight",'-', '-'));
+                memo.add(parse.logSubTitle("Creatures Spotlight", parse.CreatureSpotlight.wildcard));
+                memo.add(parse.logColumns());
                 memo.add(parse.CreatureSpotlight.log());
             }
             memo.add(parse.logTitle("Statistics based by file log extracted",'-', '='));
