@@ -1,5 +1,5 @@
-﻿using app.core;
-namespace app;
+﻿namespace parser;
+
 class Program
 {
 
@@ -8,8 +8,13 @@ class Program
 
         if (args.Length == 0)
         {
-            Console.WriteLine("Please, add a file name as a parameter and !");
-            Console.WriteLine("Example: parserlog  run <<your text>>");
+            Console.WriteLine("Please, add a file name as a parameter.");
+            Console.WriteLine("The file needs to be in the same path of the executable.");
+            Console.WriteLine("");
+            Console.WriteLine("There are a second optional parameter to focus data of creatures!");
+            Console.WriteLine("");
+            Console.WriteLine("Sintaxe: Parserlog {FileName} {Creatures wildcard}");
+            Console.WriteLine("""Example: Parserlog "Session-Full.txt" "*Knight*, cyclops*""");
 
             Environment.Exit(-1);
         }
@@ -20,7 +25,7 @@ class Program
         app.fileName = "Session-Full.txt"; 
         app.creatureRules = "*Knight*";
 #else
-        app.fileName = arg[0];
+        app.fileName = args[0];
         app.creatureRules = (args.Length >= 2) ? args[1] : "";
 #endif
 
