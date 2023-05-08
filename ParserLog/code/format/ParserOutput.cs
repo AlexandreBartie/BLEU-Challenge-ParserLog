@@ -34,9 +34,9 @@ public class ParserOutput
                 memo.add(parser.PlayerLostPower.byCreature.log("byCreature"));
             }            
 
-            if (show.LootedByCreature)
+            if (show.LootedItems)
             {
-                memo.add(parser.logTitle("Looted ByCreatures"));            
+                memo.add(parser.logTitle("Looted Items"));            
                 memo.add(parser.PlayerLootedByCreature.log("LootedByCreature"));
             }
 

@@ -18,7 +18,7 @@ class Program
 
 #if DEBUG
         app.fileName = "Session-Full.txt"; 
-        app.creatureRules = "cyclop*, dragon*";
+        app.creatureRules = "*Knight*";
 #else
         app.fileName = arg[0];
         app.creatureRules = (args.Length >= 2) ? args[1] : "";
@@ -43,8 +43,8 @@ class StartApp
     {
         show.PlayerStatistics = false;
         show.CreatureStatistics = false;
-        show.LootedByCreature = false;
-        show.CreatureSpotlight = true;
+        show.LootedItems = false;
+        show.CreatureSpotlight = true; // Extra Challenge
     }
 
     public void Run()

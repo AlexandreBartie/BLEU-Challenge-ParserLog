@@ -56,9 +56,9 @@ public class ParserFormat : ParserFormatSpotLight
         return GetLog(title, value, count, LABEL_POINTS, tab);
     }
 
-    public string GetLogItems(string title, int value, int count, int tab = 1)
+    public string GetLogItems(string item, int value, int count, int tab = 1)
     {
-        return GetLog(title, value, count, LABEL_ITEMS, tab);
+        return GetLog(item, value, count, LABEL_ITEMS, tab);
     }
 
     private string GetLog(string label, int value, int count, string unit, int level)
