@@ -7,7 +7,7 @@ namespace app.view;
 public class ViewPlayerLostPowerByCreature : ViewModelCreatureList
 {
 
-    public int totalDamage => list.total;
+    public int totalDamage => group.total;
 
     public ViewPlayerLostPowerByCreature(ViewData view) : base(view, TypeLog.eLogPlayerLostPowerByCreature) { }
 

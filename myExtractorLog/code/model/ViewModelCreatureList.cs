@@ -1,5 +1,6 @@
 using app.core;
 using app.log;
+using app.list;
 using app.group;
 using app.util;
 
@@ -8,17 +9,19 @@ namespace app.model;
 public abstract class ViewModelCreatureList : ViewModelGeneric
 {
 
-    public GroupCreatureList list;
+    public GroupCreatureList group;
+
+    public CreatureList creatures => group.creatures;
 
     public ViewModelCreatureList(ViewData view, TypeLog type) : base(view, type)
-    { list = new GroupCreatureList(view, type); }
+    { group = new GroupCreatureList(view, type); }
 
     public override void SumData()
     {
 
         foreach (RecordLog log in logs)
         {
-            list.AddItem(log);
+            group.AddItem(log);
         }
 
     }
@@ -28,9 +31,9 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
 
         var memo = new Memo();
 
-        memo.add(view.GetLogPoints(label, list.total, count, 2));
+        memo.add(view.GetLogPoints(label, group.total, count, 2));
 
-        memo.add(list.log());
+        memo.add(group.log());
 
         return memo.txt;
     }

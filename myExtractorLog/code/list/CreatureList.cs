@@ -6,6 +6,13 @@ public class CreatureList : List<Creature>
 {
     public string txt => string.Join(", ", this.OrderBy(item => item.name));
 
+    public void AddList(CreatureList list)
+    {
+        foreach (Creature creature in list)
+            AddItem(creature.name);
+
+    }
+
     public void AddItem(string name)
     {
         if (name.Trim() == "")
@@ -26,6 +33,21 @@ public class CreatureList : List<Creature>
         }
 
         return false;
+
+    }
+
+    public CreatureList Select(string filter)
+    {
+
+        CreatureList list = new();
+        
+        foreach (Creature creature in this)
+        {
+            if (Text.IsMatchByWildcard(creature.name, filter))
+                list.Add(creature);
+        }
+
+        return list;
 
     }
 
@@ -52,5 +74,12 @@ public class Creature
 
     public override string ToString() => name;
 
+    public bool IsMatch(string pattern)
+    {
+        return Text.IsMatchByWildcard(name, pattern);
+    }
+
 }
+
+
 

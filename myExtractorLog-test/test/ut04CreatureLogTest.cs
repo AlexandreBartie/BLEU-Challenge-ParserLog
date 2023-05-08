@@ -24,7 +24,7 @@ public class UT04_CreatureLogTest
 
         parse.LoadFile(input);
 
-        var creature = parse.CreatureLostPower.list.filter(name);
+        var creature = parse.CreatureLostPower.group.filter(name);
 
         Assert.Equal(total, creature.total);
         Assert.Equal(qty, creature.Count);
@@ -47,7 +47,7 @@ public class UT04_CreatureLogTest
 
         parse.LoadFile(input);
 
-        var creature = parse.CreatureLostPower.list.filter(name);
+        var creature = parse.CreatureLostPower.group.filter(name);
 
         Assert.Equal(totalDamage, creature.total);
         Assert.Equal(qty, creature.Count);
@@ -56,51 +56,51 @@ public class UT04_CreatureLogTest
 
     [Theory]
     [InlineData("cyclops, cyclops smith, dragon, dwarf soldier, ghoul")]
-    public void TST02_CreatureList_ByPlayerLostPower(string creatures)
+    public void TST02_CreatureGroup_ByPlayerLostPower(string creatures)
     {
 
         string input = "PlayerLostPower.txt";
 
         parse.LoadFile(input);
 
-        var list = parse.PlayerLostPower.byCreature.list;
+        var group = parse.PlayerLostPower.byCreature.group;
 
-        Assert.Equal(creatures, list.creatures.txt);
+        Assert.Equal(creatures, group.creatures.txt);
 
     }
 
     [Theory]
     [InlineData("dragon, dragon lord")]
-    public void TST03_CreatureList_ByCreatureHealedPower(string creatures)
+    public void TST03_CreatureGroup_ByCreatureHealedPower(string creatures)
     {
 
         string input = "CreatureHealedPower.txt";
 
         parse.LoadFile(input);
 
-        var list = parse.CreatureHealedPower.list;
+        var group = parse.CreatureHealedPower.group;
 
-        Assert.Equal(creatures, list.creatures.txt);
+        Assert.Equal(creatures, group.creatures.txt);
 
     }
 
     [Theory]
     [InlineData("cyclops, cyclops smith, dragon, dwarf, dwarf soldier, rat, skeleton, spider")]
-    public void TST04_CreatureList_ByCreatureLostPower(string creatures)
+    public void TST04_CreatureGroup_ByCreatureLostPower(string creatures)
     {
 
         string input = "CreatureLostPower.txt";
 
         parse.LoadFile(input);
 
-        var list = parse.CreatureLostPower.list;
+        var group = parse.CreatureLostPower.group;
 
-        Assert.Equal(creatures, list.creatures.txt);
+        Assert.Equal(creatures, group.creatures.txt);
 
     }
 
 
-    public void TSTXX_TotalExtraCreature(int damage, int qty)
+    public void TST04_CreatureGroup_ByCreatureLostPower(int damage, int qty)
     {
 
         input = "PlayerGainedExperience.txt";

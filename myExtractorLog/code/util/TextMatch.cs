@@ -4,7 +4,6 @@ namespace app.util;
 
 public class TextMatch
 {
-
     private Match match;
     public TextMatch(string text, string pattern)
     {

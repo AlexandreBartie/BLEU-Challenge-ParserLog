@@ -15,7 +15,7 @@ public class ViewData : ParseFormat
 
     public readonly ViewCreatureHealedPower CreatureHealedPower;  
     public readonly ViewCreatureLostPower CreatureLostPower;
-    public readonly ViewCreaturesSpotLight CreaturesSpotLight;
+    public readonly ViewCreatureSpotLight CreatureSpotLight;
 
     public RecordsLog logs => (sessions.logs);
 
@@ -31,13 +31,13 @@ public class ViewData : ParseFormat
         
         CreatureHealedPower = new ViewCreatureHealedPower(this);
         CreatureLostPower = new ViewCreatureLostPower(this);
-        CreaturesSpotLight = new ViewCreaturesSpotLight(this);
+        CreatureSpotLight = new ViewCreatureSpotLight(this);
 
     }
 
     public void SetSpotLight(string rules)
     {
-        CreaturesSpotLight.Setup(rules);
+        CreatureSpotLight.Setup(rules);
     }
 
     public void Populate(string[] lines)
@@ -51,7 +51,6 @@ public class ViewData : ParseFormat
         PlayerLootedByCreature.SumData();
         CreatureHealedPower.SumData();
         CreatureLostPower.SumData();
-        CreaturesSpotLight.SumData();
     }
 
 }
