@@ -9,6 +9,6 @@ public class ViewPlayerLostPowerByCreature : ViewModelCreatureList
 
     public int totalDamage => list.total;
 
-    public ViewPlayerLostPowerByCreature(ParseView view) : base(view, TypeLog.eLogPlayerLostPowerByCreature) { }
+    public ViewPlayerLostPowerByCreature(ViewData view) : base(view, TypeLog.eLogPlayerLostPowerByCreature) { }
 
 }

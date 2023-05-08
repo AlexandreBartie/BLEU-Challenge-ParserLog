@@ -6,7 +6,7 @@ namespace app.view;
 
 public class ViewPlayerHealedPower : ViewModelGeneric
 {
-    public ViewPlayerHealedPower(ParseView view) : base(view, TypeLog.eLogPlayerHealedPower) { }
+    public ViewPlayerHealedPower(ViewData view) : base(view, TypeLog.eLogPlayerHealedPower) { }
 
     public int totalHealed;
 

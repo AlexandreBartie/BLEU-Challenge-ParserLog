@@ -3,7 +3,7 @@ using app.view;
 
 namespace app.core;
 
-public class ParseView : ParseFormat
+public class ViewData : ParseFormat
 {
 
     public ParseSessions sessions = new();
@@ -15,21 +15,29 @@ public class ParseView : ParseFormat
 
     public readonly ViewCreatureHealedPower CreatureHealedPower;  
     public readonly ViewCreatureLostPower CreatureLostPower;
+    public readonly ViewCreaturesSpotLight CreaturesSpotLight;
 
     public RecordsLog logs => (sessions.logs);
 
     public bool isNull => (sessions.isNull);
 
-    public ParseView()
+    public ViewData()
     {
 
         PlayerHealedPower = new ViewPlayerHealedPower(this);
         PlayerLostPower = new ViewPlayerLostPower(this);
         PlayerLootedByCreature = new ViewPlayerLootedByCreature(this);
         PlayerGainedExperience = new ViewPlayerGainedExperience(this);
+        
         CreatureHealedPower = new ViewCreatureHealedPower(this);
         CreatureLostPower = new ViewCreatureLostPower(this);
+        CreaturesSpotLight = new ViewCreaturesSpotLight(this);
 
+    }
+
+    public void SetSpotLight(string rules)
+    {
+        CreaturesSpotLight.Setup(rules);
     }
 
     public void Populate(string[] lines)
@@ -43,6 +51,7 @@ public class ParseView : ParseFormat
         PlayerLootedByCreature.SumData();
         CreatureHealedPower.SumData();
         CreatureLostPower.SumData();
+        CreaturesSpotLight.SumData();
     }
 
 }

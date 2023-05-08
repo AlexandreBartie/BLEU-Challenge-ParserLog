@@ -9,7 +9,7 @@ public abstract class ViewModelGeneric : ViewModel
 
     public int count => logs.Count;
 
-    public ViewModelGeneric(ParseView view, TypeLog type) : base(view, type) {}
+    public ViewModelGeneric(ViewData view, TypeLog type) : base(view, type) { }
 
     public abstract void SumData();
 

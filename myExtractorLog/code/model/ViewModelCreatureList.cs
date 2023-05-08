@@ -10,7 +10,7 @@ public abstract class ViewModelCreatureList : ViewModelGeneric
 
     public GroupCreatureList list;
 
-    public ViewModelCreatureList(ParseView view, TypeLog type) : base(view, type)
+    public ViewModelCreatureList(ViewData view, TypeLog type) : base(view, type)
     { list = new GroupCreatureList(view, type); }
 
     public override void SumData()

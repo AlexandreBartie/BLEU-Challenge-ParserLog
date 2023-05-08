@@ -9,7 +9,7 @@ namespace app.view;
 
 public class ViewPlayerLootedByCreature : ViewModelGeneric
 {
-    public ViewPlayerLootedByCreature(ParseView view) : base(view, TypeLog.eLogPlayerLootedByCreature) { }
+    public ViewPlayerLootedByCreature(ViewData view) : base(view, TypeLog.eLogPlayerLootedByCreature) { }
 
     public GroupLootList loot = new();
 

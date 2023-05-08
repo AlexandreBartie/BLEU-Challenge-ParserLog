@@ -5,11 +5,11 @@ namespace app.model;
 
 public abstract class ViewModel
 {
-    public readonly ParseView view;
+    public readonly ViewData view;
 
     public readonly TypeLog type;
 
-    public ViewModel(ParseView view, TypeLog type)
+    public ViewModel(ViewData view, TypeLog type)
     {
         this.view = view;
 

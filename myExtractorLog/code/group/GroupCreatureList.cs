@@ -8,7 +8,7 @@ namespace app.group;
 public class GroupCreatureList : List<GroupCreature>
 {
 
-    public readonly ParseView view;
+    public readonly ViewData view;
 
     public readonly TypeLog type;
 
@@ -18,7 +18,7 @@ public class GroupCreatureList : List<GroupCreature>
 
     public int count => this.Count;
 
-    public GroupCreatureList(ParseView view, TypeLog type)
+    public GroupCreatureList(ViewData view, TypeLog type)
     {
         this.view = view;
         this.type = type;

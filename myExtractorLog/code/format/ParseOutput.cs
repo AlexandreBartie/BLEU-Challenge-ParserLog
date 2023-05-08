@@ -40,4 +40,17 @@ public class ParseOutput
 
     }
 
+    private string getExtra()
+    {
+
+        var memo = new Memo();
+
+        memo.add(parse.logTitle("Creatures SpotLight",'-', '-'));
+        memo.add(parse.CreaturesSpotLight.log());
+
+        return (memo.txt);
+
+    }
+
+
 }

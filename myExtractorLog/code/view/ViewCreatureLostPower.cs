@@ -6,5 +6,5 @@ namespace app.view;
 
 public class ViewCreatureLostPower : ViewModelCreatureList
 {
-    public ViewCreatureLostPower(ParseView view) : base(view, TypeLog.eLogCreatureLostPower) { }
+    public ViewCreatureLostPower(ViewData view) : base(view, TypeLog.eLogCreatureLostPower) { }
 }

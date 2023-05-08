@@ -6,7 +6,7 @@ namespace app.view;
 
 public class ViewPlayerLostPowerByUnknown : ViewModelGeneric
 {
-    public ViewPlayerLostPowerByUnknown(ParseView view) : base(view, TypeLog.eLogPlayerLostPowerByUnknown) { }
+    public ViewPlayerLostPowerByUnknown(ViewData view) : base(view, TypeLog.eLogPlayerLostPowerByUnknown) { }
 
     public int totalDamage = 0;
 
