@@ -33,7 +33,7 @@ public class ParseDataSettings
             var fileFolder = "";
 
             #if DEBUG
-                fileFolder ="C:/DEVOPS/CHALLENGE/BLEU/ExtractorLog/file/";
+                fileFolder ="C:/DEVOPS/CHALLENGE/BLEU/Challenge-ParserLog/file/";
             #else
                 fileFolder = AppDomain.CurrentDomain.BaseDirectory;
             #endif

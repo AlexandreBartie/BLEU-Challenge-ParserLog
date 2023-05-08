@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/myExtractorLog/bin/Debug/net7.0/myExtractorLog.dll",
-            "args": ["C:/DEVOPS/CHALLENGE/BLEU/projectmyExtractorLog/myExtractorLog/code/data/One.txt"],
-            "cwd": "${workspaceFolder}/myExtractorLog",
+            "program": "${workspaceFolder}/ParserLog/bin/Debug/net7.0/ParserLog.dll",
+            "args": ["C:/DEVOPS/CHALLENGE/BLEU/projectParserLog/ParserLog/code/data/One.txt"],
+            "cwd": "${workspaceFolder}/ParserLog",
             "console": "internalConsole",
             "stopAtEntry": false
         },

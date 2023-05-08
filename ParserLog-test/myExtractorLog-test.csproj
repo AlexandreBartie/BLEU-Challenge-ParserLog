@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>myExtractorLog-test</RootNamespace>
+    <RootNamespace>ParserLog-test</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\myExtractorLog\myExtractorLog.csproj" />
+    <ProjectReference Include="..\ParserLog\ParserLog.csproj" />
   </ItemGroup>
 
 </Project>

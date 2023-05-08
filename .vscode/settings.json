@@ -22,11 +22,11 @@
             "group": "Default"
         },
         {
-            "filePath": "myExtractorLog\\code\\total",
+            "filePath": "ParserLog\\code\\total",
             "group": "Default"
         },
         {
-            "filePath": "myExtractorLog-test\\test",
+            "filePath": "ParserLog-test\\test",
             "group": "Default"
         }
     ]
