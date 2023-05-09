@@ -31,9 +31,9 @@ public class ViewCreatureSpotlight
 
         var list = new CreatureList();
 
-        list.AddList(view.CreatureHealedPower.creatures.Match(wildcard));
-        list.AddList(view.CreatureLostPower.creatures.Match(wildcard));
         list.AddList(view.PlayerLostPower.byCreature.creatures.Match(wildcard));
+        list.AddList(view.CreatureLostPower.creatures.Match(wildcard));
+        list.AddList(view.CreatureHealedPower.creatures.Match(wildcard));  
 
         _creatures = list;
 
@@ -48,12 +48,12 @@ public class ViewCreatureSpotlight
         {
             var creature = item.name;
 
-            var healedPower = view.CreatureHealedPower.group.filter(creature).total;
-            var lostPower = view.CreatureLostPower.group.filter(creature).total;
-
             var damagePlayer = view.PlayerLostPower.byCreature.group.filter(creature).total;
 
-            var log = view.GetSpotlight(creature, healedPower, lostPower, damagePlayer);
+            var lostPower = view.CreatureLostPower.group.filter(creature).total;
+            var healedPower = view.CreatureHealedPower.group.filter(creature).total;
+
+            var log = view.GetSpotlight(creature, damagePlayer, lostPower, healedPower);
 
             memo.Add(log);
         }

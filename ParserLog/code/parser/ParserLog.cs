@@ -12,6 +12,8 @@ public class ParserLog : ViewData
     private ParserImport import;
     private ViewOutput output;
 
+    public ParserShow show => settings.show;
+
     public string txt => output.txt;
 
 

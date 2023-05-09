@@ -20,15 +20,18 @@ class Program
 
         var app = new StartApp();
 
+        string fileName;
+        string creatureRules;
+
 #if DEBUG
-        app.fileName = "Session-Full.txt"; 
-        app.creatureRules = "*Knight*";
+        fileName = "Session-Full.txt";
+        creatureRules = "*Knight*"; // "cyclop*, dragon*"; //
 #else
-        app.fileName = args[0];
-        app.creatureRules = (args.Length >= 2) ? args[1] : "";
+        fileName = args[0];
+        creatureRules = (args.Length >= 2) ? args[1] : "";
 #endif
 
-        app.Run();
+        app.Run(fileName, creatureRules);
 
     }
 
@@ -36,26 +39,23 @@ class Program
 
 class StartApp
 {
-    public string fileName = "";
-    public string creatureRules = "";
-
     public readonly ParserLog parser = new();
-    
-    public ParserShow show => parser.settings.show;
 
     public StartApp()
     {
-        show.PlayerStatistics = false;
-        show.CreatureStatistics = false;
-        show.LootedItems = false;
-        show.CreatureSpotlight = true; // Extra Challenge
+        parser.show.PlayerStatistics = false;
+        parser.show.CreatureStatistics = true;
+        parser.show.LootedItems = false;
+        parser.show.CreatureSpotlight = true; // Extra Challenge
     }
 
-    public void Run()
+    public void Run(string fileName, string creatureRules)
     {
 
+        // Set rules for spotlight creatures
         parser.SetSpotlight(creatureRules);
-      
+
+        // Set file will be opened file will be opened
         if (parser.LoadFile(fileName))
         {
             Console.WriteLine(parser.txt);

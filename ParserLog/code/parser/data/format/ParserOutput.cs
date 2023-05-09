@@ -9,8 +9,6 @@ public class ViewOutput
 
     public string txt => getTXT();
 
-    private ParserShow show => parser.settings.show;
-
     public ViewOutput(ParserLog parser)
     {
         this.parser = parser;
@@ -23,7 +21,7 @@ public class ViewOutput
         if (!parser.isNull)
         {
 
-            if (show.PlayerStatistics)
+            if (parser.show.PlayerStatistics)
             {
                 memo.add(parser.logTitle("Player Statistics"));
                 memo.add(parser.PlayerGainedExperience.log("Experience"));
@@ -33,20 +31,20 @@ public class ViewOutput
                 memo.add(parser.PlayerLostPower.byCreature.log("byCreature"));
             }
 
-            if (show.LootedItems)
+            if (parser.show.LootedItems)
             {
                 memo.add(parser.logTitle("Looted Items"));
                 memo.add(parser.PlayerLootedByCreature.log("LootedByCreature"));
             }
 
-            if (show.CreatureStatistics)
+            if (parser.show.CreatureStatistics)
             {
                 memo.add(parser.logTitle("Creature Statistics"));
                 memo.add(parser.CreatureHealedPower.log("HealedPower"));
                 memo.add(parser.CreatureLostPower.log("LostPower"));
             }
 
-            if (show.CreatureSpotlight)
+            if (parser.show.CreatureSpotlight)
             {
                 if (parser.CreatureSpotlight.HasCreatures)
                 {

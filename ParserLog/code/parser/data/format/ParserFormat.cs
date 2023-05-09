@@ -89,16 +89,16 @@ public class ViewFormatSpotLight
     public string logColumns()
     {
         var columnCreature = "Creature Name";
-        var columnHealed = "HealedPower";
-        var columnLost = "LostPower";
         var columnDamage = "DamagePlayer";
+        var columnLost = "LostPower";
+        var columnHealed = "HealedPower";
 
-        return $"{Text.Spaces(02)}{columnCreature}{Text.Spaces(6)}{columnHealed}{Text.Spaces(4)}{columnLost}{Text.Spaces(1)}{columnDamage}";
+        return $"{Text.Spaces(02)}{columnCreature}{Text.Spaces(5)}{columnDamage}{Text.Spaces(4)}{columnLost}{Text.Spaces(2)}{columnHealed}";
     }
 
-    public string GetSpotlight(string creature, int healedPower, int lostPower, int damagePlayer)
+    public string GetSpotlight(string creature, int damagePlayer, int lostPower, int healedPower)
     {
-        return $"{FormatCreature(creature, 1)} {FormatPoints(healedPower)} {FormatPoints(lostPower)} {FormatPoints(damagePlayer)}";
+        return $"{FormatCreature(creature, 1)} {FormatPoints(damagePlayer)} {FormatPoints(lostPower)} {FormatPoints(healedPower)}";
     }
 
 }
