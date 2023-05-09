@@ -1,5 +1,5 @@
 using parser.core.log;
-namespace myappxunit;
+namespace parser.unit;
 
 public class UT01_RecordLogTest
 {

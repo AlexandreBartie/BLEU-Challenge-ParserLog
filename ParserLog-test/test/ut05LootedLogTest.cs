@@ -1,8 +1,6 @@
-using parser;
+namespace parser.unit;
 
-namespace myappxunit;
-
-public class UT04_LootedLogTest
+public class UT05_LootedLogTest
 {
     string input = "PlayerLootedByCreature.txt";
 
@@ -43,18 +41,5 @@ public class UT04_LootedLogTest
         Assert.Equal(count, list.count);
 
     }
-
-    public void TSTXX_TotalExtraCreature(int damage, int qty)
-    {
-
-        input = "PlayerGainedExperience.txt";
-
-        parser.LoadFile(input);
-
-        Assert.Equal(damage, parser.PlayerGainedExperience.totalExperience);
-        Assert.Equal(qty, parser.PlayerGainedExperience.count);
-
-    }
-
 
 }

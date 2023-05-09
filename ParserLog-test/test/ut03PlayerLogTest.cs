@@ -1,6 +1,4 @@
-using parser;
-
-namespace myappxunit;
+namespace parser.unit;
 
 public class UT03_PlayerLogTest
 {

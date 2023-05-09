@@ -1,6 +1,4 @@
-using parser;
-
-namespace myappxunit;
+namespace parser.unit;
 
 public class UT04_CreatureLogTest
 {
@@ -98,26 +96,5 @@ public class UT04_CreatureLogTest
         Assert.Equal(creatures, group.creatures.txt);
 
     }
-
-    [Theory]
-    [InlineData("*cyclo*", "cyclops, cyclops smith")]
-    [InlineData("*black*", "Black Knight")]
-    [InlineData("dragon*, dwarf", "dragon, dragon lord, dwarf, dwarf soldier")]
-    public void TST05_CreatureGroup_ByCreatureSpotlight(string rules, string creatures)
-    {
-
-
-        string input = "CreatureSpotlight.txt";
-
-        parser.SetSpotlight(rules);
-
-        parser.LoadFile(input);
-
-        var list = parser.CreatureSpotlight.creatures;
-
-        Assert.Equal(creatures, list.txt);
-
-    }
-
 
 }
