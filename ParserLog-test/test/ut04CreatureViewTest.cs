@@ -1,6 +1,6 @@
 namespace parser.unit;
 
-public class UT04_CreatureLogTest
+public class UT04_CreatureViewTest
 {
     private string input = "";
 

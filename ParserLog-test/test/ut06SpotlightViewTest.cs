@@ -1,6 +1,6 @@
 namespace parser.unit;
 
-public class UT06_CreatureSpotlightTest
+public class UT06_SpotlightViewTest
 {
     string input = "CreatureSpotlight.txt";
 

@@ -1,6 +1,6 @@
 namespace parser.unit;
 
-public class UT03_PlayerLogTest
+public class UT03_PlayerViewTest
 {
 
     private string input = "";

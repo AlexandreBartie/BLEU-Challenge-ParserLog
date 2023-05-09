@@ -1,6 +1,6 @@
 namespace parser.unit;
 
-public class UT05_LootedLogTest
+public class UT05_LootedViewTest
 {
     string input = "PlayerLootedByCreature.txt";
 
