@@ -8,7 +8,7 @@ public class UT05_LootedViewTest
 
     [Theory]
     [InlineData("crossbow, cyclops toe, dragon ham, gold coins, green dragon leather, letter, meat, plate legs, small diamond, steel helmet, steel shield")]
-    public void TST01_LootedList(string creatures)
+    public void TST01_LootedItemsList(string creatures)
     {
 
         parser.LoadFile(input);
@@ -30,7 +30,7 @@ public class UT05_LootedViewTest
     [InlineData("steel shield", 1, 1)]
     [InlineData("steel helmet", 1, 1)]
     [InlineData("small diamond", 1, 1)]
-    public void TST02_LootedItem(string item, int total, int count)
+    public void TST02_LootedGroup(string item, int total, int count)
     {
 
         parser.LoadFile(input);

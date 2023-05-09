@@ -10,7 +10,7 @@ public class UT06_SpotlightViewTest
     [InlineData("*cyclo*", "cyclops, cyclops smith")]
     [InlineData("*black*", "Black Knight")]
     [InlineData("dragon*, dwarf", "dragon, dragon lord, dwarf, dwarf soldier")]
-    public void TST05_CreatureGroup_ByCreatureSpotlight(string rules, string creatures)
+    public void TST01_CreatureGroup_ByCreatureSpotlight(string rules, string creatures)
     {
 
         parser.SetSpotlight(rules);
